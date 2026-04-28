@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container mt-4 mb-4  border rounded border-dark shadow p-4">
+        <header class="row d-flex text-center">
+            <div class="col text text-primary">
+                <h1>Actividad con Bootstrap</h1>
+            </div>
+        </header>
+        <div class="row">
+            <section class="col-6 border border-dark p-4">
+                <h2 class="text-success">Columna 1</h2>
+                <p>Esta es la primera columna. Contiene texto con un borde y padding.</p>
+            </section>
+            <section class="col-6 border border-danger p-4">
+                <h2 class="text-danger">Columna 2</h2>
+                <p>Esta es la primera columna. Contiene texto con un borde y padding.</p>
+            </section>
+        </div>
+        <div class="row w-100">
+            <div class="col-md-4 offset-md-4 p-4 ">
+                <!-- Imagen de usuario -->
+                <div class="text-center mb-4">
+                    <img src="data:image/png;base64,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" class="rounded-circle border border-secondary p-1" alt="Usuario">
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary ">Haz clic aquí</button>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered table-hover">
+        <h1 class="text-info">Tabla de Datos</h1>
+        <thead>
+            <tr class="table-dark">
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr >
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr >
+                <td>Ana</td>
+                <td>Juan</td>
+                <td>Maria</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>30</td>
+                <td>22</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

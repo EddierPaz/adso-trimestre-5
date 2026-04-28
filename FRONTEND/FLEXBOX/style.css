@@ -1,0 +1,384 @@
+body {
+    display: flex;
+    margin: 2px;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header,
+nav,
+footer {
+    padding: 20px;
+    text-align: center;
+}
+
+header {
+    background-color: rgb(31, 149, 228);
+    border: blue solid 7px;
+    min-height: 90px;
+
+}
+
+nav {
+    background-color: greenyellow;
+    border: green solid 7px;
+
+}
+
+section {
+    display: flex;
+    background-color: rgb(189, 25, 189);
+    border: rgb(170, 170, 170) solid 7px;
+    padding: 20px;
+    min-height: 300px;
+    flex-direction: column;
+}
+
+
+.articulos {
+    display: flex;
+    gap: 10px;
+}
+
+article {
+    background-color: orange;
+    border: red solid 7px;
+    padding: 20px;
+    text-align: center;
+    min-height: 200px;
+}
+
+.article1 {
+    flex:3;
+}
+
+.article2 {
+    flex:1;
+}
+
+.article3 {
+    max-height: 900px;
+}
+
+footer {
+    background-color: lightgray;
+    border: gray solid 7px;
+}/* ============================================================
+   FLEXBOX - GUÍA COMENTADA
+   ============================================================
+   Flexbox es un sistema de diseño CSS que organiza elementos
+   dentro de un contenedor de forma flexible.
+   Siempre hay DOS actores:
+     - Contenedor flex (padre): tiene display: flex
+     - Ítems flex (hijos): se distribuyen según las reglas del padre
+   ============================================================ */
+
+
+/* ============================================================
+   BODY — Contenedor flex principal de toda la página
+   ============================================================ */
+body {
+    /* 
+     * display: flex
+     * Activa Flexbox. A partir de aquí, todos los hijos DIRECTOS
+     * del body (header, nav, section, footer) se convierten en
+     * "ítems flex" y obedecen las reglas de este contenedor.
+     */
+    display: flex;
+
+    /*
+     * margin: 2px
+     * Agrega un pequeño margen exterior al body en todos los lados.
+     * No es propiedad de Flexbox, es CSS básico.
+     */
+    margin: 2px;
+
+    /*
+     * flex-direction: column
+     * Define la DIRECCIÓN en que se acomodan los ítems flex.
+     * - row (por defecto): los hijos van en FILA horizontal →
+     * - column: los hijos van en COLUMNA vertical ↓
+     *
+     * Con column, el body apila así:
+     *   [ header ]
+     *   [  nav   ]
+     *   [ section]
+     *   [ footer ]
+     */
+    flex-direction: column;
+
+    /*
+     * min-height: 100vh
+     * El body ocupa como mínimo el 100% de la altura visible
+     * de la pantalla (viewport height = vh).
+     * Esto asegura que el footer siempre quede abajo,
+     * incluso cuando hay poco contenido.
+     * No es propiedad de Flexbox, es CSS básico.
+     */
+    min-height: 100vh;
+}
+
+
+/* ============================================================
+   HEADER, NAV, FOOTER — Estilos compartidos (no Flexbox)
+   ============================================================ */
+header,
+nav,
+footer {
+    /*
+     * padding: 20px
+     * Espacio interior de 20px en todos los lados.
+     * El contenido no toca los bordes del elemento.
+     */
+    padding: 20px;
+
+    /*
+     * text-align: center
+     * Centra el texto horizontalmente dentro del elemento.
+     * NO es propiedad Flexbox, es CSS básico de texto.
+     */
+    text-align: center;
+}
+
+
+/* ============================================================
+   HEADER — Estilos específicos
+   ============================================================ */
+header {
+    /* Color de fondo azul */
+    background-color: rgb(31, 149, 228);
+
+    /* Borde azul sólido de 7px en todos los lados */
+    border: blue solid 7px;
+
+    /*
+     * min-height: 90px
+     * El header tendrá al menos 90px de alto.
+     * Si el contenido es mayor, crece automáticamente.
+     */
+    min-height: 90px;
+}
+
+
+/* ============================================================
+   NAV — Estilos específicos
+   ============================================================ */
+nav {
+    /* Color de fondo verde amarillento */
+    background-color: greenyellow;
+
+    /* Borde verde sólido de 7px */
+    border: green solid 7px;
+}
+
+
+/* ============================================================
+   SECTION — Contenedor flex INTERNO
+   ============================================================ */
+section {
+    /*
+     * display: flex
+     * La section también es un contenedor flex.
+     * Sus hijos directos (el span y el div.articulos)
+     * se convierten en ítems flex de la section.
+     */
+    display: flex;
+
+    /* Color de fondo morado */
+    background-color: rgb(189, 25, 189);
+
+    /* Borde gris sólido de 7px */
+    border: rgb(170, 170, 170) solid 7px;
+
+    /* Espacio interior de 20px */
+    padding: 20px;
+
+    /*
+     * min-height: 300px
+     * La section tendrá al menos 300px de alto.
+     */
+    min-height: 300px;
+
+    /*
+     * flex-direction: column
+     * Los hijos de la section se apilan verticalmente:
+     *   [ span "section" ]
+     *   [ div.articulos  ]
+     * Si no se pusiera esto, irían en fila (row) por defecto.
+     */
+    flex-direction: column;
+}
+
+
+/* ============================================================
+   .ARTICULOS — Contenedor flex horizontal (fila)
+   ============================================================ */
+.articulos {
+    /*
+     * display: flex
+     * El div.articulos también es contenedor flex.
+     * Sus hijos (los article) se organizan como ítems flex.
+     */
+    display: flex;
+
+    /*
+     * NO se define flex-direction aquí.
+     * El valor por defecto es ROW → los artículos van en FILA horizontal:
+     *   [ article1 ][ article2 ]
+     */
+
+    /*
+     * gap: 10px
+     * Agrega un espacio de 10px ENTRE cada ítem flex.
+     * Es la forma moderna de separar ítems (antes se usaba margin).
+     * Ventaja: no agrega margen al primero ni al último ítem.
+     */
+    gap: 10px;
+}
+
+
+/* ============================================================
+   ARTICLE — Estilos base de todos los artículos
+   ============================================================ */
+article {
+    /* Color de fondo naranja */
+    background-color: orange;
+
+    /* Borde rojo sólido de 7px */
+    border: red solid 7px;
+
+    /* Espacio interior de 20px */
+    padding: 20px;
+
+    /* Texto centrado horizontalmente */
+    text-align: center;
+
+    /*
+     * min-height: 200px
+     * Cada artículo tendrá al menos 200px de alto.
+     */
+    min-height: 200px;
+}
+
+
+/* ============================================================
+   .ARTICLE1 — Propiedad flex: proporción del espacio
+   ============================================================ */
+.article1 {
+    /*
+     * flex: 3
+     * Esta es la propiedad clave de Flexbox para distribuir espacio.
+     *
+     * flex es un shorthand (atajo) de tres propiedades:
+     *   flex-grow:   3  → cuánto puede CRECER para ocupar espacio libre
+     *   flex-shrink: 1  → cuánto puede ENCOGER si no hay espacio (default)
+     *   flex-basis:  0% → tamaño base antes de distribuir espacio (default)
+     *
+     * CÁLCULO DE PROPORCIÓN:
+     * article1 tiene flex:3 y article2 tiene flex:1
+     * Total de partes = 3 + 1 = 4 partes
+     *
+     * Si el contenedor mide 400px:
+     *   article1 = (3/4) × 400px = 300px
+     *   article2 = (1/4) × 400px = 100px
+     *
+     * Si el contenedor mide 800px:
+     *   article1 = (3/4) × 800px = 600px
+     *   article2 = (1/4) × 800px = 200px
+     *
+     * La proporción siempre se mantiene: article1 es 3 veces más ancho que article2.
+     */
+    flex: 3;
+}
+
+
+/* ============================================================
+   .ARTICLE2 — Propiedad flex: proporción del espacio
+   ============================================================ */
+.article2 {
+    /*
+     * flex: 1
+     * Este artículo ocupa 1 parte del espacio disponible.
+     * Como article1 tiene flex:3, este siempre será
+     * 3 veces más pequeño que article1.
+     *
+     * Comparación visual (contenedor = 400px):
+     * ┌────────────────────┬──────┐
+     * │    article1        │art2  │
+     * │      300px         │100px │
+     * └────────────────────┴──────┘
+     */
+    flex: 1;
+}
+
+
+/* ============================================================
+   .ARTICLE3 — Sin flex, solo altura máxima
+   ============================================================ */
+.article3 {
+    /*
+     * max-height: 900px
+     * Este artículo NO tiene propiedad flex definida.
+     * Simplemente limita su altura máxima a 900px.
+     * Como está solo en su section (sin hermanos con flex),
+     * la propiedad flex no aplica aquí de forma visible.
+     *
+     * Ocupa el 100% del ancho disponible de su contenedor.
+     */
+    max-height: 900px;
+}
+
+
+/* ============================================================
+   FOOTER — Estilos específicos
+   ============================================================ */
+footer {
+    /* Color de fondo gris claro */
+    background-color: lightgray;
+
+    /* Borde gris sólido de 7px */
+    border: gray solid 7px;
+
+    /*
+     * El footer es un ítem flex del body (flex-direction: column).
+     * No tiene flex definido, así que usa el valor por defecto flex: 0 1 auto
+     * lo que significa: no crece, puede encoger, tamaño según contenido.
+     *
+     * Si quisieras que el footer siempre quedara al fondo de la página,
+     * podrías darle margin-top: auto al footer, que empujaría todo
+     * el contenido hacia arriba.
+     */
+}
+
+
+/* ============================================================
+   RESUMEN DE PROPIEDADES FLEXBOX USADAS EN ESTE ARCHIVO
+   ============================================================
+
+   PROPIEDADES DEL CONTENEDOR (padre con display:flex):
+   ┌─────────────────────┬────────────────────────────────────────┐
+   │ display: flex       │ Activa Flexbox                         │
+   │ flex-direction: row │ Hijos en fila horizontal (por defecto) │
+   │ flex-direction: col │ Hijos en columna vertical              │
+   │ gap: 10px           │ Espacio entre ítems                    │
+   └─────────────────────┴────────────────────────────────────────┘
+
+   PROPIEDADES DE LOS ÍTEMS (hijos del contenedor flex):
+   ┌─────────────────────┬────────────────────────────────────────┐
+   │ flex: 3             │ Ocupa 3 partes del espacio disponible  │
+   │ flex: 1             │ Ocupa 1 parte del espacio disponible   │
+   └─────────────────────┴────────────────────────────────────────┘
+
+   OTRAS PROPIEDADES ÚTILES QUE NO SE USAN AQUÍ PERO EXISTEN:
+   ┌──────────────────────────┬─────────────────────────────────────┐
+   │ justify-content: center  │ Centra ítems en el eje PRINCIPAL     │
+   │ align-items: center      │ Centra ítems en el eje CRUZADO       │
+   │ flex-wrap: wrap          │ Permite que los ítems bajen de línea │
+   │ flex-grow: 1             │ El ítem puede crecer                 │
+   │ flex-shrink: 0           │ El ítem NO puede encoger             │
+   │ flex-basis: 200px        │ Tamaño base del ítem                 │
+   │ order: 2                 │ Cambia el orden visual del ítem      │
+   │ align-self: flex-end     │ Alinea UN ítem individualmente       │
+   └──────────────────────────┴─────────────────────────────────────┘
+
+   ============================================================ */

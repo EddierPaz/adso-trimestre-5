@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="estilos1.css">
+</head>
+
+<body>
+    <!-- Contenedor principal Bootstrap: centra el contenido y aplica márgenes automáticos a los lados -->
+    <div class="container">
+
+        <!-- Fila del encabezado (usa el sistema de grilla de Bootstrap) -->
+        <header class="row">
+
+            <!-- Columna que ocupa todo el ancho disponible automáticamente -->
+            <div class="col">
+                <h1>TITULO DE HEADER</h1>
+            </div>
+
+        </header>
+
+        <!-- Fila principal que contiene la navegación y el contenido -->
+        <div class="row">
+
+            <!-- Navegación lateral:
+             - col-12: ocupa 12/12 columnas (ancho completo) en pantallas pequeñas (móvil)
+             - col-md-3: ocupa 3/12 columnas (25%) en pantallas medianas o mayores -->
+            <nav class="col-12 col-md-3">
+                <h1>NAVEGACIÓN</h1>
+            </nav>
+
+            <!-- Sección principal de contenido:
+             - col-12: ocupa todo el ancho en pantallas pequeñas (móvil)
+             - col-md-9: ocupa 9/12 columnas (75%) en pantallas medianas o mayores -->
+            <main class="col-12 col-md-9">
+                <h1>SECCIÓN PRINCIPAL</h1>
+
+                <!-- Fila interna de artículos:
+                 - justify-content-between: distribuye los elementos con espacio entre ellos
+                 - align-items-center: alinea verticalmente los elementos al centro -->
+                <div class="row justify-content-between align-items-center">
+
+                    <!-- Artículo 1:
+                     - col-12: ancho completo en móvil
+                     - col-md-6: mitad del ancho (50%) en pantallas medianas
+                     - col-xl-3: un cuarto del ancho (25%) en pantallas extra grandes -->
+                    <section class="col-12 col-md-6 col-xl-3">
+                        <h1>Articulo</h1>
+                    </section>
+
+                    <!-- Artículo 2: mismo comportamiento responsive que el Artículo 1 -->
+                    <section class="col-12 col-md-6 col-xl-3">
+                        <h1>Articulo</h1>
+                    </section>
+
+                    <!-- Artículo 3: mismo comportamiento responsive que el Artículo 1 -->
+                    <section class="col-12 col-md-6 col-xl-3">
+                        <h1>Articulo</h1>
+                    </section>
+
+                </div>
+            </main>
+
+        </div>
+
+        <!-- Fila del pie de página -->
+        <footer class="row">
+
+            <!-- Columna que ocupa el ancho completo (12/12) en cualquier tamaño de pantalla -->
+            <div class="col-12">
+                <h1>NAV</h1>
+            </div>
+
+        </footer>
+    </div>
+    <br>
+    <!-- Tabla con clase Bootstrap que aplica estilos básicos (bordes, espaciado, tipografía) -->
+    <table class="table">
+
+        <!-- Título/descripción visible de la tabla, renderizado debajo de ella por defecto -->
+        <caption>Tabla 1. Tabla básica</caption>
+
+        <!-- Sección de encabezado de la tabla -->
+        <thead>
+
+            <!-- Fila de encabezado con fondo amarillo/advertencia usando color Bootstrap "warning" -->
+            <tr class="table-warning">
+                <th>Producto</th> <!-- Celda de encabezado: columna Producto -->
+                <th>Cantidad</th> <!-- Celda de encabezado: columna Cantidad -->
+                <th>Precio</th> <!-- Celda de encabezado: columna Precio -->
+            </tr>
+
+        </thead>
+
+        <!-- Sección del cuerpo de la tabla donde van los datos -->
+        <tbody>
+
+            <!-- Fila con fondo azul claro usando el color Bootstrap "primary" -->
+            <tr class="table-primary">
+                <td>Ratón</td> <!-- Dato: nombre del producto -->
+                <td>15</td> <!-- Dato: cantidad disponible -->
+                <td>100</td> <!-- Dato: precio unitario -->
+            </tr>
+
+            <!-- Fila con fondo rojo claro usando el color Bootstrap "danger" (alerta/peligro) -->
+            <tr class="table-danger">
+                <td>Teclado</td> <!-- Dato: nombre del producto -->
+                <td>34</td> <!-- Dato: cantidad disponible -->
+                <td>340</td> <!-- Dato: precio unitario -->
+            </tr>
+
+            <!-- Fila sin clase Bootstrap, hereda el estilo por defecto de la tabla (fondo blanco) -->
+            <tr>
+                <td>Pantalla</td> <!-- Dato: nombre del producto -->
+                <td>10</td> <!-- Dato: cantidad disponible -->
+                <td>400</td> <!-- Dato: precio unitario -->
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

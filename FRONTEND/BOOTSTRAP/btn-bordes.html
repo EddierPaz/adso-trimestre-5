@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="estilos1.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        
+        <!--.btn-sm, para botones pequeños-->
+        <button type="button" class="btn btn-primary btn-sm">btn-sm</button>
+        <!--.btn-lg, para botones grandes-->
+        <button type="button" class="btn btn-info btn-lg">btn-lg</button>
+        <button type="button" class="btn btn-warning">btn</button>
+        <hr>
+        <!--En el caso de necesitar un botón que se ajuste al ancho del contenedor, llamado botón de tipo bloque o «block button«,
+  crearemos un contenedor padre con la clase .d-grid y podemos usar .gap-x, donde x es un número que define su
+  espaciado, y en su interior definiremos los botones.-->
+        <div class="d-grid">
+            <button class="btn btn-danger" type="button">Block button width 100%</button>
+        </div>
+        <hr>
+        <div class="d-grid col-3">
+            <button class="btn btn-secondary" type="button">Block button col-3</button>
+        </div>
+
+        <div class="container mt-5">
+            <div class="d-grid col-3 gap-3">
+                <button class="btn btn-primary">Botón 1</button>
+                <button class="btn btn-success">Botón 2</button>
+                <button class="btn btn-danger">Botón 3</button>
+            </div>
+            <br>
+            <div class="d-grid gap-3">
+                <button class="btn btn-primary">Botón 1</button>
+                <button class="btn btn-success">Botón 2</button>
+                <button class="btn btn-danger">Botón 3</button>
+            </div>
+
+        </div>
+        <!--bordes a los elementos utilizando diferentes clases-->
+        <div class="container mt-5">
+            <h2>Ejemplo de bordes y redondeos en Bootstrap</h2>
+
+            <!-- Ejemplo 1: .border y .rounded-->
+            <div class="border rounded p-3 mb-3">
+                <p>Div con borde y bordes redondeados (.border y .rounded)</p>
+            </div>
+            <!-- Ejemplo 2: .border-top y .rounded-top-->
+            <div class="border-top rounded-top p-3 mb-3">
+                <p>Div con borde superior y bordes redondeados en la parte superior (.border-top y .rounded-top)</p>
+            </div>
+            <!-- Ejemplo 3: .border-end y .rounded-end -->
+            <div class="border-end rounded-end p-3 mb-3">
+                <p>Div con borde derecho y bordes redondeados en la parte derecha (.border-end y .rounded-end)</p>
+            </div>
+            <!-- Ejemplo 4: .border-bottom y .rounded-bottom -->
+            <div class="border-bottom rounded-bottom p-3 mb-3">
+                <p>Div con borde inferior y bordes redondeados en la parte inferior (.border-bottom y .rounded-bottom)
+                </p>
+            </div>
+            <!-- Ejemplo 5: .border-start y .rounded-start -->
+            <div class="border-start rounded-start p-3 mb-3">
+                <p>Div con borde izquierdo y bordes redondeados en la parte izquierda (.border-start y .rounded-start)
+                </p>
+            </div>
+            <!-- Ejemplo 6: .rounded-circle -->
+            <div class="border rounded-circle p-5 mb-3">
+                <p>Div con borde y forma circular (.rounded-circle)</p>
+            </div>
+            <!-- Ejemplo 7: .rounded-0 -->
+            <div class="border rounded-0 p-3 mb-3">
+                <p>Div con borde y sin redondeo de esquinas (.rounded-0)</p>
+            </div>
+            <!-- Ejemplo 8: .border-0 -->
+            <div class="border-0 rounded p-3 mb-3">
+                <p>Div sin borde, solo con redondeo (.border-0)</p>
+            </div>
+            <!-- Ejemplo 9: .border-primary -->
+            <div class="border border-primary p-3 mb-3">
+                <p>Div con borde color primario (.border-primary)</p>
+            </div>
+            <!-- Ejemplo 10: .border-secondary -->
+            <div class="border border-secondary p-3 mb-3">
+                <p>Div con borde color secundario (.border-secondary)</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<!--
+    DOCTYPE html
+    Le dice al navegador que use el estándar HTML5.
+    Siempre debe ir en la primera línea.
+-->
+
+<html lang="en">
+<!--
+    <html lang="en">
+    Elemento raíz que envuelve TODO el contenido de la página.
+    lang="en" indica que el idioma es inglés (ayuda a lectores de pantalla y SEO).
+-->
+
+<head>
+    <!--
+        <head>
+        Contiene información sobre la página que el navegador necesita
+        pero que el USUARIO NO VE directamente en pantalla.
+    -->
+
+    <meta charset="UTF-8">
+    <!--
+        charset="UTF-8"
+        Define la codificación de caracteres.
+        UTF-8 soporta todos los caracteres: tildes, ñ, emojis, etc.
+        Siempre debe ir primero dentro del head.
+    -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+        viewport
+        Le dice al navegador móvil cómo mostrar la página.
+        - width=device-width: el ancho de la página = ancho de la pantalla del dispositivo
+        - initial-scale=1.0: sin zoom inicial
+        SIN esta línea, los móviles muestran la página como escritorio (muy pequeña).
+    -->
+
+    <link rel="stylesheet" href="style1.css">
+    <!--
+        Vincula el archivo CSS externo (style1.css) con este HTML.
+        - rel="stylesheet": le dice que es una hoja de estilos
+        - href="style1.css": ruta al archivo CSS (debe estar en la misma carpeta)
+        TODOS los estilos de Flexbox que comentamos están en ese archivo.
+    -->
+
+    <title>Eddier Paz</title>
+    <!--
+        El texto que aparece en la PESTAÑA del navegador.
+        También es lo que ven los buscadores como título de la página.
+    -->
+
+</head>
+
+<body>
+    <!--
+        <body>
+        Contiene todo el contenido VISIBLE de la página.
+
+        ¿Por qué es importante para Flexbox?
+        En el CSS, el body tiene:
+            display: flex;
+            flex-direction: column;
+        
+        Eso significa que todos los hijos DIRECTOS del body
+        (header, nav, section, footer) son ítems flex y se apilan
+        verticalmente uno debajo del otro.
+        
+        Layout resultante:
+        ┌─────────────────┐
+        │     header      │  ← ítem flex #1
+        ├─────────────────┤
+        │      nav        │  ← ítem flex #2
+        ├─────────────────┤
+        │    section 1    │  ← ítem flex #3
+        ├─────────────────┤
+        │    section 2    │  ← ítem flex #4
+        ├─────────────────┤
+        │     footer      │  ← ítem flex #5
+        └─────────────────┘
+    -->
+
+    <header>
+        <!--
+            <header>
+            Elemento semántico HTML5 que representa la cabecera de la página.
+            
+            Relación con Flexbox:
+            - Es un ÍTEM FLEX del body (su padre tiene display:flex)
+            - No tiene flex definido, así que usa el valor por defecto:
+              flex: 0 1 auto → no crece, puede encoger, tamaño según contenido.
+            
+            En el CSS tiene:
+            - background-color: rgb(31, 149, 228) → azul
+            - border: blue solid 7px
+            - min-height: 90px → al menos 90px de alto
+            - padding: 20px y text-align: center (heredados del selector compartido)
+        -->
+        <span>header</span>
+        <!--
+            <span> es un elemento INLINE (en línea), no ocupa toda la fila.
+            Aquí solo muestra el texto "header" para identificar la sección.
+        -->
+    </header>
+
+    <nav>
+        <!--
+            <nav>
+            Elemento semántico HTML5 para la barra de navegación.
+            Normalmente contiene enlaces (<a>) de menú.
+            
+            Relación con Flexbox:
+            - También es ÍTEM FLEX del body
+            - Sin flex definido → tamaño según su contenido
+            
+            En el CSS tiene:
+            - background-color: greenyellow → verde amarillento
+            - border: green solid 7px
+            - padding y text-align heredados del selector compartido
+        -->
+        <span>nav</span>
+    </nav>
+
+    <section class="section1">
+        <!--
+            <section>
+            Elemento semántico HTML5 que agrupa contenido relacionado.
+            
+            DOBLE ROL en Flexbox:
+            1. Como ÍTEM FLEX: es hijo del body (que tiene display:flex column)
+               → se apila verticalmente después del nav
+            
+            2. Como CONTENEDOR FLEX: en el CSS tiene display:flex column
+               → sus hijos (span y div.articulos) también son ítems flex
+               → se apilan verticalmente dentro de la section
+            
+            Estructura interna de esta section:
+            ┌─────────────────────────────┐
+            │  span "section"             │  ← ítem flex #1 de la section
+            ├─────────────────────────────┤
+            │  div.articulos              │  ← ítem flex #2 de la section
+            │  ┌──────────────┬──────┐   │
+            │  │  article1    │art2  │   │  ← ítems flex del div.articulos (row)
+            │  └──────────────┴──────┘   │
+            └─────────────────────────────┘
+            
+            class="section1": para poder aplicarle estilos específicos si fuera necesario.
+        -->
+        <span>section</span>
+
+        <div class="articulos">
+            <!--
+                <div class="articulos">
+                Este div es el CONTENEDOR FLEX de los artículos.
+                
+                En el CSS tiene:
+                    display: flex;   → activa Flexbox
+                    gap: 10px;       → 10px de separación entre artículos
+                
+                NO tiene flex-direction definido, por defecto es ROW (fila horizontal).
+                Los article van uno al lado del otro:
+                ┌────────────────────┬──────────┐
+                │    article1        │ article2 │
+                │    (flex: 3)       │ (flex:1) │
+                │    75% del ancho   │  25%     │
+                └────────────────────┴──────────┘
+            -->
+
+            <article class="article1">
+                <!--
+                    <article>
+                    Elemento semántico HTML5 para contenido independiente
+                    (como una tarjeta, una entrada de blog, un producto, etc.).
+                    
+                    class="article1" → en el CSS tiene flex: 3
+                    
+                    ¿Qué significa flex: 3?
+                    El espacio disponible se divide entre todos los ítems flex
+                    según sus valores. article1 tiene 3 y article2 tiene 1.
+                    
+                    Total = 3 + 1 = 4 partes
+                    article1 = 3/4 = 75% del espacio del contenedor
+                    article2 = 1/4 = 25% del espacio del contenedor
+                    
+                    Si el contenedor mide 400px (descontando gap):
+                    article1 = 300px
+                    article2 = 100px
+                -->
+                <span>article1</span>
+            </article>
+
+            <article class="article2">
+                <!--
+                    class="article2" → en el CSS tiene flex: 1
+                    
+                    Este artículo ocupa 1 parte del espacio disponible.
+                    Siempre será proporcional a article1 (flex:3).
+                    
+                    Nunca importa el tamaño total del contenedor:
+                    la relación 3:1 siempre se mantiene.
+                -->
+                <span>article2</span>
+            </article>
+
+        </div>
+        <!--
+            Cierre del div.articulos
+            Todo lo que esté DENTRO del div son ítems flex (en fila).
+            Todo lo que esté FUERA pero dentro de section son ítems flex (en columna).
+        -->
+
+    </section>
+    <!-- Cierre de section.section1 -->
+
+    <section class="section2">
+        <!--
+            Segunda section. Igual que la primera en estructura CSS.
+            También tiene display:flex y flex-direction:column.
+            
+            Pero su contenido interno es diferente:
+            ┌─────────────────────────────┐
+            │  span "section"             │  ← ítem flex #1
+            ├─────────────────────────────┤
+            │  article3                   │  ← ítem flex #2
+            │  (max-height: 900px)        │
+            └─────────────────────────────┘
+            
+            DIFERENCIA CLAVE con section1:
+            article3 NO está dentro de un div.articulos con display:flex.
+            Está directamente dentro de la section (que es flex column).
+            Por eso article3 ocupa todo el ancho disponible.
+        -->
+        <span>section</span>
+
+        <article class="article3">
+            <!--
+                class="article3" → en el CSS solo tiene max-height: 900px
+                
+                Este article NO tiene flex definido como valor numérico.
+                Al estar en una section con flex-direction: column,
+                y ser el único article en esa fila, ocupa todo el ancho.
+                
+                max-height: 900px significa que nunca superará 900px de alto,
+                pero puede ser más pequeño si el contenido es menor.
+            -->
+            <span>article3</span>
+        </article>
+
+    </section>
+    <!-- Cierre de section.section2 -->
+
+    <footer>
+        <!--
+            <footer>
+            Elemento semántico HTML5 para el pie de página.
+            Normalmente contiene: copyright, links legales, contacto, etc.
+            
+            Relación con Flexbox:
+            - Es el ÚLTIMO ÍTEM FLEX del body (flex-direction: column)
+            - Sin flex definido → tamaño según contenido
+            
+            TRUCO: si quisieras que el footer siempre se pegue al fondo
+            de la pantalla (sticky footer), agregarías en el CSS:
+                footer { margin-top: auto; }
+            El margin-top: auto empuja el footer hacia abajo ocupando
+            todo el espacio disponible restante (gracias al min-height:100vh del body).
+            
+            En el CSS tiene:
+            - background-color: lightgray → gris claro
+            - border: gray solid 7px
+            - padding y text-align heredados del selector compartido
+        -->
+        <span>NAV</span>
+        <!--
+            Nota: el span dice "NAV" pero es el footer.
+            Probablemente es un error tipográfico en el código original.
+        -->
+    </footer>
+
+</body>
+<!--
+    Cierre del body.
+    Todo el contenido visible de la página debe estar DENTRO del body.
+-->
+
+</html>
+<!--
+    ============================================================
+    RESUMEN DE LA ESTRUCTURA FLEXBOX EN ESTE ARCHIVO
+    ============================================================
+
+    NIVEL 1 — body (flex-direction: column)
+    Los hijos directos del body se apilan verticalmente:
+    [header] → [nav] → [section.section1] → [section.section2] → [footer]
+
+    NIVEL 2 — section (flex-direction: column)
+    Los hijos directos de cada section se apilan verticalmente:
+    [span "section"] → [div.articulos o article3]
+
+    NIVEL 3 — div.articulos (flex-direction: row — por defecto)
+    Los hijos del div.articulos van en fila horizontal:
+    [article1 (flex:3)] + [article2 (flex:1)]
+    Con gap: 10px entre ellos.
+
+    PROPORCIÓN DE ESPACIO en div.articulos:
+    article1 ocupa 3/4 del ancho (75%)
+    article2 ocupa 1/4 del ancho (25%)
+    ============================================================
+-->

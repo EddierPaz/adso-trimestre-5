@@ -1,0 +1,30 @@
+header {
+    background-color: rgb(27, 144, 211);
+    height: 100px;
+}
+
+nav {
+    background-color: lightcoral;
+}
+
+main {
+    background-color: lightgreen;
+    height: 500px;
+}
+
+section {
+    background-color: orange;
+}
+
+footer {
+    background-color: rgb(142, 61, 235);
+    height: 100px;
+}
+
+main .row {
+    height: 400px;
+}
+
+section>h1 {
+    height: 100px;
+}

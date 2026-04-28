@@ -1,0 +1,29 @@
+[class*="col"] {
+    border: 2px solid black;
+}
+
+.container, .container-fluid, .container-lg, .container-md{
+    border: solid black;
+}
+
+body {
+    background: #EEEFF2;
+    color: #fff;
+}
+header {
+    background: #2F3350;
+    padding: 20px;
+}
+main article {
+    color: #000;
+    background: #fff;
+    padding: 20px;
+}
+aside {
+    background: #238399;
+    padding: 20px;
+}
+footer {
+    background: #783532;
+    padding: 20px;
+}
