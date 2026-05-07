@@ -19,6 +19,7 @@ class UsuarioService:
         tareas = []
         for d in datos:
             tareas.append(Tarea(d[1], d[0]))
+            
         return tareas
 
     def actualizar(self, tarea):

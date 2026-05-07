@@ -8,8 +8,8 @@ class Database:
         self.connection = mysql.connector.connect(
             host="localhost",
             user="root",
-            password="",
-            database="operpan"
+            password="MyNewPass1!",
+            database="proyecto"
         )
         print("Conectado")
     
