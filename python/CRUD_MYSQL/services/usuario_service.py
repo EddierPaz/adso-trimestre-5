@@ -20,7 +20,7 @@ class UsuarioService:
         usuarios = []
         for d in datos:
             usuarios.append(Usuario(d[1],d[2],d[0]))
-            return usuarios
+        return usuarios
     
     def actualizar(self, usuario):
         cursor = self.db.get_cursor()
