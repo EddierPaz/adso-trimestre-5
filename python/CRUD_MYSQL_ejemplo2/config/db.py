@@ -9,7 +9,7 @@ class Database:
             host="localhost",
             user="root",
             password="",
-            database="operpan"
+            database="ejemplo_db"
         )
         print("Conectado")
     
