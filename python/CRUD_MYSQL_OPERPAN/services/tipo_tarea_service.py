@@ -1,14 +1,14 @@
-from models.usuario import Tarea
+from models.usuario import TipoTarea
 
-class UsuarioService:
+class TipoTareaService:
     def __init__(self, db):
         self.db = db
 
-    def crear(self, tarea):
+    def crear(self, tipo_tarea):
         cursor = self.db.get_cursor()
         cursor.execute(
             "INSERT INTO tipo_tarea (nombre_tipo_tarea) VALUES (%s)",
-            (tarea.nombre_tipo_tarea,)
+            (tipo_tarea.nombre_tipo_tarea,)
         )
         self.db.commit()
 
@@ -18,15 +18,15 @@ class UsuarioService:
         datos = cursor.fetchall()
         tareas = []
         for d in datos:
-            tareas.append(Tarea(d[1], d[0]))
+            tareas.append(TipoTarea(d[1], d[0]))
             
         return tareas
 
-    def actualizar(self, tarea):
+    def actualizar(self, tipo_tarea):
         cursor = self.db.get_cursor()
         cursor.execute(
             "UPDATE tipo_tarea SET nombre_tipo_tarea = %s WHERE id_tipo_tarea = %s",
-            (tarea.nombre_tipo_tarea, tarea.id_tipo_tarea)
+            (tipo_tarea.nombre_tipo_tarea, tipo_tarea.id_tipo_tarea)
         )
         self.db.commit()
 
