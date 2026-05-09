@@ -1,19 +1,20 @@
 from config.db import Database
-from services.usuario_service import UsuarioService
+from services.tipo_tarea_service import TipoTareaService
 from models.usuario import Tarea
 
 def main():
     db = Database()
     db.connect()
 
-    service = UsuarioService(db)
+    service = TipoTareaService(db)
 
     while True:
-        print("\n1. Crear")
-        print("2. Listar")
-        print("3. Actualizar")
-        print("4. Eliminar")
-        print("5. Salir")
+        print("\n--- TAREAS ---")
+        print("1. Crear tarea")
+        print("2. Listar tarea")
+        print("3. Actualizar tarea")
+        print("4. Eliminar tarea")
+        print("5. Salir al menu")
 
         op = input("Opcion: ")
 
@@ -40,6 +41,7 @@ def main():
         
         elif op == "5":
             db.close()
+            print("¡Saliste al menu!")
             break
     
 if __name__ == "__main__":
