@@ -28,15 +28,15 @@ def main():
                 print("No hay tareas registradas.")
             else:
                 for t in tareas:
-                    print(f"ID: {t.id_tipo_tarea} | Nombre: {t.nombre_tipo_tarea}")
+                    print(f"ID tarea: {t.id_tipo_tarea} | Nombre de la tarea: {t.nombre_tipo_tarea}")
         
         elif op == "3":
-            id_tipo_tarea = int(input("ID a actualizar: "))
-            nombre_tipo_tarea = input("Nuevo Nombre: ")
+            id_tipo_tarea = int(input("ID de tarea a actualizar: "))
+            nombre_tipo_tarea = input("Nuevo nombre de la tarea: ")
             service.actualizar(Tarea(nombre_tipo_tarea, id_tipo_tarea))
         
         elif op == "4":
-            id_tipo_tarea = int(input("ID a eliminar: "))
+            id_tipo_tarea = int(input("ID de tarea a eliminar: "))
             service.eliminar(id_tipo_tarea)
         
         elif op == "5":
