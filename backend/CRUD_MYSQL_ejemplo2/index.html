@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD MySQL — Ejemplo 2 · Eddier Paz</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <nav>
+        <a class="nav-brand" href="#">CRUD MySQL — Ejemplo 2</a>
+        <a class="back-link" href="../../index.html">← Portafolio</a>
+    </nav>
+
+    <div class="hero">
+        <div class="fade-in">
+            <span class="hero-tag">Backend · POO · Capas</span>
+            <h1>CRUD MySQL <em>Ejemplo 2</em></h1>
+            <p class="subtitle">Segunda variación del CRUD con arquitectura por capas: separación entre configuración,
+                modelos y servicios usando Programación Orientada a Objetos.</p>
+            <div class="chips">
+                <span class="chip">Python 3</span>
+                <span class="chip">MySQL</span>
+                <span class="chip">POO</span>
+                <span class="chip">Arquitectura en capas</span>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <p class="section-label">Arquitectura</p>
+        <h2 class="section-title" style="font-family:'DM Serif Display',serif;font-size:1.8rem;margin-bottom:1.5rem">
+            Estructura por capas</h2>
+        <div class="layers fade-in">
+            <div class="layer-card config">
+                <div class="layer-num">01</div>
+                <div class="layer-title">Config</div>
+                <div class="layer-desc">Parámetros de conexión a la base de datos MySQL. Centraliza credenciales y host.
+                </div>
+            </div>
+            <div class="layer-card models">
+                <div class="layer-num">02</div>
+                <div class="layer-title">Models</div>
+                <div class="layer-desc">Definición de las entidades y su representación como clases Python con POO.
+                </div>
+            </div>
+            <div class="layer-card services">
+                <div class="layer-num">03</div>
+                <div class="layer-title">Services</div>
+                <div class="layer-desc">Lógica de negocio: operaciones CRUD separadas del punto de entrada principal.
+                </div>
+            </div>
+        </div>
+
+        <div class="terminal fade-in">
+            <div class="terminal-bar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="terminal-label">python main.py</span>
+            </div>
+            <div class="terminal-body">
+                <div class="t-comment"># Estructura modular</div>
+                <div><span class="t-prompt">$ </span>python main.py</div>
+                <div class="t-info">Cargando configuración...</div>
+                <div class="t-ok">✓ Conexión establecida</div>
+                <div>&nbsp;</div>
+                <div class="t-out">Selecciona una opción:</div>
+                <div class="t-out">[C] Crear [R] Leer [U] Actualizar [D] Eliminar</div>
+                <div>&nbsp;</div>
+                <div><span class="t-prompt">→ </span><span class="cursor"></span></div>
+            </div>
+        </div>
+
+        <p class="section-label">Funcionalidades</p>
+        <div class="features fade-in">
+            <div class="feat"><span class="feat-dot"></span><span class="feat-text">CRUD completo con separación de
+                    responsabilidades</span></div>
+            <div class="feat"><span class="feat-dot"></span><span class="feat-text">Modelos definidos como clases Python
+                    (POO)</span></div>
+            <div class="feat"><span class="feat-dot"></span><span class="feat-text">Servicios independientes y
+                    reutilizables</span></div>
+            <div class="feat"><span class="feat-dot"></span><span class="feat-text">Configuración centralizada para la
+                    conexión</span></div>
+            <div class="feat"><span class="feat-dot"></span><span class="feat-text">Código más limpio y fácil de
+                    mantener que la versión 1</span></div>
+        </div>
+    </section>
+
+    <footer>
+        Eddier Paz · 2025 · <a href="../../index.html">← Volver al portafolio</a>
+    </footer>
+
+    <script>
+        const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); }), { threshold: .1 });
+        document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD OperPan · Gestión de Tareas</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav>
+        <a class="nav-brand" href="#">OperPan · CRUD Tareas</a>
+        <a class="back-link" href="../../index.html">← Portafolio</a>
+    </nav>
+
+    <div class="hero">
+        <div class="fade-in">
+            <span class="hero-tag">Python · MySQL · CRUD</span>
+
+            <h1>
+                Sistema CRUD <em>OperPan</em>
+            </h1>
+
+            <p class="subtitle">
+                Aplicación desarrollada en Python utilizando Programación Orientada a Objetos y arquitectura por capas
+                para la gestión de tareas en OperPan.
+            </p>
+
+            <div class="chips">
+                <span class="chip">Python</span>
+                <span class="chip">MySQL</span>
+                <span class="chip">POO</span>
+                <span class="chip">Arquitectura Modular</span>
+            </div>
+        </div>
+    </div>
+
+    <section>
+
+        <p class="section-label">Arquitectura</p>
+        <h2 class="section-title">Estructura del proyecto</h2>
+
+        <div class="layers fade-in">
+
+            <div class="layer-card config">
+                <div class="layer-num">01</div>
+                <div class="layer-title">Config DB</div>
+                <div class="layer-desc">
+                    Manejo de conexión a MySQL mediante una clase Database reutilizable.
+                </div>
+            </div>
+
+            <div class="layer-card models">
+                <div class="layer-num">02</div>
+                <div class="layer-title">Models</div>
+                <div class="layer-desc">
+                    Representación de tareas utilizando clases y Programación Orientada a Objetos.
+                </div>
+            </div>
+
+            <div class="layer-card services">
+                <div class="layer-num">03</div>
+                <div class="layer-title">Services</div>
+                <div class="layer-desc">
+                    Implementación de la lógica CRUD para crear, listar, actualizar y eliminar tareas.
+                </div>
+            </div>
+
+        </div>
+
+        <div class="terminal fade-in">
+
+            <div class="terminal-bar">
+                <span class="dot r"></span>
+                <span class="dot y"></span>
+                <span class="dot g"></span>
+
+                <span class="terminal-label">python main.py</span>
+            </div>
+
+            <div class="terminal-body">
+
+                <div class="t-info">--- TAREAS ---</div>
+
+                <div class="t-out">1. Crear tarea</div>
+                <div class="t-out">2. Listar tarea</div>
+                <div class="t-out">3. Actualizar tarea</div>
+                <div class="t-out">4. Eliminar tarea</div>
+                <div class="t-out">5. Salir al menú</div>
+
+                <br>
+
+                <div>
+                    <span class="t-prompt">Opción: </span>
+                    <span class="cursor"></span>
+                </div>
+
+            </div>
+        </div>
+
+        <p class="section-label">Características</p>
+
+        <div class="features fade-in">
+
+            <div class="feat">
+                <span class="feat-dot"></span>
+                <span>CRUD completo para gestión de tareas.</span>
+            </div>
+
+            <div class="feat">
+                <span class="feat-dot"></span>
+                <span>Arquitectura organizada en capas.</span>
+            </div>
+
+            <div class="feat">
+                <span class="feat-dot"></span>
+                <span>Uso de Programación Orientada a Objetos.</span>
+            </div>
+
+            <div class="feat">
+                <span class="feat-dot"></span>
+                <span>Separación entre lógica, modelos y conexión.</span>
+            </div>
+
+            <div class="feat">
+                <span class="feat-dot"></span>
+                <span>Interfaz basada en consola para administración de tareas.</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        Eddier Paz · 2025 · <a href="../../index.html">← Volver al portafolio</a>
+    </footer>   
+
+    <script>
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: .1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+    </script>
+
+</body>
+
+</html>

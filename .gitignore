@@ -1,0 +1,39 @@
+# =====================
+# Sistema operativo
+# =====================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =====================
+# Python
+# =====================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+.env
+.venv/
+venv/
+env/
+
+# =====================
+# MySQL / Base de datos
+# =====================
+*.sql.bak
+*.sqlite
+*.db
+
+# =====================
+# VS Code
+# =====================
+.vscode/
+*.code-workspace
+
+# =====================
+# Logs y temporales
+# =====================
+*.log
+*.tmp
+*.bak

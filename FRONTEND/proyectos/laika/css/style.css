@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    font-family: "Rubik", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+body {
+    margin-top: 148px;
+}
+
+#info-encabezado {
+    display: flex;
+    background-color: #3c2654;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+#info-general {
+    display: flex;
+    background-color: #654090;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+#info-general img {
+    width: 50px;
+}
+
+#buscar {
+    width: 450px;
+    height: 45px;
+    font-size: 16px;
+    border: #654090 solid 1px;
+    border-radius: 5px;
+}
+
+#ingresar {
+    width: 150px;
+    height: 50px;
+    font-size: 16px;
+    background-color: #654090;
+    color: white;
+    border: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav>ul {
+    display: flex;
+    background-color: #ededed;
+}
+
+nav>ul>li {
+    position: relative;
+    padding: 15px;
+    color: black;
+    cursor: pointer;
+}
+
+nav>ul>li:hover {
+    background-color: lab(62.8239% 34.9159 -60.0512);
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ededed;
+    min-width: 150px;
+}
+
+nav ul ul li {
+    color: black;
+    padding: 10px;
+}
+
+nav ul li:hover>ul {
+    display: block;
+}
+
+nav ul ul li:hover {
+    background-color: lab(62.8239% 34.9159 -60.0512);
+}
+
+header,
+nav {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header {
+    top: 0;
+}
+
+nav {
+    top: 105px;
+}
+
+#banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+#banner img {
+    width: 1200px;
+    border-radius: 6px;
+}
+
+#mascotas {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    gap: 20px;
+}
+
+#perro {
+    background-color: lightgoldenrodyellow;
+    border-radius: 6px;
+}
+
+#gato {
+    background-color: lightgreen;
+    border-radius: 6px;
+}
+
+#perro,
+#gato {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 590px;
+    height: 300px;
+}
+
+#perro img,
+#gato img {
+    width: 300px;
+}
+
+.parrafo {
+    padding: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.caja {
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+    padding: 50px 170px;
+    background-color: #ededed;
+}
+
+article h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #654090;
+    margin-bottom: 5px;
+    padding: auto;
+}
+
+.parrafo-articulo {
+    font-size: 15px;
+    text-align: justify;
+}
+
+.caja-imagenes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    height: auto;
+}
+
+.caja-imagenes,
+article {
+    flex: 1;
+}
+
+.caja-imagenes img {
+    flex: 1 1 cal(50% - 10px);
+    height: 100px;
+    border-radius: 5px;
+}
+
+.grande {
+    flex: 1 1 100%;
+    width: 200px;
+}
+
+.linea-con-icono {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 10px;
+}
+
+.linea-con-icono img {
+    width: 50px;
+}
+
+.linea-con-icono hr {
+    flex: 1;
+    border: none;
+    background-color: #ededed;
+    height: 2px;
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+}
+
+footer>div {
+    flex: 1;
+    min-width: 200px;
+}
+
+.info-legal {
+    flex: 1 1 100%;
+    border-top: 1px solid gray;
+    padding: 20px 50px;
+}
+
+.info-legal p {
+    margin-bottom: 8px;
+}
+
+h3 {
+    color: #654090;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+footer span {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.copyright-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.copyright-row img {
+    max-width: 300px;
+    height: auto;
+}
+
+input[type=email] {
+    height: 10px;
+    width: 200px;
+    border-radius: 6px;
+    font-size: 12px;
+    padding: 12px 15px;
+}
+
+input[type=submit] {
+    background-color: #654090;
+    color: white;
+    height: 27px;
+    width: 30px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.footer1 {
+    text-align: center;
+    padding: 2rem;
+    font-size: .8rem;
+    color: var(--muted);
+    border-top: 1px solid var(--sand);
+    margin-top: 3rem;
+}
+
+.footera {
+    color: var(--clay-d);
+    text-decoration: none;
+}

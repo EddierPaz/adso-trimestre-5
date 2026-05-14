@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD MySQL — Ejemplo 1 · Eddier Paz</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <nav>
+        <a class="nav-brand" href="#">CRUD MySQL — Ejemplo 1</a>
+        <a class="back-link" href="../../index.html">← Portafolio</a>
+    </nav>
+
+    <div class="hero">
+        <div class="fade-in">
+            <span class="hero-tag">Backend · Python · MySQL</span>
+            <h1>CRUD MySQL <em>Ejemplo 1</em></h1>
+            <p class="subtitle">Aplicación de consola en Python con operaciones de Create, Read, Update y Delete
+                conectada a una base de datos MySQL.</p>
+            <div class="chips">
+                <span class="chip">Python 3</span>
+                <span class="chip">MySQL</span>
+                <span class="chip">mysql-connector</span>
+                <span class="chip">CLI</span>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="terminal fade-in">
+            <div class="terminal-bar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="terminal-label">python main.py</span>
+            </div>
+            <div class="terminal-body">
+                <div><span class="t-prompt">$ </span>python main.py</div>
+                <div class="t-info">Conectando a MySQL...</div>
+                <div class="t-ok">✓ Conexión exitosa</div>
+                <div>&nbsp;</div>
+                <div class="t-out">[1] Crear registro</div>
+                <div class="t-out">[2] Listar registros</div>
+                <div class="t-out">[3] Actualizar registro</div>
+                <div class="t-out">[4] Eliminar registro</div>
+                <div class="t-out">[0] Salir</div>
+                <div>&nbsp;</div>
+                <div><span class="t-prompt">→ </span><span class="cursor"></span></div>
+            </div>
+        </div>
+
+        <p class="section-label">Tecnologías</p>
+        <div class="cards fade-in" style="margin-bottom:3rem">
+            <div class="card">
+                <div class="card-icon">🐍</div>
+                <div class="card-title">Python 3</div>
+                <div class="card-desc">Lenguaje principal del proyecto</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">🐬</div>
+                <div class="card-title">MySQL</div>
+                <div class="card-desc">Motor de base de datos relacional</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔌</div>
+                <div class="card-title">mysql-connector</div>
+                <div class="card-desc">Driver de conexión Python → MySQL</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">⌨️</div>
+                <div class="card-title">CLI</div>
+                <div class="card-desc">Menú interactivo en consola</div>
+            </div>
+        </div>
+
+        <p class="section-label">Funcionalidades</p>
+        <div class="features fade-in">
+            <div class="feat"><span class="feat-dot"></span><span class="feat-text">Crear nuevos registros en la base de
+                    datos</span></div>
+            <div class="feat"><span class="feat-dot"></span><span class="feat-text">Listar y consultar todos los
+                    registros</span></div>
+            <div class="feat"><span class="feat-dot"></span><span class="feat-text">Actualizar datos de un registro
+                    existente</span></div>
+            <div class="feat"><span class="feat-dot"></span><span class="feat-text">Eliminar registros de forma
+                    segura</span></div>
+            <div class="feat"><span class="feat-dot"></span><span class="feat-text">Conexión configurada en archivo
+                    separado (config/)</span></div>
+        </div>
+    </section>
+
+    <footer>
+        Eddier Paz · 2026 · <a href="../../index.html">← Volver al portafolio</a>
+    </footer>
+
+    <script>
+        const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); }), { threshold: .1 });
+        document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laika Mascotas - Universo peludo</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png"
+        href="https://play-lh.googleusercontent.com/xA13otULjme4ORKDU4NrnULIheexbKag6nOJycJ46QiS8yCrbxEsQQH7ERFJyoITD0NQ">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="d-none d-md-block py-2" style="background-color: rgb(60, 38, 84);">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center text-light" style="font-size: 14px;">
+
+                <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-telephone-fill"></i>
+                    <span>Llámanos +57 300 910 8496</span>
+                </div>
+
+                <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-shield-fill"></i>
+                    <span>Compras seguras online</span>
+                </div>
+
+                <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-cash-stack"></i>
+                    <span>Pago contra entrega</span>
+                </div>
+
+                <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-truck"></i>
+                    <span>Entregas el mismo día</span>
+                </div>
+
+                <div class="d-flex align-items-center gap-2">
+                    <span>Síguenos en:</span>
+                    <a href="#" class="text-light"><i class="bi bi-youtube"></i></a>
+                    <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-light"><i class="bi bi-tiktok"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <div class="py-3" style="background-color: rgb(99, 62, 134);">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center text-light">
+
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqnsskPT2d5Bq81cOHOlB46utTSn0pMF8DHg&s"
+                    style="width: 80px; height: auto;" alt="Laika Logo">
+
+                <div class="input-group" style="width: 570px; height: 55px;">
+                    <input type="text" class="form-control" placeholder="Buscar productos, marcas y más...">
+                    <span class="input-group-text bg-white border-start-0">
+                        <i class="bi bi-search text-muted"></i>
+                    </span>
+                </div>
+
+                <div class="account-dropdown">
+                    <div class="d-flex align-items-center gap-2 account-btn">
+                        <i class="bi bi-person-fill fs-4"></i>
+                        <p class="fw-bold m-0">Mi cuenta</p>
+                    </div>
+                    <div class="account-menu">
+                        <a class="link-morado" href="#">Registrarse</a>
+                        <a class="link-morado" href="#">Iniciar sesión</a>
+                    </div>
+                </div>
+
+                <i class="bi bi-cart text-light" style="font-size: 32px"></i>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <div class="border-bottom border-2 py-3">
+        <div class="container">
+            <nav class="navbar d-flex justify-content-between align-items-center p-0">
+
+                <ul class="navbar-nav d-flex flex-row gap-4">
+
+                    <!-- PERRO -->
+                    <li class="nav-item mega-menu">
+                        <a class="nav-link d-flex align-items-center gap-1 text-dark link-morado" href="#">
+                            Perro <i class="bi bi-chevron-down"></i>
+                        </a>
+                        <div class="menu-panel">
+                            <div class="menu-item">
+                                <a class="link-morado" href="#">Alimentos <i class="bi bi-chevron-right"></i></a>
+                                <div class="submenu-panel">
+                                    <a class="link-morado" href="#">Concentrado</a>
+                                    <a class="link-morado" href="#">Húmedo</a>
+                                    <a class="link-morado" href="#">Natural</a>
+                                    <a class="link-morado" href="#">Prescripción Seco</a>
+                                    <a class="link-morado" href="#">Prescripción Húmedo</a>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <a class="link-morado" href="#">Juguetes <i class="bi bi-chevron-right"></i></a>
+                                <div class="submenu-panel">
+                                    <a class="link-morado" href="#">Peluches</a>
+                                    <a class="link-morado" href="#">Interactivos</a>
+                                    <a class="link-morado" href="#">Masticables</a>
+                                    <a class="link-morado" href="#">Pelotas y lanzadores</a>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <a class="link-morado" href="#">Farmapet <i class="bi bi-chevron-right"></i></a>
+                                <div class="submenu-panel">
+                                    <a class="link-morado" href="#">Antipulgas y Garrapatas</a>
+                                    <a class="link-morado" href="#">Antiparasitarios</a>
+                                    <a class="link-morado" href="#">Suplementos y Vitaminas</a>
+                                    <a class="link-morado" href="#">Dermatología</a>
+                                    <a class="link-morado" href="#">Digestivo y Hepático</a>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <a class="link-morado" href="#">Accesorios <i class="bi bi-chevron-right"></i></a>
+                                <div class="submenu-panel">
+                                    <a class="link-morado" href="#">Collares y bozales</a>
+                                    <a class="link-morado" href="#">Arneses y pecheras</a>
+                                    <a class="link-morado" href="#">Correas</a>
+                                    <a class="link-morado" href="#">Comederos y bebederos</a>
+                                    <a class="link-morado" href="#">Ropa</a>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <a class="link-morado" href="#">Cuidado e Higiene <i
+                                        class="bi bi-chevron-right"></i></a>
+                                <div class="submenu-panel">
+                                    <a class="link-morado" href="#">Shampoos y jabones</a>
+                                    <a class="link-morado" href="#">Pañitos, pañales y tapetes</a>
+                                    <a class="link-morado" href="#">Bolsas y residuos</a>
+                                    <a class="link-morado" href="#">Cuidado oral</a>
+                                    <a class="link-morado" href="#">Cuidado de patitas y piel</a>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <a class="link-morado" href="#">Snacks <i class="bi bi-chevron-right"></i></a>
+                                <div class="submenu-panel">
+                                    <a class="link-morado" href="#">Cuidado dental</a>
+                                    <a class="link-morado" href="#">Galletas y pasteleria</a>
+                                    <a class="link-morado" href="#">Huesos y naturales</a>
+                                    <a class="link-morado" href="#">Cremosos y aderezos</a>
+                                    <a class="link-morado" href="#">Masticables</a>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <a class="link-morado" href="#">Marcas Exclusivas <i
+                                        class="bi bi-chevron-right"></i></a>
+                                <div class="submenu-panel">
+                                    <a class="link-morado" href="#">True Nature</a>
+                                    <a class="link-morado" href="#">Besties</a>
+                                    <a class="link-morado" href="#">Lets Be Fresh</a>
+                                    <a class="link-morado" href="#">Salvaje</a>
+                                    <a class="link-morado" href="#">Laika by Rausch</a>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <a class="link-morado" href="#">imPETdibles <i class="bi bi-chevron-right"></i></a>
+                                <div class="submenu-panel">
+                                    <a class="link-morado" href="#">Happy flash</a>
+                                    <a class="link-morado" href="#">Laika Home</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- GATO -->
+                    <li class="nav-item mega-menu">
+                        <a class="nav-link d-flex align-items-center gap-1 text-dark link-morado" href="#">
+                            Gato <i class="bi bi-chevron-down"></i>
+                        </a>
+                        <div class="menu-panel">
+                            <div class="menu-item">
+                                <a class="link-morado" href="#">Alimentos <i class="bi bi-chevron-right"></i></a>
+                                <div class="submenu-panel">
+                                    <a class="link-morado" href="#">Concentrado</a>
+                                    <a class="link-morado" href="#">Húmedo</a>
+                                    <a class="link-morado" href="#">Natural</a>
+                                    <a class="link-morado" href="#">Prescripción Seco</a>
+                                    <a class="link-morado" href="#">Prescripción Húmedo</a>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <a class="link-morado" href="#">Arenas <i class="bi bi-chevron-right"></i></a>
+                                <div class="submenu-panel">
+                                    <a class="link-morado" href="#">Arenas</a>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <a class="link-morado" href="#">Juguetes <i class="bi bi-chevron-right"></i></a>
+                                <div class="submenu-panel">
+                                    <a class="link-morado" href="#">Peluches</a>
+                                    <a class="link-morado" href="#">Interactivos</a>
+                                    <a class="link-morado" href="#">Masticables</a>
+                                    <a class="link-morado" href="#">Pelotas y lanzadores</a>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <a class="link-morado" href="#">Farmapet <i class="bi bi-chevron-right"></i></a>
+                                <div class="submenu-panel">
+                                    <a class="link-morado" href="#">Antipulgas y Garrapatas</a>
+                                    <a class="link-morado" href="#">Antiparasitarios</a>
+                                    <a class="link-morado" href="#">Suplementos y Vitaminas</a>
+                                    <a class="link-morado" href="#">Dermatología</a>
+                                    <a class="link-morado" href="#">Digestivo y Hepático</a>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <a class="link-morado" href="#">Accesorios <i class="bi bi-chevron-right"></i></a>
+                                <div class="submenu-panel">
+                                    <a class="link-morado" href="#">Collares y bozales</a>
+                                    <a class="link-morado" href="#">Arneses y pecheras</a>
+                                    <a class="link-morado" href="#">Correas</a>
+                                    <a class="link-morado" href="#">Comederos y bebederos</a>
+                                    <a class="link-morado" href="#">Ropa</a>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <a class="link-morado" href="#">Cuidado e Higiene <i
+                                        class="bi bi-chevron-right"></i></a>
+                                <div class="submenu-panel">
+                                    <a class="link-morado" href="#">Shampoos y jabones</a>
+                                    <a class="link-morado" href="#">Pañitos, pañales y tapetes</a>
+                                    <a class="link-morado" href="#">Bolsas y residuos</a>
+                                    <a class="link-morado" href="#">Cuidado oral</a>
+                                    <a class="link-morado" href="#">Cuidado de patitas y piel</a>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <a class="link-morado" href="#">Snacks <i class="bi bi-chevron-right"></i></a>
+                                <div class="submenu-panel">
+                                    <a class="link-morado" href="#">Cuidado dental</a>
+                                    <a class="link-morado" href="#">Galletas y pasteleria</a>
+                                    <a class="link-morado" href="#">Huesos y naturales</a>
+                                    <a class="link-morado" href="#">Cremosos y aderezos</a>
+                                    <a class="link-morado" href="#">Masticables</a>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <a class="link-morado" href="#">Marcas Exclusivas <i
+                                        class="bi bi-chevron-right"></i></a>
+                                <div class="submenu-panel">
+                                    <a class="link-morado" href="#">True Nature</a>
+                                    <a class="link-morado" href="#">Besties</a>
+                                    <a class="link-morado" href="#">Lets Be Fresh</a>
+                                    <a class="link-morado" href="#">Salvaje</a>
+                                    <a class="link-morado" href="#">Laika by Rausch</a>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <a class="link-morado" href="#">imPETdibles <i class="bi bi-chevron-right"></i></a>
+                                <div class="submenu-panel">
+                                    <a class="link-morado" href="#">Happy flash</a>
+                                    <a class="link-morado" href="#">Laika Home</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- SERVICIOS -->
+                    <li class="nav-item mega-menu">
+                        <a class="nav-link d-flex align-items-center gap-1 text-dark link-morado" href="#">
+                            Servicios <i class="bi bi-chevron-down"></i>
+                        </a>
+                        <div class="menu-panel">
+                            <div class="menu-item">
+                                <a class="link-morado" href="#">Veterinario a Domicilio</a>
+                            </div>
+                            <div class="menu-item">
+                                <a class="link-morado" href="#">VetCare</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-dark link-morado" href="#">Promociones</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-dark link-morado" href="#">Tiendas</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-dark link-morado" href="#">Laika Member</a>
+                    </li>
+
+                </ul>
+
+                <!-- CITY DROPDOWN -->
+                <div class="city-dropdown">
+                    <button class="city-btn">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            Selecciona una ciudad
+                        </div>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="city-menu">
+                        <a href="#" class="city-item"><i class="bi bi-geo-alt-fill"></i> Bogotá D.C.</a>
+                        <a href="#" class="city-item"><i class="bi bi-geo-alt-fill"></i> Medellín</a>
+                        <a href="#" class="city-item"><i class="bi bi-geo-alt-fill"></i> Cali</a>
+                        <a href="#" class="city-item"><i class="bi bi-geo-alt-fill"></i> Barranquilla</a>
+                        <a href="#" class="city-item"><i class="bi bi-geo-alt-fill"></i> Cartagena</a>
+                        <a href="#" class="city-item"><i class="bi bi-geo-alt-fill"></i> Bucaramanga</a>
+                        <a href="#" class="city-item"><i class="bi bi-geo-alt-fill"></i> Pereira</a>
+                        <a href="#" class="city-item"><i class="bi bi-geo-alt-fill"></i> Manizales</a>
+                        <a href="#" class="city-item"><i class="bi bi-geo-alt-fill"></i> Santa Marta</a>
+                        <a href="#" class="city-item"><i class="bi bi-geo-alt-fill"></i> Villavicencio</a>
+                        <a href="#" class="city-item"><i class="bi bi-geo-alt-fill"></i> Ibagué</a>
+                        <a href="#" class="city-item"><i class="bi bi-geo-alt-fill"></i> Cúcuta</a>
+                        <a href="#" class="city-item"><i class="bi bi-geo-alt-fill"></i> Pasto</a>
+                        <a href="#" class="city-item"><i class="bi bi-geo-alt-fill"></i> Montería</a>
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container my-5">
+        <div class="row mt-3">
+
+            <!-- CAROUSEL BANNERS -->
+            <div class="col-12">
+                <div id="carouselLakia" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner" style="height: 200px;">
+                        <div class="carousel-item active h-100">
+                            <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fbanners%2F737f8bec4b0428b971eb0e9f8a3326a2_1778014661.jpg&w=1920&q=75"
+                                class="d-block w-100 h-100" alt="Banner 1">
+                        </div>
+                        <div class="carousel-item h-100">
+                            <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fbanners%2F00c52ef0b4ff6e2e0be38bf830835686_1777922452.jpg&w=1920&q=75"
+                                class="d-block w-100 h-100" alt="Banner 2">
+                        </div>
+                        <div class="carousel-item h-100">
+                            <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fbanners%2F475a24e60dc3664011965dbd0550c4ac_1777924353.jpg&w=1920&q=75"
+                                class="d-block w-100 h-100" alt="Banner 3">
+                        </div>
+                        <div class="carousel-item h-100">
+                            <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fbanners%2F6f6e29149ae6bc51a2b5c1161a0a2c86_1777923413.jpg&w=1920&q=75"
+                                class="d-block w-100 h-100" alt="Banner 4">
+                        </div>
+                        <div class="carousel-item h-100">
+                            <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fbanners%2F737f8bec4b0428b971eb0e9f8a3326a2_1777926106.jpg&w=1920&q=75"
+                                class="d-block w-100 h-100" alt="Banner 5">
+                        </div>
+                        <div class="carousel-item h-100">
+                            <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fbanners%2F6f6e29149ae6bc51a2b5c1161a0a2c86_1777923813.jpg&w=1920&q=75"
+                                class="d-block w-100 h-100" alt="Banner 6">
+                        </div>
+                        <div class="carousel-item h-100">
+                            <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fbanners%2F231dc70229cd88b1ed809f03cbef18cd_1777926350.jpg&w=1920&q=75"
+                                class="d-block w-100 h-100" alt="Banner 7">
+                        </div>
+                        <div class="carousel-item h-100">
+                            <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fbanners%2Fbbd8c2bcd53db6b59e9728d5bf6cea1d_1776387602.jpg&w=1920&q=75"
+                                class="d-block w-100 h-100" alt="Banner 8">
+                        </div>
+                        <div class="carousel-item h-100">
+                            <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fbanners%2F737f8bec4b0428b971eb0e9f8a3326a2_1778015154.jpg&w=1920&q=75"
+                                class="d-block w-100 h-100" alt="Banner 9">
+                        </div>
+                        <div class="carousel-item h-100">
+                            <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fbanners%2F2002c45a65ceecd042f958bcd1d3a482_1778074997.jpg&w=1920&q=75"
+                                class="d-block w-100 h-100" alt="Banner 10">
+                        </div>
+                        <div class="carousel-item h-100">
+                            <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fbanners%2Fa2054685c37324994c418c5eb1efb193_1778075346.jpg&w=1920&q=75"
+                                class="d-block w-100 h-100" alt="Banner 11">
+                        </div>
+                    </div>
+                    <div class="carousel-indicators custom-indicators">
+                        <button type="button" data-bs-target="#carouselLakia" data-bs-slide-to="0"
+                            class="active"></button>
+                        <button type="button" data-bs-target="#carouselLakia" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#carouselLakia" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#carouselLakia" data-bs-slide-to="3"></button>
+                        <button type="button" data-bs-target="#carouselLakia" data-bs-slide-to="4"></button>
+                        <button type="button" data-bs-target="#carouselLakia" data-bs-slide-to="5"></button>
+                        <button type="button" data-bs-target="#carouselLakia" data-bs-slide-to="6"></button>
+                        <button type="button" data-bs-target="#carouselLakia" data-bs-slide-to="7"></button>
+                        <button type="button" data-bs-target="#carouselLakia" data-bs-slide-to="8"></button>
+                        <button type="button" data-bs-target="#carouselLakia" data-bs-slide-to="9"></button>
+                        <button type="button" data-bs-target="#carouselLakia" data-bs-slide-to="10"></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORÍAS PERRO / GATO -->
+            <div class="col-12 col-md-6 mt-4">
+                <div class="d-flex align-items-center gap-3 rounded h-100"
+                    style="background-color: rgb(253, 242, 139);">
+                    <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fsettings%2Fhome%2Fperros-001.png&w=640&q=75"
+                        class="img-fluid mt-5" style="max-width: 300px;" alt="Perro">
+                    <div>
+                        <h3 class="fw-bold">Cuida a tu <br> mejor amigo</h3>
+                        <p class="fs-6">Todo lo que necesita para ser feliz y saludable.</p>
+                        <button type="button" class="btn btn-lg text-light px-4 fw-bold"
+                            style="background-color: rgb(99, 62, 134);">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 mt-4">
+                <div class="d-flex align-items-center gap-4 rounded h-100"
+                    style="background-color: rgb(162, 228, 246);">
+                    <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fsettings%2Fhome%2Fgatos-001.png&w=640&q=75"
+                        class="img-fluid mt-5" style="max-width: 300px;" alt="Gato">
+                    <div>
+                        <h3 class="fw-bold">Mima a tu <br> felino</h3>
+                        <p class="fs-6">Productos hechos para su comodidad y diversión.</p>
+                        <button type="button" class="btn btn-lg text-light px-4 fw-bold"
+                            style="background-color: rgb(99, 62, 134);">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CAROUSEL PRODUCTOS -->
+        <div class="my-5 px-3">
+            <div id="productosCarousel" class="carousel slide">
+
+                <div class="mb-4">
+                    <h1 class="fw-bold">Favoritos para tu PET-AMIGO</h1>
+                    <p class="text-secondary">
+                        Descubre descuentos exclusivos, combos y precios especiales en nuestros productos por tiempo
+                        limitado.
+                    </p>
+                </div>
+
+                <div class="carousel-inner">
+
+                    <!-- SLIDE 1 -->
+                    <div class="carousel-item active">
+                        <div class="row row-cols-1 row-cols-md-5 g-4">
+
+                            <div class="col">
+                                <div class="card h-100">
+                                    <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fproducts-3%2Ff3ccdd27d2000e3f9255a7e3e2c48800_1692135452.jpg&w=1920&q=75"
+                                        class="card-img-top p-4" style="height: 220px; object-fit: contain;"
+                                        alt="Producto">
+                                    <hr>
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="text-secondary mb-1">Por Heel</p>
+                                        <h5 class="card-title">Heel - Engystol Tabletas</h5>
+                                        <h3 class="fw-bold mt-3">$142.000</h3>
+                                        <p class="text-secondary mb-1">($14,200/gr)</p>
+                                        <button class="btn text-light mt-auto"
+                                            style="background-color: #6f42c1;">Agregar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card h-100">
+                                    <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fproducts%2Fa6350e730fbbd7f42a9e827c1dd15f77_1776796414.jpg&w=1920&q=75"
+                                        class="card-img-top p-4" style="height: 220px; object-fit: contain;"
+                                        alt="Producto">
+                                    <hr>
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="text-secondary mb-1">Por Fresh step</p>
+                                        <h5 class="card-title">Fresh Step - Arena Multi Cat con Frebreze</h5>
+                                        <h3 class="fw-bold mt-3">$70.900</h3>
+                                        <p class="text-secondary mb-1">($11,15/gr)</p>
+                                        <button class="btn text-light mt-auto"
+                                            style="background-color: #6f42c1;">Agregar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card h-100">
+                                    <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fproducts%2Fcd8e3bc07429e6ed12e78e74881b932e_1772203201.jpg&w=1920&q=75"
+                                        class="card-img-top p-4" style="height: 220px; object-fit: contain;"
+                                        alt="Producto">
+                                    <hr>
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="text-secondary mb-1">Por Heel</p>
+                                        <h5 class="card-title">Heel - Engystol Tabletas</h5>
+                                        <h3 class="fw-bold mt-3">$5.600</h3>
+                                        <p class="text-secondary mb-1">($18,67/gr)</p>
+                                        <button class="btn text-light mt-auto"
+                                            style="background-color: #6f42c1;">Agregar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card h-100">
+                                    <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fproducts-3%2F0009aa26f62b8daa503a61243e4091c0_1686267733.jpg&w=1920&q=75"
+                                        class="card-img-top p-4" style="height: 220px; object-fit: contain;"
+                                        alt="Producto">
+                                    <hr>
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="text-secondary mb-1">Por Heel</p>
+                                        <h5 class="card-title">Heel - Engystol Tabletas</h5>
+                                        <h3 class="fw-bold mt-3">$30.300</h3>
+                                        <p class="text-secondary mb-1">($37,88/gr)</p>
+                                        <button class="btn text-light mt-auto"
+                                            style="background-color: #6f42c1;">Agregar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card h-100">
+                                    <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fproducts%2Fad77d5febc4f19d928fe5867fc6d3b68_1739306771.jpg&w=1920&q=75"
+                                        class="card-img-top p-4" style="height: 220px; object-fit: contain;"
+                                        alt="Producto">
+                                    <hr>
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="text-secondary mb-1">Por Heel</p>
+                                        <h5 class="card-title">Heel - Engystol Tabletas</h5>
+                                        <h3 class="fw-bold mt-3">$235.900</h3>
+                                        <p class="text-secondary mb-1">($67,59/gr)</p>
+                                        <button class="btn text-light mt-auto"
+                                            style="background-color: #6f42c1;">Agregar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 2 -->
+                    <div class="carousel-item">
+                        <div class="row row-cols-1 row-cols-md-5 g-4">
+
+                            <div class="col">
+                                <div class="card h-100">
+                                    <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fproducts-3%2F3f5dde3575c920f2957c3ffa660baa44_1700241463.jpg&w=1920&q=75"
+                                        class="card-img-top p-4" style="height: 220px; object-fit: contain;"
+                                        alt="Producto">
+                                    <hr>
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="text-secondary mb-1">Por Heel</p>
+                                        <h5 class="card-title">Heel - Engystol Tabletas</h5>
+                                        <h3 class="fw-bold mt-3">$81.100</h3>
+                                        <p class="text-secondary mb-1">($54,07/gr)</p>
+                                        <button class="btn text-light mt-auto"
+                                            style="background-color: #6f42c1;">Agregar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card h-100">
+                                    <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fproducts-3%2Ffe73fe9b291f2132aee5aac1a7933f35_1673042539.jpg&w=1920&q=75"
+                                        class="card-img-top p-4" style="height: 220px; object-fit: contain;"
+                                        alt="Producto">
+                                    <hr>
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="text-secondary mb-1">Por Heel</p>
+                                        <h5 class="card-title">Heel - Engystol Tabletas</h5>
+                                        <h3 class="fw-bold mt-3">$15.100</h3>
+                                        <p class="text-secondary mb-1">($97,42/gr)</p>
+                                        <button class="btn text-light mt-auto"
+                                            style="background-color: #6f42c1;">Agregar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card h-100">
+                                    <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fproducts%2Fe2f7fbcfa52a6df2d9825df52b851ae4_1757423954.jpg&w=1920&q=75"
+                                        class="card-img-top p-4" style="height: 220px; object-fit: contain;"
+                                        alt="Producto">
+                                    <hr>
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="text-secondary mb-1">Por Heel</p>
+                                        <h5 class="card-title">Heel - Engystol Tabletas</h5>
+                                        <h3 class="fw-bold mt-3">$12.183</h3>
+                                        <p class="text-secondary mb-1">($24,37/gr)</p>
+                                        <button class="btn text-light mt-auto"
+                                            style="background-color: #6f42c1;">Agregar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card h-100">
+                                    <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fproducts%2F0695768035b13001aa9ac18e2181021c_1767018657.jpg&w=1920&q=75"
+                                        class="card-img-top p-4" style="height: 220px; object-fit: contain;"
+                                        alt="Producto">
+                                    <hr>
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="text-secondary mb-1">Por Heel</p>
+                                        <h5 class="card-title">Heel - Engystol Tabletas</h5>
+                                        <h3 class="fw-bold mt-3">$58.900</h3>
+                                        <p class="text-secondary mb-1">($19,63/gr)</p>
+                                        <button class="btn text-light mt-auto"
+                                            style="background-color: #6f42c1;">Agregar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card h-100">
+                                    <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fproducts-3%2Ff3ccdd27d2000e3f9255a7e3e2c48800_1692135452.jpg&w=1920&q=75"
+                                        class="card-img-top p-4" style="height: 220px; object-fit: contain;"
+                                        alt="Producto">
+                                    <hr>
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="text-secondary mb-1">Por Heel</p>
+                                        <h5 class="card-title">Heel - Engystol Tabletas</h5>
+                                        <h3 class="fw-bold mt-3">$142.000</h3>
+                                        <p class="text-secondary mb-1">($14,200/gr)</p>
+                                        <button class="btn text-light mt-auto"
+                                            style="background-color: #6f42c1;">Agregar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="carousel-indicators custom-indicators">
+                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="0"
+                        class="active"></button>
+                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="1"></button>
+                </div>
+
+                <br>
+                <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fsettings%2Fbanners%2Fdownload-app-001.jpg&w=3840&q=75"
+                    class="w-100" alt="Descarga la app">
+
+            </div>
+        </div>
+
+        <!-- SECCIÓN IMÁGENES GRID -->
+        <div class="my-4 px-3">
+            <div class="row g-2">
+                <div class="col-md-4 d-flex">
+                    <img src="https://static.laika.digital/settings/sections/1-desk-categorias.jpg"
+                        class="img-fluid rounded w-100" style="object-fit: cover;" alt="Catálogo">
+                </div>
+                <div class="col-md-4 d-flex flex-column gap-2">
+                    <img src="https://static.laika.digital/settings/sections/3-desk-stores.jpg"
+                        class="img-fluid rounded w-100 flex-fill" style="object-fit: cover; min-height: 0;"
+                        alt="Tiendas">
+                    <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fsettings%2Fsections%2F2-desk-members.jpg&w=3840&q=75"
+                        class="img-fluid rounded w-100 flex-fill" style="object-fit: cover; min-height: 0;"
+                        alt="Members">
+                </div>
+                <div class="col-md-4 d-flex flex-column gap-2">
+                    <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fsettings%2Fsections%2F4-desk-vet.jpg&w=3840&q=75"
+                        class="img-fluid rounded w-100 flex-fill" style="object-fit: cover; min-height: 0;" alt="Vet">
+                    <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fsettings%2Fsections%2F5-desk-vetcare.jpg&w=3840&q=75"
+                        class="img-fluid rounded w-100 flex-fill" style="object-fit: cover; min-height: 0;"
+                        alt="VetCare">
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN SEO + TEXTO -->
+        <div class="my-5 px-3">
+            <div class="row g-3 align-items-start">
+
+                <div class="col-md-3 d-flex flex-column gap-3">
+                    <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fsettings%2Fseo%2Fseo-2.jpg&w=3840&q=75"
+                        class="img-fluid rounded" alt="">
+                    <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fsettings%2Fseo%2Fseo-3.jpg&w=3840&q=75"
+                        class="img-fluid rounded" alt="">
+                </div>
+
+                <div class="col-md-3 d-flex flex-column gap-3">
+                    <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fsettings%2Fseo%2Fseo-1.jpg&w=1920&q=75"
+                        class="img-fluid rounded" alt="">
+                    <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fsettings%2Fseo%2Fseo-4.jpg&w=1920&q=75"
+                        class="img-fluid rounded" alt="">
+                </div>
+
+                <div class="col-md-6">
+                    <h1 class="fs-3">
+                        LAIKA: <span style="color: #654090;">La Tienda Online de Mascotas que tu PET-AMIGO
+                            Necesita</span>
+                    </h1>
+                    <p class="mb-3 text-secondary">
+                        LAIKA fue el primer ser vivo en conocer el espacio, y así se convirtió en nuestra guardiana,
+                        ahora se encarga de todo el universo de cuidado y bienestar para tu PET-AMIGO en un solo lugar.
+                    </p>
+                    <p class="mb-3 text-secondary">
+                        Al navegar en LAIKA descubrirás un sistema de envíos a domicilio el mismo día que te conecta
+                        desde los accesorios más trendy y adorables para perros y gatos, el alimento y snacks que
+                        conquista cualquier paladar, los juguetes perfectos que aseguran una diversión de otro mundo,
+                        las camas más cómodas y confortables que llevarán a tener sueños bajo las estrellas, y todo
+                        para verse y sentirse como los más guapos, cepillos, shampoo, arenas para gatos exigentes y
+                        todos los productos de higiene y farmacia para perros y gatos.
+                    </p>
+                    <p class="text-secondary">
+                        Nuestra misión es acompañar sus momentos juntos, de esta forma creamos 2 universos uno de ellos
+                        digital (app y web) para que sea fácil y rápido conseguir lo que necesiten y otro en tiendas
+                        físicas que responde a materializar un mundo mágico para nuestros PET-AMIGOS, creemos que el
+                        amor por los animales es lo que nos une, y en LAIKA, queremos ser parte de esa conexión.
+                        Únete a nosotros en este viaje intergaláctico de exploración y cuidado, donde las necesidades
+                        de tu PET-AMIGOS son siempre nuestra estrella polar.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SECCIÓN MARCAS -->
+    <div class="container my-5 px-3">
+
+        <div class="d-flex justify-content-between align-items-start mb-4">
+            <div>
+                <h2 class="fw-bold mb-1">Todas <span style="color: var(--morado);">las marcas</span></h2>
+                <p class="text-secondary mb-0">Todas nuestras mejores marcas.</p>
+            </div>
+            <a href="#" class="fw-semibold text-decoration-none" style="color: var(--morado);">
+                Ver todas las marcas &raquo;&raquo;
+            </a>
+        </div>
+
+        <div id="marcasCarousel" class="carousel slide">
+            <div class="carousel-inner">
+
+                <!-- SLIDE 1 -->
+                <div class="carousel-item active">
+                    <div class="row row-cols-2 row-cols-md-5 g-3">
+                        <div class="col">
+                            <div class="marca-card">
+                                <img src="https://cdn.shopify.com/s/files/1/0435/6374/5433/files/Nutra_Nuggets_Logo.png?v=1668790317"
+                                    alt="Nutra Nuggets">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="marca-card">
+                                <img src="https://tse4.mm.bing.net/th/id/OIP.hi6B5GTxH6gllZBylrfACAHaE_?pid=Api&P=0&h=180"
+                                    alt="Pro Plan">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="marca-card">
+                                <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fcategories%2Ftotal_max_circulo3.png&w=128&q=75"
+                                    alt="Max">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="marca-card">
+                                <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fcategories%2F4f8cab144242eaf64624e8118c2183c0_1712413250.jpg&w=128&q=75"
+                                    alt="Pet Prime">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="marca-card">
+                                <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fcategories%2FEQUILIBRIO_CIRCULO3.png&w=128&q=75"
+                                    alt="Equilíbrio">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="marca-card">
+                                <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fcategories%2Fhills_circulo5.png&w=256&q=75"
+                                    alt="Hill's">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="marca-card">
+                                <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fcategories%2Fd4243b2d6ca86e479e25a1746e1ac940_1697823230.jpg&w=256&q=75"
+                                    alt="4 Moments">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="marca-card">
+                                <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fcategories%2FBR_FOR_DOG_CIRCULO.png&w=256&q=75"
+                                    alt="BR for Dog">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="marca-card">
+                                <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fcategories%2FBR_FOR_CAT2.png&w=256&q=75"
+                                    alt="BR for Cat">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="marca-card">
+                                <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fcategories-2%2F1589395980_ROYAL_CANIN_500X500.png&w=256&q=75"
+                                    alt="Royal Canin">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 2 -->
+                <div class="carousel-item">
+                    <div class="row row-cols-2 row-cols-md-5 g-3">
+                        <div class="col">
+                            <div class="marca-card">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm21oxTjL0-TqOwPPiP6a5lXl5T0kVQwIYDQ&s"
+                                    alt="Pedigree">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="marca-card">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9rlX8iMjZi-FT8BAJDkMrvtJPP9e_dHt4Vg&s"
+                                    alt="Whiskas">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="marca-card">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE4JJRz4mHA_MGEXj__h2xlzZYUU5A_xVP-A&s"
+                                    alt="Frontline">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="marca-card">
+                                <img src="https://www.agrocampo.com.co/media/amasty/shopby/option_images/nexgard-logo-nuevo_ed-min.jpg"
+                                    alt="Nexgard">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="marca-card">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrRudvaJV6Ei3MJxCqHbylD7Gg7m5at8bV1g&s"
+                                    alt="Advantix">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="marca-card">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4QYy4pWopKy7ZH7R8Dnqc4dgPwVJbJfomnA&s"
+                                    alt="Kong">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="marca-card">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8Ffq_8GzPSeqhHydK0s0vfr1pXTIALrLAHw&s"
+                                    alt="Canidae">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="marca-card">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaoagTCxXYcLxDhMzWg9vUR-AjFQmEZ5H08g&s"
+                                    alt="Orijen">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="marca-card">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHsS_gsgh71cnpkdlSa2S3ija6dSYDJChQEA&s"
+                                    alt="Acana">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="marca-card">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHHlWj57REQILsReIvR6hXLHrCsmv10n51sA&s"
+                                    alt="Science Diet">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- INDICADORES -->
+            <div class="carousel-indicators custom-indicators">
+                <button type="button" data-bs-target="#marcasCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#marcasCarousel" data-bs-slide-to="1"></button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer mt-2">
+
+        <!-- LINKS -->
+        <div class="container py-5">
+            <div class="row g-4">
+
+                <!-- Logo -->
+                <div class="col-12 mb-2">
+                    <div class="footer-logo">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqnsskPT2d5Bq81cOHOlB46utTSn0pMF8DHg&s"
+                            alt="Laika Logo">
+                    </div>
+                </div>
+
+                <!-- Conócenos -->
+                <div class="col-6 col-md-3">
+                    <h6 class="footer-title">Conócenos</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Trabaja con nosotros</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Información -->
+                <div class="col-6 col-md-3">
+                    <h6 class="footer-title">Información</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Políticas de entrega</a></li>
+                    </ul>
+                </div>
+
+                <!-- Encuéntranos -->
+                <div class="col-6 col-md-3">
+                    <h6 class="footer-title">Encuéntranos</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Nuestras tiendas</a></li>
+                    </ul>
+                </div>
+
+                <!-- Suscríbete -->
+                <div class="col-6 col-md-3">
+                    <h6 class="footer-title">Suscríbete</h6>
+                    <p class="text-secondary" style="font-size: 14px;">Recibe noticias y promociones diarias</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Correo electrónico"
+                            style="font-size: 14px;">
+                        <button class="btn text-light" style="background-color: var(--morado);">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="footer-bottom">
+            <div class="container py-3">
+
+                <p class="mb-1" style="font-size: 13px;">
+                    <a href="https://www.sic.gov.co" class="footer-link-morado"
+                        target="_blank">https://www.sic.gov.co</a>
+                    / Proyecto E S.A.S. / NIT: 901.110.407 -4 / Dirección de notificación judicial: Cra 68G No. 74B -
+                    56, Bogotá DC
+                </p>
+                <p class="mb-3" style="font-size: 13px;">
+                    Teléfono: <a href="tel:+573009108496" class="footer-link-morado">+57 300 910 8496</a>
+                    / Correo electrónico para notificación judicial:
+                    <a href="mailto:contabilidad@laika.com.co" class="footer-link-morado">contabilidad@laika.com.co</a>
+                </p>
+
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                    <p class="mb-0" style="font-size: 13px;">Copyright © LAIKA todos los derechos reservados</p>
+                    <div class="d-flex align-items-center gap-2 flex-wrap">
+                        <img src="https://laika.com.co/_next/image?url=https%3A%2F%2Fstatic.laika.digital%2Fsettings%2Fpayments%2Fall_pay_methods.png&w=640&q=75"
+                            alt="Davivienda" class="footer-payment">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+
+    <footer class="footer1">
+        Eddier Paz · 2026 · <a class="footera" href="../../../index.html">← Volver al portafolio</a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
