@@ -328,6 +328,66 @@
 
     </main>
 
+    <!-- ========== MODO UNIVERSO ========== -->
+    <div id="universe-container" class="universe-container">
+        <canvas id="universe-canvas"></canvas>
+
+        <!-- Botón para salir al modo lectura (nuevo) -->
+        <button id="exit-universe-btn" class="exit-universe-btn">
+            <i class="fa-solid fa-book-open"></i> Modo Lectura
+        </button>
+
+        <!-- Botón centrar -->
+        <button id="center-universe-btn" class="center-btn">◎ CENTRAR UNIVERSO</button>
+
+        <!-- Filtros -->
+        <div class="universe-filters">
+            <button class="universe-filter active" data-filter="all">TODOS</button>
+            <button class="universe-filter" data-filter="web">WEB</button>
+            <button class="universe-filter" data-filter="backend">BACKEND</button>
+            <button class="universe-filter" data-filter="sistemas">SISTEMAS</button>
+            <button class="universe-filter" data-filter="python">PYTHON</button>
+            <button class="universe-filter" data-filter="django">DJANGO</button>
+            <button class="universe-filter" data-filter="mysql">MYSQL</button>
+            <button class="universe-filter" data-filter="javascript">JAVASCRIPT</button>
+        </div>
+
+        <!-- Panel lateral de proyecto -->
+        <div id="project-panel" class="project-panel">
+            <button id="close-panel-btn" class="close-panel-btn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="panel-content">
+                <h2 id="panel-title">OperPan</h2>
+                <p id="panel-subtitle" class="panel-subtitle">Sistema de Gestión de Personal</p>
+                <div class="panel-meta">
+                    <span class="panel-badge" id="panel-status">Destacado</span>
+                    <span class="panel-year" id="panel-year">2026</span>
+                </div>
+                <p id="panel-description" class="panel-description">Descripción del proyecto...</p>
+                <div class="panel-techs" id="panel-techs"></div>
+                <div class="panel-actions">
+                    <a href="#" id="panel-link" class="btn btn-primary">Ver proyecto</a>
+                    <a href="#" id="panel-repo" class="btn btn-outline">Ver código</a>
+                </div>
+                <div class="panel-gallery" id="panel-gallery"></div>
+            </div>
+        </div>
+
+        <!-- Perfil del explorador (Sobre mí en el universo) -->
+        <div id="explorer-profile" class="explorer-profile">
+            <div class="profile-avatar">EP</div>
+            <h3>Eddier Paz</h3>
+            <p>Estudiante de ADSO · Desarrollador Web</p>
+            <p class="profile-bio">Construyendo mi camino como desarrollador, un proyecto a la vez.</p>
+            <div class="profile-stats">
+                <div><span>5+</span> Proyectos</div>
+                <div><span>7+</span> Tecnologías</div>
+                <div><span>1+</span> Año aprendiendo</div>
+                <div><span>100%</span> Compromiso</div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer-grid">
