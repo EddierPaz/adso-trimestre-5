@@ -1,0 +1,37 @@
+/* --- PALETA DE COLORES EXTRAÍDA DE LA IMAGEN --- */
+:root {
+    /* Colores principales */
+    --dark-bg: #1E1E2F;         /* Fondo footer y modo oscuro */
+    --primary-purple: #7C3AED;  /* Botón morado */
+    --secondary-red: #FF6B6B;   /* Botón rojo */
+    --accent-orange: #FFB050;   /* Detalles y estrellas */
+    
+    /* Colores de fondo y texto */
+    --bg-light: #F8F9FC;        /* Fondo general claro */
+    --bg-white: #FFFFFF;
+    --text-dark: #1E1E2F;       /* Texto oscuro */
+    --text-gray: #555555;       /* Texto secundario */
+    --text-light: #FFFFFF;
+    --border-light: #E5E7EB;
+
+    /* Tipografía */
+    --font-primary: 'Poppins', sans-serif;
+}
+
+/* --- MODO OSCURO (DARK MODE) --- */
+body.dark-mode {
+    --bg-light: #1a1a2e;        /* Fondo más oscuro */
+    --bg-white: #16213e;        /* Tarjetas y formularios azul oscuro */
+    --text-dark: #e0e0e0;       /* Texto blanco/gris claro */
+    --text-gray: #b0b0b0;       /* Texto secundario gris claro */
+    --border-light: #2a2a4a;    /* Bordes más sutiles */
+}
+
+/* Ajustes específicos para que el header y el footer se vean bien en modo oscuro */
+body.dark-mode .header {
+    background-color: var(--bg-light);
+}
+
+body.dark-mode .footer {
+    background-color: #0f0f1a;
+}

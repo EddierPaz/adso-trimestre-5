@@ -2,576 +2,373 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eddier Paz — Portafolio</title>
+
+    <!-- Fuente Poppins (Igual a la imagen) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap"
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <style>
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
 
-        :root {
-            --sage: #8fad99;
-            --sage-l: #e8f0eb;
-            --sand: #e8e0d5;
-            --sand-d: #c4b8a8;
-            --clay: #c9a98a;
-            --clay-d: #a07d5c;
-            --ink: #2c2c2c;
-            --muted: #7a7a7a;
-            --bg: #f7f5f2;
-            --white: #ffffff;
-            --radius: 14px;
-            --shadow: 0 2px 20px rgba(0, 0, 0, 0.07);
-        }
+    <!-- Íconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--bg);
-            color: var(--ink);
-            line-height: 1.7;
-        }
-
-        /* NAV */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            background: rgba(247, 245, 242, 0.88);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--sand);
-            padding: 0 2rem;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .nav-brand {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.2rem;
-            color: var(--ink);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--muted);
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--ink);
-        }
-
-        /* HERO */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 80px 2rem 4rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .hero-inner {
-            max-width: 600px;
-        }
-
-        .hero-tag {
-            display: inline-block;
-            background: var(--sage-l);
-            color: var(--sage);
-            font-size: 0.78rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            padding: 0.3rem 0.9rem;
-            border-radius: 99px;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h1 {
-            font-family: 'DM Serif Display', serif;
-            font-size: clamp(2.8rem, 6vw, 4.2rem);
-            line-height: 1.1;
-            color: var(--ink);
-            margin-bottom: 1.2rem;
-        }
-
-        .hero h1 em {
-            font-style: italic;
-            color: var(--clay-d);
-        }
-
-        .hero p {
-            font-size: 1.05rem;
-            color: var(--muted);
-            max-width: 460px;
-            margin-bottom: 2rem;
-        }
-
-        .hero-chips {
-            display: flex;
-            gap: 0.6rem;
-            flex-wrap: wrap;
-        }
-
-        .chip {
-            background: var(--white);
-            border: 1px solid var(--sand-d);
-            border-radius: 99px;
-            padding: 0.3rem 0.9rem;
-            font-size: 0.82rem;
-            color: var(--muted);
-        }
-
-        /* SECCIONES */
-        section {
-            padding: 5rem 2rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .section-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--clay);
-            margin-bottom: 0.5rem;
-        }
-
-        .section-title {
-            font-family: 'DM Serif Display', serif;
-            font-size: clamp(1.8rem, 4vw, 2.6rem);
-            color: var(--ink);
-            margin-bottom: 2.5rem;
-            line-height: 1.2;
-        }
-
-        /* CARDS */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 1.2rem;
-        }
-
-        .card {
-            background: var(--white);
-            border-radius: var(--radius);
-            border: 1px solid var(--sand);
-            padding: 1.5rem;
-            box-shadow: var(--shadow);
-            transition: transform 0.2s, box-shadow 0.2s;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
-
-        .icon-green {
-            background: var(--sage-l);
-        }
-
-        .icon-sand {
-            background: var(--sand);
-        }
-
-        .icon-clay {
-            background: #f5e8db;
-        }
-
-        .card-title {
-            font-weight: 600;
-            font-size: 0.98rem;
-            color: var(--ink);
-        }
-
-        .card-desc {
-            font-size: 0.85rem;
-            color: var(--muted);
-            line-height: 1.5;
-        }
-
-        .card-badge {
-            align-self: flex-start;
-            background: var(--sage-l);
-            color: var(--sage);
-            font-size: 0.72rem;
-            font-weight: 600;
-            padding: 0.2rem 0.6rem;
-            border-radius: 99px;
-        }
-
-        .card-badge.clay {
-            background: #f5e8db;
-            color: var(--clay-d);
-        }
-
-        /* ABOUT */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: start;
-        }
-
-        @media (max-width: 600px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .about-text p {
-            color: var(--muted);
-            margin-bottom: 1rem;
-        }
-
-        .skills-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-
-        .skill-item {
-            display: flex;
-            flex-direction: column;
-            gap: 0.3rem;
-        }
-
-        .skill-name {
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--ink);
-        }
-
-        .skill-bar {
-            height: 6px;
-            background: var(--sand);
-            border-radius: 99px;
-            overflow: hidden;
-        }
-
-        .skill-fill {
-            height: 100%;
-            border-radius: 99px;
-            background: linear-gradient(90deg, var(--sage), var(--clay));
-            animation: fillBar 1.2s ease forwards;
-            transform-origin: left;
-        }
-
-        @keyframes fillBar {
-            from {
-                width: 0;
-            }
-        }
-
-        /* CONTACTO */
-        .contact-box {
-            background: var(--white);
-            border: 1px solid var(--sand);
-            border-radius: var(--radius);
-            padding: 2.5rem;
-            box-shadow: var(--shadow);
-            max-width: 480px;
-        }
-
-        .contact-box p {
-            color: var(--muted);
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 0.8rem 1rem;
-            border: 1px solid var(--sand);
-            border-radius: 10px;
-            text-decoration: none;
-            color: var(--ink);
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: background 0.2s, border-color 0.2s;
-        }
-
-        .contact-link:hover {
-            background: var(--sage-l);
-            border-color: var(--sage);
-        }
-
-        .contact-link span {
-            font-size: 1.1rem;
-        }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.82rem;
-            color: var(--muted);
-            border-top: 1px solid var(--sand);
-            margin-top: 4rem;
-        }
-
-        /* ANIMACIÓN ENTRADA */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: none;
-        }
-
-        @media (max-width: 640px) {
-            .nav-links {
-                display: none;
-            }
-        }
-    </style>
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="./assets/css/variables.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/components.css">
 </head>
 
 <body>
 
-    <nav>
-        <a class="nav-brand" href="#">Eddier Paz</a>
-        <ul class="nav-links">
-            <li><a href="#frontend">Frontend</a></li>
-            <li><a href="#backend">Backend</a></li>
-            <li><a href="#sobre-mi">Sobre mí</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
+    <!-- HEADER / NAV -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="#" class="logo">EP</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#hero" class="active">Inicio</a></li>
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
 
-    <!-- HERO -->
-    <div class="hero">
-        <div class="hero-inner fade-in">
-            <span class="hero-tag">Trimestre 5 · En aprendizaje</span>
-            <h1>Hola, soy<br><em>Eddier Paz</em></h1>
-            <p>Estudiante de desarrollo de software, aprendiendo a construir interfaces web y aplicaciones con Python.
-                Aquí están mis prácticas y proyectos del trimestre.</p>
-            <div class="hero-chips">
-                <span class="chip">HTML & CSS</span>
-                <span class="chip">Bootstrap</span>
-                <span class="chip">Python</span>
-                <span class="chip">MySQL</span>
-                <span class="chip">Flexbox</span>
+            <!-- CONTROLES DE TEMA -->
+            <div class="theme-controls">
+                <!-- Botón Sol / Luna (Tema Claro/Oscuro) -->
+                <button id="darkmode-toggle" class="icon-btn" aria-label="Cambiar tema oscuro/claro">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <!-- Botón Modo Juego (El que ya tenías) -->
+                <button id="game-toggle" class="mode-toggle-btn">
+                    <span id="game-icon">🎮</span> <span id="game-text">Modo Juego</span>
+                </button>
             </div>
         </div>
-    </div>
+    </header>
 
-    <!-- FRONTEND -->
-    <section id="frontend">
-        <div class="fade-in">
-            <p class="section-label">Frontend</p>
-            <h2 class="section-title">Proyectos web</h2>
-        </div>
-        <div class="cards fade-in">
-            <a class="card" href="./frontend/bootstrap/">
-                <div class="card-icon icon-green">🎨</div>
-                <div class="card-title">Bootstrap — Componentes</div>
-                <div class="card-desc">Práctica de grillas, tarjetas, navbars y componentes de Bootstrap 5.</div>
-                <span class="card-badge">HTML · Bootstrap</span>
-            </a>
-            <a class="card" href="./frontend/flexbox/">
-                <div class="card-icon icon-sand">📐</div>
-                <div class="card-title">Flexbox</div>
-                <div class="card-desc">Ejercicios de layouts con Flexbox: alineación, dirección y distribución de
-                    elementos.</div>
-                <span class="card-badge">HTML · CSS</span>
-            </a>
-            <a class="card" href="./frontend/proyectos/laika/">
-                <div class="card-icon icon-clay">🐾</div>
-                <div class="card-title">Laika — Sitio web</div>
-                <div class="card-desc">Proyecto práctico completo: sitio web de tienda de mascotas con CSS puro.</div>
-                <span class="card-badge">HTML · CSS</span>
-            </a>
-            <a class="card" href="./frontend/proyectos/laika - bootstrap/index.html">
-                <div class="card-icon icon-green">🐾</div>
-                <div class="card-title">Laika — Bootstrap</div>
-                <div class="card-desc">Versión del mismo proyecto reescrita usando componentes y grilla de Bootstrap.
-                </div>
-                <span class="card-badge">HTML · Bootstrap</span>
-            </a>
-            <a class="card" href="frontend\proyectos\exposición\OperPan - Bootstrap.pdf">
-                <div class="card-icon icon-sand">📊</div>
-                <div class="card-title">Material de exposición</div>
-                <div class="card-desc">Demos y ejemplos usados en exposiciones: tooltips, scrollspy y más.</div>
-                <span class="card-badge">HTML · Bootstrap</span>
-            </a>
-        </div>
-    </section>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
 
-    <!-- BACKEND -->
-    <section id="backend">
-        <div class="fade-in">
-            <p class="section-label">Backend</p>
-            <h2 class="section-title">Python & MySQL</h2>
-        </div>
-        <div class="cards fade-in">
-            <a class="card" href="./backend/CRUD_MYSQL/index.html">
-                <div class="card-icon icon-clay">🐍</div>
-                <div class="card-title">CRUD MySQL - Ejemplo 1</div>
-                <div class="card-desc">Aplicación de consola en Python con operaciones crear, listar, actualizar y
-                    eliminar usando MySQL.</div>
-                <span class="card-badge clay">Python · MySQL</span>
-            </a>
-            <a class="card" href="./backend/CRUD_MYSQL_ejemplo2/index.html">
-                <div class="card-icon icon-clay">🗄️</div>
-                <div class="card-title">CRUD MySQL — Ejemplo 2</div>
-                <div class="card-desc">Segunda variación del CRUD con estructura por capas: config, models y services.
-                </div>
-                <span class="card-badge clay">Python · POO</span>
-            </a>
-            <a class="card" href="./backend/CRUD_MYSQL_OPERPAN/index.html">
-                <div class="card-icon icon-clay">⚙️</div>
-                <div class="card-title">CRUD Operpan</div>
-                <div class="card-desc">Práctica de CRUD aplicada a un caso de uso distinto siguiendo los mismos
-                    principios de POO.</div>
-                <span class="card-badge clay">Python · MySQL</span>
-            </a>
-        </div>
-    </section>
+        <!-- HERO SECTION -->
+        <section class="section-padding" id="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <p class="greeting">Hola, soy</p>
+                    <h1>Eddier <span>Paz</span></h1>
+                    <p class="subtitle">Estudiante de ADSO<br>Desarrollador Web</p>
+                    <p class="description">
+                        Apasionado por crear soluciones digitales que sean funcionales, accesibles y con un buen diseño.
+                    </p>
 
-    <!-- SOBRE MÍ -->
-    <section id="sobre-mi">
-        <div class="fade-in">
-            <p class="section-label">Sobre mí</p>
-            <h2 class="section-title">¿Quién soy?</h2>
-        </div>
-        <div class="about-grid fade-in">
-            <div class="about-text">
-                <p>Soy estudiante de desarrollo de software en mi quinto trimestre. Este repositorio es mi espacio de
-                    práctica no todo está perfecto, pero cada carpeta representa algo que aprendí.</p>
-                <p>Actualmente estoy aprendiendo a conectar frontend y backend, a organizar proyectos de forma
-                    profesional y a escribir código más limpio con cada práctica.</p>
-            </div>
-            <div class="skills-list">
-                <div class="skill-item">
-                    <span class="skill-name">HTML & CSS</span>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width:75%"></div>
+                    <div class="btn-group">
+                        <a href="#proyectos" class="btn btn-primary">Ver mis proyectos</a>
+                        <a href="#" class="btn btn-outline">Descargar CV <i class="fa-solid fa-download"></i></a>
+                    </div>
+
+                    <div class="social-icons">
+                        <a href="https://github.com/EddierPaz/adso-trimestre-5" target="_blank" aria-label="GitHub"><i
+                                class="fa-brands fa-github"></i></a>
+                        <a href="https://wa.me/573023365691" target="_blank" aria-label="WhatsApp"><i
+                                class="fa-brands fa-whatsapp"></i></a>
+                        <a href="mailto:eddierpaz9@gmail.com" aria-label="Email"><i
+                                class="fa-regular fa-envelope"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="skill-item">
-                    <span class="skill-name">Bootstrap</span>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width:65%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <span class="skill-name">Python</span>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width:55%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <span class="skill-name">MySQL</span>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width:45%"></div>
-                    </div>
+
+                <div class="hero-image-wrapper">
+                    <img src="assets/img/avatar.png" alt="Avatar 3D de Eddier Paz" class="hero-avatar-img">
+                    <div class="badge-float badge-dev"><i class="fa-solid fa-code"></i> Desarrollo</div>
+                    <div class="badge-float badge-creative"><i class="fa-solid fa-mug-hot"></i> Creatividad</div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- CONTACTO -->
-    <section id="contacto">
-        <div class="fade-in">
-            <p class="section-label">Contacto</p>
-            <h2 class="section-title">¿Hablamos?</h2>
-        </div>
-        <div class="contact-box fade-in">
-            <p>Si tienes alguna sugerencia sobre mis proyectos o simplemente quieres conectar, puedes encontrarme aquí.
-            </p>
-            <div class="contact-links">
-                <a class="contact-link" href="https://github.com/EddierPaz/adso-trimestre-5" target="_blank">
-                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-github" viewBox="0 0 16 16">
-                            <path
-                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
-                        </svg></span> GitHub — Eddier Paz Pardo
-                </a>
-                <a class="contact-link" href="
-                    https://wa.me/573023365691?text=Hola%20quiero%20sugerir%esto%20en%20tu%20proyecto" target="_blank">
-                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-whatsapp" viewBox="0 0 16 16">
-                            <path
-                                d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
-                        </svg></span> Whatsapp
-                </a>
-                <a class="contact-link" href="mailto:eddierpaz9@gmail.com">
-                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 9.671V4.697l-5.803 3.546.338.208A4.5 4.5 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671" />
-                            <path
-                                d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791" />
-                        </svg></span> eddierpaz9@gmail.com
-                </a>
+            <!-- STATS -->
+            <div class="container stats-container">
+                <div class="stat-item">
+                    <h3>5+</h3>
+                    <p>Proyectos</p>
+                </div>
+                <div class="stat-item">
+                    <h3>2+</h3>
+                    <p>Tecnologías Dominadas</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1+</h3>
+                    <p>Años de Experiencia</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Compromiso</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE MÍ -->
+        <section class="section-padding bg-white" id="sobre-mi">
+            <div class="container about-grid">
+                <div class="about-content">
+                    <h2 class="section-title">Sobre mí</h2>
+                    <p>Soy estudiante de Análisis y Desarrollo de Software, apasionado por crear soluciones que sean
+                        funcionales, accesibles y con un diseño intuitivo. Disfruto aprender nuevas tecnologías y
+                        enfrentar desafíos que me permitan crecer como profesional.</p>
+                    <button class="btn btn-secondary-red">Conoce más de mi experiencia <i
+                            class="fa-solid fa-arrow-right"></i></button>
+
+                    <div class="about-cards">
+                        <div class="about-card">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <h4>Aprendizaje</h4>
+                            <p>Siempre estoy aprendiendo y mejorando para crecer cada día.</p>
+                        </div>
+                        <div class="about-card">
+                            <i class="fa-solid fa-laptop-code"></i>
+                            <h4>Desarrollo</h4>
+                            <p>Mi enfoque en escribir código limpio, eficiente y escalable.</p>
+                        </div>
+                        <div class="about-card">
+                            <i class="fa-solid fa-handshake"></i>
+                            <h4>Colaboración</h4>
+                            <p>Me gusta trabajar en equipo y compartir conocimientos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="assets/img/avatar-1.png" alt="Avatar 3D de Eddier Paz" class="hero-avatar-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- PROYECTOS -->
+        <section class="section-padding" id="proyectos">
+            <div class="container">
+                <div class="projects-header">
+                    <h2 class="section-title">Mis Proyectos</h2>
+                    <div class="filter-btn-group">
+                        <button class="btn-filter active">Todos</button>
+                        <button class="btn-filter">Web</button>
+                        <button class="btn-filter">Aplicaciones</button>
+                        <button class="btn-filter">Sistemas</button>
+                    </div>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Tarjeta 1 -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <!-- Reemplaza con imagen real -->
+                            <span>🎨 Mockup Web</span>
+                        </div>
+                        <div class="project-body">
+                            <h4>Laika — Sitio web</h4>
+                            <p>Proyecto práctico completo: sitio web de tienda de mascotas con CSS puro.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                            </div>
+                            <a href="./proyectos/frontend/laika/" class="project-link">Ver proyecto <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 2 -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <span>🗄️ Mockup CRUD</span>
+                        </div>
+                        <div class="project-body">
+                            <h4>CRUD MySQL — Por capas</h4>
+                            <p>Variación del CRUD con estructura por capas: config, models y services.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">MySQL</span>
+                            </div>
+                            <a href="./proyectos/backend/crud-mysql-2/index.html" class="project-link">Ver proyecto <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 3 -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <span>📊 Mockup App</span>
+                        </div>
+                        <div class="project-body">
+                            <h4>Material de exposición</h4>
+                            <p>Demos y ejemplos usados en exposiciones: tooltips, scrollspy y más.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">Bootstrap</span>
+                            </div>
+                            <a href="./proyectos/frontend/exposicion/OperPan-Bootstrap.pdf" class="project-link">Ver
+                                proyecto <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HABILIDADES -->
+        <section class="section-padding bg-white" id="habilidades">
+            <div class="container skills-layout">
+                <div class="skills-left">
+                    <h2 class="section-title">Habilidades</h2>
+
+                    <div class="skills-grid-icons">
+                        <div class="skill-icon-box"><i class="fa-brands fa-html5" style="color:#E34F26;"></i>
+                            <p>HTML</p>
+                        </div>
+                        <div class="skill-icon-box"><i class="fa-brands fa-css3-alt" style="color:#1572B6;"></i>
+                            <p>CSS</p>
+                        </div>
+                        <div class="skill-icon-box"><i class="fa-brands fa-js" style="color:#F7DF1E;"></i>
+                            <p>JavaScript</p>
+                        </div>
+                        <div class="skill-icon-box"><i class="fa-brands fa-python" style="color:#3776AB;"></i>
+                            <p>Python</p>
+                        </div>
+                        <div class="skill-icon-box"><i class="fa-brands fa-bootstrap" style="color:#563D7C;"></i>
+                            <p>Bootstrap</p>
+                        </div>
+                        <div class="skill-icon-box"><i class="fa-solid fa-database" style="color:#00758F;"></i>
+                            <p>MySQL</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-right">
+                    <h3 class="subtitle-skill">Otras habilidades</h3>
+
+                    <div class="skill-bar-wrap">
+                        <div class="skill-label"><span>Resolución de problemas</span></div>
+                        <div class="skill-track">
+                            <div class="skill-fill" style="width: 90%;"></div>
+                        </div>
+                        <span class="skill-percent">90%</span>
+                    </div>
+
+                    <div class="skill-bar-wrap">
+                        <div class="skill-label"><span>Trabajo en equipo</span></div>
+                        <div class="skill-track">
+                            <div class="skill-fill" style="width: 85%;"></div>
+                        </div>
+                        <span class="skill-percent">85%</span>
+                    </div>
+
+                    <div class="skill-bar-wrap">
+                        <div class="skill-label"><span>Comunicación</span></div>
+                        <div class="skill-track">
+                            <div class="skill-fill" style="width: 80%;"></div>
+                        </div>
+                        <span class="skill-percent">80%</span>
+                    </div>
+
+                    <div class="learning-card">
+                        <h4>Siempre aprendiendo</h4>
+                        <p>Me gusta explorar nuevas tecnologías y mejorar mis habilidades constantemente.</p>
+                        <div class="learning-icon">
+                            <i class="fa-solid fa-book-open" style="color: var(--accent-orange);"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section class="section-padding" id="contacto">
+            <div class="container contact-layout">
+                <div class="contact-info">
+                    <h2 class="section-title">Contacto</h2>
+                    <p>¿Tienes algún proyecto en mente o quieres colaborar? ¡Hablemos!</p>
+
+                    <div class="contact-item">
+                        <i class="fa-regular fa-envelope"></i>
+                        <span>eddierpaz9@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+57 302 336 5691</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Santiago de Compostela, Colombia</span>
+                    </div>
+
+                    <div class="contact-socials">
+                        <a href="https://github.com/EddierPaz" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://wa.me/573023365691" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="mailto:eddierpaz9@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label>Correo electrónico</label>
+                        <input type="email" placeholder="tu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Mensaje</label>
+                        <textarea rows="4" placeholder="Escribe tu mensaje aquí"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar un mensaje</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4 class="logo-footer">EP</h4>
+                <p>Estudiante de ADSO apasionado por el desarrollo web y la creación de soluciones innovadoras.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces útiles</h4>
+                <ul>
+                    <li><a href="https://github.com/EddierPaz" target="_blank">GitHub</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">CV / Portafolio</a></li>
+                    <li><a href="#">Certificaciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><i class="fa-regular fa-envelope"></i> eddierpaz9@gmail.com</li>
+                    <li><i class="fa-solid fa-phone"></i> +57 302 336 5691</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Santiago de Compostela</li>
+                </ul>
             </div>
         </div>
-    </section>
-
-    <footer>
-        Hecho con ganas de aprender · Eddier Paz · 2026
+        <div class="container footer-bottom">
+            <p>Hecho con ganas de aprender · Eddier Paz · 2026</p>
+        </div>
     </footer>
 
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-    </script>
-
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>
