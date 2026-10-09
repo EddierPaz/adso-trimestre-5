@@ -1,0 +1,236 @@
+/* ============================================
+   PALETA DE COLORES — Calculadora
+   ============================================ */
+
+/* ===== LIGHT MODE (por defecto) ===== */
+:root {
+    --primary-purple: #7C3AED;
+    --primary-purple-hover: #6D28D9;
+
+    /* Página */
+    --page-bg: #F4F4F8;
+
+    /* Calculadora */
+    --calc-bg-start: #7C3AED;
+    --calc-bg-end:   #5B21B6;
+    --calc-shadow:   0 20px 50px rgba(124, 58, 237, 0.25),
+                     0 0 0 1px rgba(124, 58, 237, 0.08);
+
+    /* Pantalla */
+    --screen-bg:    #FFFFFF;
+    --screen-text:  #1E1E2F;
+
+    /* Botones numéricos */
+    --btn-num-bg:    #FFFFFF;
+    --btn-num-text:  #1E1E2F;
+    --btn-num-hover: #EDE9FE;
+
+    /* Operadores (÷ × − +) */
+    --btn-op-bg:    #4C1D95;
+    --btn-op-hover: #3B1578;
+
+    /* Igual (=) */
+    --btn-eq-bg:    #1E1E2F;
+    --btn-eq-text:  #FFFFFF;
+    --btn-eq-hover: #2D2D4A;
+
+    /* Fuente */
+    --font-primary: 'Poppins', sans-serif;
+}
+
+/* ===== DARK MODE ===== */
+body.dark-mode {
+    --page-bg: #0F0F1A;
+
+    --calc-bg-start: #1E1E2F;
+    --calc-bg-end:   #16213E;
+    --calc-shadow:   0 20px 50px rgba(0, 0, 0, 0.6),
+                     0 0 0 1px rgba(124, 58, 237, 0.15);
+
+    --screen-bg:   #2A2A4A;
+    --screen-text: #F8FAFC;
+
+    --btn-num-bg:    #2D2D4A;
+    --btn-num-text:  #F8FAFC;
+    --btn-num-hover: #3D3D5A;
+
+    --btn-op-bg:    #7C3AED;
+    --btn-op-hover: #6D28D9;
+
+    --btn-eq-bg:    #F8FAFC;
+    --btn-eq-text:  #1E1E2F;
+    --btn-eq-hover: #E2E8F0;
+}
+
+/* ============================================
+   BASE
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    background: var(--page-bg);
+    font-family: var(--font-primary);
+    transition: background 0.3s ease;
+}
+
+/* ============================================
+   WRAPPER QUE CENTRA EL CONTENIDO
+   ============================================ */
+.page-wrap {
+    min-height: 100vh;
+    padding: 64px 20px 0;   /* ✅ 64 arriba (nav), 0 abajo, 20 a los lados */
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ============================================
+   CALCULADORA
+   ============================================ */
+.logo {
+    display: block;
+    position: relative;
+    margin-bottom: 20px;
+    text-decoration: none;
+    font-size: 0;
+    height: 4px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    border-radius: 4px;
+    background: #F8FAFC;
+    animation: linea-movil 2s ease-in-out infinite alternate;
+}
+
+@keyframes linea-movil {
+    from { transform: translateX(0); }
+    to   { transform: translateX(150%); }
+}
+
+.calculadora {
+    background: linear-gradient(135deg, var(--calc-bg-start), var(--calc-bg-end));
+    border-radius: 16px;
+    padding: 24px;
+    width: 280px;
+    box-shadow: var(--calc-shadow);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#pantalla {
+    background: var(--screen-bg);
+    color: var(--screen-text);
+    font-size: 32px;
+    text-align: right;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.botones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+button {
+    background: var(--btn-num-bg);
+    color: var(--btn-num-text);
+    border: none;
+    border-radius: 8px;
+    padding: 18px;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.08s, color 0.15s;
+    user-select: none;
+}
+
+button:hover {
+    background: var(--btn-num-hover);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+/* Operadores (÷ × − +) */
+button.operador {
+    background: var(--btn-op-bg);
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+button.operador:hover {
+    background: var(--btn-op-hover);
+}
+
+/* Igual (=) */
+button.igual {
+    background: var(--btn-eq-bg);
+    color: var(--btn-eq-text);
+    font-weight: 700;
+}
+
+button.igual:hover {
+    background: var(--btn-eq-hover);
+}
+
+/* Cero a doble ancho */
+button.cero {
+    grid-column: span 2;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 380px) {
+    .page-wrap {
+        padding: 80px 12px 24px;
+    }
+
+    .calculadora {
+        width: 100%;
+        max-width: 300px;
+        padding: 20px;
+    }
+
+    #pantalla {
+        font-size: 28px;
+    }
+
+    button {
+        padding: 16px;
+        font-size: 16px;
+    }
+}

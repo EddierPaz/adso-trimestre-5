@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Clima</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="contenedor">
+        <div class="buscador">
+            <input type="text" id="ciudad" placeholder="Buscar ciudad...">
+            <button onclick="buscar()">Buscar</button>
+        </div>
+
+        <div id="error" class="error oculto"></div>
+
+        <div id="clima-actual" class="oculto">
+            <div class="ciudad-info">
+                <h1 id="nombre-ciudad"></h1>
+                <p id="fecha"></p>
+            </div>
+            <div class="temp-principal">
+                <span id="icono" class="icono"></span>
+                <span id="temperatura"></span>
+            </div>
+            <p id="descripcion"></p>
+            <div class="detalles">
+                <div class="detalle">
+                    <span class="label">Sensación</span>
+                    <span id="sensacion"></span>
+                </div>
+                <div class="detalle">
+                    <span class="label">Humedad</span>
+                    <span id="humedad"></span>
+                </div>
+                <div class="detalle">
+                    <span class="label">Viento</span>
+                    <span id="viento"></span>
+                </div>
+                <div class="detalle">
+                    <span class="label">Visibilidad</span>
+                    <span id="visibilidad"></span>
+                </div>
+            </div>
+        </div>
+
+        <div id="pronostico" class="oculto">
+            <h2>Pronóstico 5 días</h2>
+            <div id="dias"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

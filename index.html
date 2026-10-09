@@ -159,57 +159,121 @@
                 </div>
 
                 <div class="projects-grid">
-                    <!-- Tarjeta 1 -->
-                    <div class="project-card">
-                        <div class="project-img">
-                            <!-- Reemplaza con imagen real -->
-                            <span>🎨 Mockup Web</span>
-                        </div>
-                        <div class="project-body">
-                            <h4>Laika — Sitio web</h4>
-                            <p>Proyecto práctico completo: sitio web de tienda de mascotas con CSS puro.</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                            </div>
-                            <a href="./proyectos/frontend/laika/" class="project-link">Ver proyecto <i
-                                    class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
 
-                    <!-- Tarjeta 2 -->
-                    <div class="project-card">
+                    <!-- Proyecto 1: Calculadora -->
+                    <article class="project-card">
                         <div class="project-img">
-                            <span>🗄️ Mockup CRUD</span>
+                            <!-- Sube una captura a assets/img/proyectos/calculadora.webp -->
+                            <img src="./assets/img/proyectos/calculadora.webp" alt="Calculadora web" loading="lazy">
                         </div>
                         <div class="project-body">
-                            <h4>CRUD MySQL — Por capas</h4>
-                            <p>Variación del CRUD con estructura por capas: config, models y services.</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">MySQL</span>
-                            </div>
-                            <a href="./proyectos/backend/crud-mysql-2/index.html" class="project-link">Ver proyecto <i
-                                    class="fa-solid fa-arrow-right"></i></a>
+                            <h3>Calculadora Web</h3>
+                            <p>Calculadora funcional con operaciones básicas, manejo de errores y diseño responsive.</p>
+                            <ul class="tech-stack">
+                                <li class="tech-tag">HTML5</li>
+                                <li class="tech-tag">CSS3</li>
+                                <li class="tech-tag">JavaScript</li>
+                            </ul>
+                            <a href="./proyectos/JS/01-Calculadora/index.html" class="project-link">
+                                Ver proyecto <i class="fa-solid fa-arrow-right"></i>
+                            </a>
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- Tarjeta 3 -->
-                    <div class="project-card">
+                    <!-- Proyecto 2: App Tareas -->
+                    <article class="project-card">
                         <div class="project-img">
-                            <span>📊 Mockup App</span>
+                            <img src="./assets/img/proyectos/tareas.webp" alt="App de tareas" loading="lazy">
                         </div>
                         <div class="project-body">
-                            <h4>Material de exposición</h4>
-                            <p>Demos y ejemplos usados en exposiciones: tooltips, scrollspy y más.</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">Bootstrap</span>
-                            </div>
-                            <a href="./proyectos/frontend/exposicion/OperPan-Bootstrap.pdf" class="project-link">Ver
-                                proyecto <i class="fa-solid fa-arrow-right"></i></a>
+                            <h3>App de Tareas</h3>
+                            <p>Gestor de tareas con persistencia en <code>localStorage</code>, filtros por estado y categorías.</p>
+                            <ul class="tech-stack">
+                                <li class="tech-tag">JavaScript</li>
+                                <li class="tech-tag">LocalStorage</li>
+                            </ul>
+                            <a href="./proyectos/JS/02-App-tareas/index.html" class="project-link">
+                                Ver proyecto <i class="fa-solid fa-arrow-right"></i>
+                            </a>
                         </div>
-                    </div>
+                    </article>
+
+                    <!-- Proyecto 3: Dashboard Clima -->
+                    <article class="project-card">
+                        <div class="project-img">
+                            <img src="./assets/img/proyectos/clima.webp" alt="Dashboard del clima" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <h3>Dashboard del Clima</h3>
+                            <p>Consumo de API OpenWeather con Chart.js para pronóstico a 5 días y búsqueda por ciudad.</p>
+                            <ul class="tech-stack">
+                                <li class="tech-tag">JavaScript</li>
+                                <li class="tech-tag">API REST</li>
+                                <li class="tech-tag">Chart.js</li>
+                            </ul>
+                            <a href="./proyectos/JS/03-Dashboard-clima/index.html" class="project-link">
+                                Ver proyecto <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 4: Laika -->
+                    <article class="project-card">
+                        <div class="project-img">
+                            <img src="./assets/img/proyectos/laika.webp" alt="Tienda de mascotas Laika" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <h3>Laika — Tienda de mascotas</h3>
+                            <p>Sitio responsive con HTML y CSS puro: header fijo, menú desplegable y grillas Flexbox.</p>
+                            <ul class="tech-stack">
+                                <li class="tech-tag">HTML5</li>
+                                <li class="tech-tag">CSS3</li>
+                                <li class="tech-tag">Flexbox</li>
+                            </ul>
+                            <a href="./proyectos/frontend/laika/index.html" class="project-link">
+                                Ver proyecto <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 5: Backend CRUD -->
+                    <article class="project-card">
+                        <div class="project-img">
+                            <img src="./assets/img/proyectos/crud.webp" alt="CRUD MySQL por capas" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <h3>CRUD MySQL por capas</h3>
+                            <p>Sistema CRUD en Python con arquitectura por capas: <code>config/</code>, <code>models/</code> y <code>services/</code>.</p>
+                            <ul class="tech-stack">
+                                <li class="tech-tag">Python</li>
+                                <li class="tech-tag">MySQL</li>
+                                <li class="tech-tag">POO</li>
+                            </ul>
+                            <!-- Los proyectos de Python no corren en el navegador, así que enviamos a GitHub -->
+                            <a href="https://github.com/EddierPaz/Portafolio-Eddier-Paz/tree/main/proyectos/backend/crud-mysql-1" target="_blank" rel="noopener" class="project-link">
+                                Ver en GitHub <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 6: Fundamentos POO -->
+                    <article class="project-card">
+                        <div class="project-img">
+                            <img src="./assets/img/proyectos/poo.webp" alt="Fundamentos de POO en Python" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <h3>Fundamentos POO</h3>
+                            <p>Prácticas de Programación Orientada a Objetos: clases, herencia, encapsulamiento y polimorfismo.</p>
+                            <ul class="tech-stack">
+                                <li class="tech-tag">Python</li>
+                                <li class="tech-tag">POO</li>
+                            </ul>
+                            <a href="https://github.com/EddierPaz/Portafolio-Eddier-Paz/tree/main/proyectos/backend/fundamentos-poo" target="_blank" rel="noopener" class="project-link">
+                                Ver en GitHub <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </article>
+
                 </div>
             </div>
         </section>

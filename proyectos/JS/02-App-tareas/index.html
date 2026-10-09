@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Tareas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="contenedor">
+    <h1>Mis Tareas</h1>
+
+    <div class="input-area">
+      <input type="text" id="input-tarea" placeholder="Nueva tarea...">
+      <select id="categoria">
+        <option value="personal">Personal</option>
+        <option value="estudio">Estudio</option>
+        <option value="trabajo">Trabajo</option>
+      </select>
+      <button onclick="agregarTarea()">Agregar</button>
+    </div>
+
+    <div class="filtros">
+      <button onclick="filtrar('todas')" class="activo">Todas</button>
+      <button onclick="filtrar('pendiente')">Pendientes</button>
+      <button onclick="filtrar('completada')">Completadas</button>
+    </div>
+
+    <ul id="lista-tareas"></ul>
+
+    <div class="stats">
+      <span id="total">0 tareas</span>
+      <span id="completadas">0 completadas</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

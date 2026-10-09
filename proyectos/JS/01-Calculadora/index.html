@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora — Eddier Paz</title>
+
+    <!-- Fuente Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome (iconos del nav) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS del proyecto -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS compartido del nav -->
+    <link rel="stylesheet" href="../../../assets/css/portafolio_nav.css">
+</head>
+
+<body>
+
+    <!-- ============ NAV COMPARTIDO ============ -->
+    <nav class="portfolio-nav">
+        <a href="../../../index.html" class="pnav-brand" aria-label="Ir al inicio del portafolio">EP</a>
+
+        <a href="../../../index.html#proyectos" class="pnav-back" aria-label="Volver al portafolio">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Volver al portafolio</span>
+        </a>
+
+        <div class="pnav-actions">
+            <button id="pnav-dark-toggle" class="pnav-icon-btn" aria-label="Cambiar tema oscuro/claro">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <a href="../../../index.html#juego" class="pnav-game-btn" aria-label="Abrir modo universo">
+                <span class="pnav-game-icon">🎮</span>
+                <span class="pnav-game-text">Modo Juego</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- ============ CONTENIDO CENTRADO ============ -->
+    <main class="page-wrap">
+        <div class="calculadora">
+            <a href="#" class="logo">CalculaRapido</a>
+            <div id="pantalla">0</div>
+            <div class="botones">
+                <button onclick="limpiar()">C</button>
+                <button onclick="borrar()">⌫</button>
+                <button onclick="agregar('%')">%</button>
+                <button onclick="agregar('/')" class="operador">÷</button>
+
+                <button onclick="agregar('7')">7</button>
+                <button onclick="agregar('8')">8</button>
+                <button onclick="agregar('9')">9</button>
+                <button onclick="agregar('*')" class="operador">×</button>
+
+                <button onclick="agregar('4')">4</button>
+                <button onclick="agregar('5')">5</button>
+                <button onclick="agregar('6')">6</button>
+                <button onclick="agregar('-')" class="operador">−</button>
+
+                <button onclick="agregar('1')">1</button>
+                <button onclick="agregar('2')">2</button>
+                <button onclick="agregar('3')">3</button>
+                <button onclick="agregar('+')" class="operador">+</button>
+
+                <button onclick="agregar('0')" class="cero">0</button>
+                <button onclick="agregar('.')">.</button>
+                <button onclick="calcular()" class="igual">=</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script src="script.js"></script>
+    <script src="../../../assets/js/portafolio_nav.js"></script>
+</body>
+
+</html>

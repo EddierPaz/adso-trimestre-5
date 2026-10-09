@@ -1,59 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // ============================================
-    // PARTE 1: MODO LECTURA (funcionalidad existente)
+    // REFERENCIAS AL DOM
     // ============================================
-
     const body = document.body;
     const darkmodeBtn = document.getElementById('darkmode-toggle');
     const darkmodeIcon = darkmodeBtn.querySelector('i');
+    const gameToggle = document.getElementById('game-toggle');
+    const gameIcon = gameToggle.querySelector('#game-icon');
+    const gameText = gameToggle.querySelector('#game-text');
 
-    // Tema oscuro/claro
-    darkmodeBtn.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-        if (body.classList.contains('dark-mode')) {
-            darkmodeIcon.classList.remove('fa-moon');
-            darkmodeIcon.classList.add('fa-sun');
-        } else {
-            darkmodeIcon.classList.remove('fa-sun');
-            darkmodeIcon.classList.add('fa-moon');
-        }
-    });
-
-    // Navegación activa por scroll
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            const sectionHeight = section.clientHeight;
-            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
-            }
-        });
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
-
-    // Filtros de proyectos (modo lectura)
-    const filterBtns = document.querySelectorAll('.btn-filter');
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-        });
-    });
-
-    // ============================================
-    // PARTE 2: MODO UNIVERSO (nueva funcionalidad)
-    // ============================================
-
-    // --- Referencias a elementos del universo ---
     const container = document.getElementById('universe-container');
     const canvas = document.getElementById('universe-canvas');
     const ctx = canvas.getContext('2d');
@@ -61,145 +17,266 @@ document.addEventListener('DOMContentLoaded', () => {
     const panel = document.getElementById('project-panel');
     const closePanelBtn = document.getElementById('close-panel-btn');
     const filterUniverseBtns = document.querySelectorAll('.universe-filter');
-
-    // NUEVO: Botón para salir del universo (Modo Lectura)
     const exitUniverseBtn = document.getElementById('exit-universe-btn');
 
-    // --- Cursor personalizado ---
+    // Cursor personalizado
     const cursorEl = document.createElement('div');
     cursorEl.className = 'universe-cursor';
     document.body.appendChild(cursorEl);
 
-    // --- Datos de proyectos y tecnologías ---
-    const projectsData = {
-        'operpan': {
-            id: 'operpan',
-            name: 'OperPan',
-            subtitle: 'Sistema de Gestión de Personal',
-            status: 'Destacado',
-            year: '2026',
-            description: 'Sistema web desarrollado para optimizar procesos administrativos de personal. Incluye módulos de empleados, horarios, permisos y reportes.',
-            technologies: ['Django', 'Python', 'MySQL', 'JavaScript', 'Bootstrap', 'HTML', 'CSS'],
-            category: 'sistemas',
-            link: '#',
-            repo: '#',
-            gallery: ['Dashboard', 'Empleados', 'Horarios', 'Permisos', 'Reportes'],
-            x: 0,
-            y: 0,
-            radius: 65,
-            glowColor: '#7C3AED'
-        },
-        'crud-mysql': {
-            id: 'crud-mysql',
-            name: 'CRUD MySQL',
-            subtitle: 'Backend / Base de datos',
-            status: 'Completado',
-            year: '2025',
-            description: 'Implementación de CRUD con Python y MySQL, siguiendo una arquitectura por capas.',
-            technologies: ['Python', 'MySQL'],
-            category: 'backend',
-            link: '#',
-            repo: '#',
-            gallery: ['Estructura', 'Conexión', 'Operaciones'],
-            x: 0,
-            y: 0,
-            radius: 45,
-            glowColor: '#38BDF8'
-        },
-        'laika': {
-            id: 'laika',
-            name: 'Laika',
-            subtitle: 'Sitio web de tienda de mascotas',
-            status: 'Frontend',
-            year: '2025',
-            description: 'Proyecto práctico de frontend: tienda de mascotas con diseño responsivo y CSS puro.',
-            technologies: ['HTML', 'CSS'],
-            category: 'web',
-            link: '#',
-            repo: '#',
-            gallery: ['Home', 'Productos', 'Contacto'],
-            x: 0,
-            y: 0,
-            radius: 35,
-            glowColor: '#FFB050'
-        },
-        'portafolio': {
-            id: 'portafolio',
-            name: 'Portafolio Personal',
-            subtitle: 'Frontend / Identidad digital',
-            status: 'Activo',
-            year: '2026',
-            description: 'Mi portafolio personal que estás explorando ahora. Desarrollado con HTML, CSS y JavaScript puro.',
-            technologies: ['HTML', 'CSS', 'JavaScript'],
-            category: 'web',
-            link: '#',
-            repo: '#',
-            gallery: ['Diseño', 'Modo Lectura', 'Modo Universo'],
-            x: 0,
-            y: 0,
-            radius: 40,
-            glowColor: '#22D3EE'
-        }
-    };
+    // ============================================
+    // MODO LECTURA — TEMA Y NAVEGACIÓN
+    // ============================================
+    darkmodeBtn.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        const isDark = body.classList.contains('dark-mode');
+        darkmodeIcon.classList.toggle('fa-moon', !isDark);
+        darkmodeIcon.classList.toggle('fa-sun', isDark);
+    });
 
-    // Lista de tecnologías únicas
-    const allTechs = ['Django', 'Python', 'MySQL', 'JavaScript', 'Bootstrap', 'HTML', 'CSS'];
-
-    // Mapa tecnología -> proyectos
-    const techToProjects = {};
-    allTechs.forEach(tech => {
-        techToProjects[tech] = [];
-        Object.values(projectsData).forEach(p => {
-            if (p.technologies.includes(tech)) {
-                techToProjects[tech].push(p.id);
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const top = section.offsetTop - 100;
+            if (scrollY >= top && scrollY < top + section.clientHeight) {
+                current = section.getAttribute('id');
             }
+        });
+        navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
         });
     });
 
-    // --- Estado del universo ---
-    const state = {
-        offsetX: 0,
-        offsetY: 0,
-        zoom: 1,
-        isDragging: false,
-        dragStartX: 0,
-        dragStartY: 0,
-        startOffsetX: 0,
-        startOffsetY: 0,
-        selectedProject: null,
-        hoveredProject: null,
-        filter: 'all',
-        animFrame: null,
-        particles: [],
-        stars: [],
-        time: 0
+    document.querySelectorAll('.btn-filter').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        });
+    });
+
+    // ============================================
+    // DATOS DE PROYECTOS
+    // ============================================
+    const projectsData = {
+        // ============ BACKEND (Python + MySQL) ============
+        'crud-mysql-1': {
+            id: 'crud-mysql-1',
+            name: 'CRUD MySQL',
+            subtitle: 'Backend / Arquitectura básica',
+            status: 'Completado',
+            year: '2025',
+            description: 'CRUD completo en Python con conexión a MySQL. Implementa operaciones Crear, Leer, Actualizar y Eliminar con Programación Orientada a Objetos.',
+            technologies: ['Python', 'MySQL', 'POO'],
+            category: 'backend',
+            link: 'https://github.com/EddierPaz/Portafolio-Eddier-Paz/tree/main/proyectos/backend/crud-mysql-1',
+            repo: 'https://github.com/EddierPaz/Portafolio-Eddier-Paz/tree/main/proyectos/backend/crud-mysql-1',
+            gallery: ['Estructura', 'Conexión', 'CRUD'],
+            x: 0, y: 0, radius: 55, glowColor: '#3776AB'
+        },
+        'crud-mysql-2': {
+            id: 'crud-mysql-2',
+            name: 'CRUD MySQL v2',
+            subtitle: 'Backend / Por capas',
+            status: 'Completado',
+            year: '2025',
+            description: 'Segunda versión del CRUD con arquitectura por capas: config/, models/ y services/ para separar responsabilidades.',
+            technologies: ['Python', 'MySQL', 'POO'],
+            category: 'backend',
+            link: 'https://github.com/EddierPaz/Portafolio-Eddier-Paz/tree/main/proyectos/backend/crud-mysql-2',
+            repo: 'https://github.com/EddierPaz/Portafolio-Eddier-Paz/tree/main/proyectos/backend/crud-mysql-2',
+            gallery: ['Config', 'Models', 'Services'],
+            x: 0, y: 0, radius: 50, glowColor: '#1E40AF'
+        },
+        'crud-operpan': {
+            id: 'crud-operpan',
+            name: 'CRUD OperPan',
+            subtitle: 'Backend / Sistema real',
+            status: 'Destacado',
+            year: '2025',
+            description: 'CRUD aplicado a un caso real: gestión de operaciones y panadería. Incluye módulos de productos, ventas y clientes.',
+            technologies: ['Python', 'MySQL', 'POO'],
+            category: 'backend',
+            link: 'https://github.com/EddierPaz/Portafolio-Eddier-Paz/tree/main/proyectos/backend/crud-mysql-operpan',
+            repo: 'https://github.com/EddierPaz/Portafolio-Eddier-Paz/tree/main/proyectos/backend/crud-mysql-operpan',
+            gallery: ['Productos', 'Ventas', 'Clientes', 'Reportes'],
+            x: 0, y: 0, radius: 60, glowColor: '#7C3AED'
+        },
+        'poo': {
+            id: 'poo',
+            name: 'Fundamentos POO',
+            subtitle: 'Backend / POO',
+            status: 'Completado',
+            year: '2025',
+            description: 'Prácticas de POO en Python: clases, herencia, encapsulamiento, polimorfismo, métodos especiales y abstracción.',
+            technologies: ['Python', 'POO'],
+            category: 'backend',
+            link: 'https://github.com/EddierPaz/Portafolio-Eddier-Paz/tree/main/proyectos/backend/fundamentos-poo',
+            repo: 'https://github.com/EddierPaz/Portafolio-Eddier-Paz/tree/main/proyectos/backend/fundamentos-poo',
+            gallery: ['Clases', 'Herencia', 'Polimorfismo'],
+            x: 0, y: 0, radius: 45, glowColor: '#FFD43B'
+        },
+
+        // ============ FRONTEND (HTML + CSS) ============
+        'laika': {
+            id: 'laika',
+            name: 'Laika',
+            subtitle: 'Frontend / CSS puro',
+            status: 'Destacado',
+            year: '2025',
+            description: 'Tienda de mascotas con diseño responsive: header fijo, menú desplegable, grillas Flexbox y secciones con imágenes.',
+            technologies: ['HTML', 'CSS', 'Flexbox'],
+            category: 'web',
+            link: './proyectos/frontend/laika/index.html',
+            repo: 'https://github.com/EddierPaz/Portafolio-Eddier-Paz/tree/main/proyectos/frontend/laika',
+            gallery: ['Home', 'Menú', 'Productos', 'Footer'],
+            x: 0, y: 0, radius: 65, glowColor: '#FFB050'
+        },
+        'laika-bootstrap': {
+            id: 'laika-bootstrap',
+            name: 'Laika Bootstrap',
+            subtitle: 'Frontend / Bootstrap 5',
+            status: 'Completado',
+            year: '2025',
+            description: 'Reconstrucción del sitio Laika con Bootstrap: grillas responsive, carousels, mega-menús y componentes nativos.',
+            technologies: ['HTML', 'CSS', 'Bootstrap'],
+            category: 'web',
+            link: './proyectos/frontend/laika-bootstrap/index.html',
+            repo: 'https://github.com/EddierPaz/Portafolio-Eddier-Paz/tree/main/proyectos/frontend/laika-bootstrap',
+            gallery: ['Carousel', 'Grid', 'Mega-menu', 'Cards'],
+            x: 0, y: 0, radius: 60, glowColor: '#7952B3'
+        },
+        'flexbox': {
+            id: 'flexbox',
+            name: 'Guía Flexbox',
+            subtitle: 'Frontend / Layouts modernos',
+            status: 'Completado',
+            year: '2025',
+            description: 'Ejercicios prácticos de Flexbox: contenedores, ítems, direcciones, alineación y proporciones comentadas paso a paso.',
+            technologies: ['HTML', 'CSS', 'Flexbox'],
+            category: 'web',
+            link: './proyectos/frontend/flexbox/index.html',
+            repo: 'https://github.com/EddierPaz/Portafolio-Eddier-Paz/tree/main/proyectos/frontend/flexbox',
+            gallery: ['Row', 'Column', 'flex: 3 vs 1'],
+            x: 0, y: 0, radius: 40, glowColor: '#06B6D4'
+        },
+        'bootstrap': {
+            id: 'bootstrap',
+            name: 'Bootstrap Completo',
+            subtitle: 'Frontend / Componentes',
+            status: 'Completado',
+            year: '2025',
+            description: 'Ejercicios con el sistema de grillas, cards, modals, navbar, carousels y utilidades de Bootstrap 5.',
+            technologies: ['HTML', 'CSS', 'Bootstrap'],
+            category: 'web',
+            link: './proyectos/frontend/bootstrap/index.html',
+            repo: 'https://github.com/EddierPaz/Portafolio-Eddier-Paz/tree/main/proyectos/frontend/bootstrap',
+            gallery: ['Grid', 'Cards', 'Modals', 'Forms'],
+            x: 0, y: 0, radius: 45, glowColor: '#563D7C'
+        },
+        'exposicion': {
+            id: 'exposicion',
+            name: 'Material Exposición',
+            subtitle: 'Frontend / Demos',
+            status: 'Completado',
+            year: '2025',
+            description: 'Demos usados en exposiciones: tooltips, scrollspy, Popovers y ejemplos de componentes interactivos.',
+            technologies: ['HTML', 'Bootstrap'],
+            category: 'web',
+            link: './proyectos/frontend/exposicion/',
+            repo: 'https://github.com/EddierPaz/Portafolio-Eddier-Paz/tree/main/proyectos/frontend/exposicion',
+            gallery: ['Tooltips', 'Scrollspy', 'Popovers'],
+            x: 0, y: 0, radius: 38, glowColor: '#F59E0B'
+        },
+
+        // ============ JAVASCRIPT (Apps interactivas) ============
+        'calculadora': {
+            id: 'calculadora',
+            name: 'Calculadora',
+            subtitle: 'JS / Lógica y DOM',
+            status: 'Completado',
+            year: '2026',
+            description: 'Calculadora funcional con operaciones básicas, manejo de errores y diseño limpio. Usa eval() controlado y actualización en tiempo real.',
+            technologies: ['HTML', 'CSS', 'JavaScript'],
+            category: 'js',
+            link: './proyectos/JS/01-Calculadora/index.html',
+            repo: 'https://github.com/EddierPaz/Portafolio-Eddier-Paz/tree/main/proyectos/JS/01-Calculadora',
+            gallery: ['Interfaz', 'Operaciones', 'Errores'],
+            x: 0, y: 0, radius: 42, glowColor: '#F7DF1E'
+        },
+        'tareas': {
+            id: 'tareas',
+            name: 'App de Tareas',
+            subtitle: 'JS / LocalStorage',
+            status: 'Completado',
+            year: '2026',
+            description: 'Gestor de tareas con persistencia en localStorage, filtros por estado (todas/pendientes/completadas) y categorías personalizables.',
+            technologies: ['HTML', 'CSS', 'JavaScript'],
+            category: 'js',
+            link: './proyectos/JS/02-App-tareas/index.html',
+            repo: 'https://github.com/EddierPaz/Portafolio-Eddier-Paz/tree/main/proyectos/JS/02-App-tareas',
+            gallery: ['Lista', 'Filtros', 'Estadísticas'],
+            x: 0, y: 0, radius: 48, glowColor: '#E94560'
+        },
+        'clima': {
+            id: 'clima',
+            name: 'Dashboard Clima',
+            subtitle: 'JS / API REST + Chart.js',
+            status: 'Destacado',
+            year: '2026',
+            description: 'Consumo de la API OpenWeather con gráficas de pronóstico a 5 días usando Chart.js. Incluye búsqueda por ciudad y detalles de humedad, viento y visibilidad.',
+            technologies: ['JavaScript', 'API REST', 'Chart.js'],
+            category: 'js',
+            link: './proyectos/JS/03-Dashboard-clima/index.html',
+            repo: 'https://github.com/EddierPaz/Portafolio-Eddier-Paz/tree/main/proyectos/JS/03-Dashboard-clima',
+            gallery: ['Clima actual', 'Pronóstico', 'Gráfica', 'Búsqueda'],
+            x: 0, y: 0, radius: 55, glowColor: '#22D3EE'
+        }
     };
 
-    // --- Layout: distribución de planetas ---
-    const layoutRadius = 280;
+    // ============================================
+    // ESTADO DEL UNIVERSO
+    // ============================================
+    const state = {
+        offsetX: 0, offsetY: 0, zoom: 1,
+        isDragging: false, dragStartX: 0, dragStartY: 0,
+        startOffsetX: 0, startOffsetY: 0,
+        selectedProject: null, hoveredProject: null,
+        filter: 'all', animFrame: null,
+        particles: [], stars: [], time: 0
+    };
+
     const techOrbitMultiplier = 1.8;
 
+    // ✅ LAYOUT CORREGIDO: dos anillos concéntricos con los 12 proyectos reales
     function layoutPlanets() {
         const ids = Object.keys(projectsData);
-        const count = ids.length;
-        const angleStep = (Math.PI * 2) / count;
-        let startAngle = -Math.PI / 2;
-        // Ordenar para que OperPan esté arriba
-        const ordered = ['operpan', 'crud-mysql', 'laika', 'portafolio'];
-        ordered.forEach((id, index) => {
-            const angle = startAngle + index * angleStep;
-            const p = projectsData[id];
-            p.x = Math.cos(angle) * layoutRadius;
-            p.y = Math.sin(angle) * layoutRadius;
+        const startAngle = -Math.PI / 2;
+
+        // Anillo interior: backend (4 proyectos)
+        const innerRing = ids.filter(id => projectsData[id].category === 'backend');
+        // Anillo exterior: resto (frontend + js)
+        const outerRing = ids.filter(id => projectsData[id].category !== 'backend');
+
+        innerRing.forEach((id, i) => {
+            const angle = startAngle + (i * (Math.PI * 2)) / innerRing.length;
+            projectsData[id].x = Math.cos(angle) * 280;
+            projectsData[id].y = Math.sin(angle) * 280;
+        });
+
+        outerRing.forEach((id, i) => {
+            const angle = startAngle + ((i + 0.5) * (Math.PI * 2)) / outerRing.length;
+            projectsData[id].x = Math.cos(angle) * 580;
+            projectsData[id].y = Math.sin(angle) * 580;
         });
     }
     layoutPlanets();
 
-    // --- Partículas y estrellas ---
+    // Partículas y estrellas
     function initParticles() {
-        const count = 120;
         state.particles = [];
-        for (let i = 0; i < count; i++) {
+        for (let i = 0; i < 120; i++) {
             state.particles.push({
                 x: (Math.random() - 0.5) * 2000,
                 y: (Math.random() - 0.5) * 2000,
@@ -210,12 +287,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
-    initParticles();
-
     function initStars() {
-        const count = 300;
         state.stars = [];
-        for (let i = 0; i < count; i++) {
+        for (let i = 0; i < 300; i++) {
             state.stars.push({
                 x: (Math.random() - 0.5) * 3000,
                 y: (Math.random() - 0.5) * 3000,
@@ -224,9 +298,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+    initParticles();
     initStars();
 
-    // --- Funciones de dibujo ---
+    // ============================================
+    // FUNCIONES DE DIBUJO
+    // ============================================
     function drawBackground() {
         const grad = ctx.createRadialGradient(
             state.offsetX, state.offsetY, 0,
@@ -280,7 +357,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const cy = (project.y + state.offsetY) * state.zoom + canvas.height / 2;
         const radius = project.radius * state.zoom;
 
-        // Glow
         const glowSize = isSelected ? radius * 3 : (isHovered ? radius * 2.5 : radius * 1.8);
         const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, glowSize);
         grad.addColorStop(0, project.glowColor + '40');
@@ -290,7 +366,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.arc(cx, cy, glowSize, 0, Math.PI * 2);
         ctx.fill();
 
-        // Cuerpo del planeta
         const grad2 = ctx.createRadialGradient(cx - radius * 0.2, cy - radius * 0.2, radius * 0.1, cx, cy, radius);
         grad2.addColorStop(0, '#F8FAFC');
         grad2.addColorStop(0.3, project.glowColor);
@@ -303,14 +378,12 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.lineWidth = 1.5 * state.zoom;
         ctx.stroke();
 
-        // Nombre
         ctx.fillStyle = '#F8FAFC';
         ctx.font = `${14 * state.zoom}px Poppins, sans-serif`;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'bottom';
         ctx.fillText(project.name, cx, cy - radius - 12 * state.zoom);
 
-        // Etiqueta "EXPLORAR" en hover
         if (isHovered) {
             ctx.fillStyle = '#7C3AED';
             ctx.font = `12px Poppins, sans-serif`;
@@ -318,30 +391,34 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.fillText('✦ EXPLORAR', cx, cy + radius + 6 * state.zoom);
         }
 
-        // Satélites (tecnologías)
         const techAngleStep = (Math.PI * 2) / project.technologies.length;
         project.technologies.forEach((tech, index) => {
             const angle = state.time * 0.15 + index * techAngleStep;
             const orbitRadius = project.radius * techOrbitMultiplier * state.zoom;
             const sx = cx + Math.cos(angle) * orbitRadius;
             const sy = cy + Math.sin(angle) * orbitRadius;
-            // Línea de conexión
+
             ctx.beginPath();
             ctx.moveTo(cx, cy);
             ctx.lineTo(sx, sy);
             ctx.strokeStyle = 'rgba(34, 211, 238, 0.15)';
             ctx.lineWidth = 1 * state.zoom;
             ctx.stroke();
-            // Satélite
-            const techRadius = 6 * state.zoom;
+
             ctx.beginPath();
-            ctx.arc(sx, sy, techRadius, 0, Math.PI * 2);
+            ctx.arc(sx, sy, 6 * state.zoom, 0, Math.PI * 2);
             ctx.fillStyle = '#22D3EE';
             ctx.shadowColor = '#22D3EE';
             ctx.shadowBlur = 12 * state.zoom;
             ctx.fill();
             ctx.shadowBlur = 0;
         });
+    }
+
+    function isProjectVisible(project) {
+        return state.filter === 'all'
+            || project.category === state.filter
+            || project.technologies.some(t => t.toLowerCase() === state.filter);
     }
 
     function drawUniverse() {
@@ -351,26 +428,18 @@ document.addEventListener('DOMContentLoaded', () => {
         drawStars();
         drawParticles();
 
-        const projectIds = Object.keys(projectsData);
-        // Dibujar órbitas primero
-        projectIds.forEach(id => {
-            const project = projectsData[id];
-            const isVisible = (state.filter === 'all' || project.category === state.filter || project.technologies.some(t => t.toLowerCase() === state.filter));
-            if (isVisible) drawOrbit(project);
+        Object.keys(projectsData).forEach(id => {
+            if (isProjectVisible(projectsData[id])) drawOrbit(projectsData[id]);
         });
 
-        // Dibujar planetas
-        projectIds.forEach(id => {
+        Object.keys(projectsData).forEach(id => {
             const project = projectsData[id];
-            const isVisible = (state.filter === 'all' || project.category === state.filter || project.technologies.some(t => t.toLowerCase() === state.filter));
-            ctx.globalAlpha = isVisible ? 1 : 0.25;
-            const isSelected = state.selectedProject === id;
-            const isHovered = state.hoveredProject === id;
-            drawPlanet(project, isSelected, isHovered);
+            const visible = isProjectVisible(project);
+            ctx.globalAlpha = visible ? 1 : 0.25;
+            drawPlanet(project, state.selectedProject === id, state.hoveredProject === id);
             ctx.globalAlpha = 1;
         });
 
-        // Título sutil
         ctx.fillStyle = 'rgba(255,255,255,0.03)';
         ctx.font = '60px Poppins, sans-serif';
         ctx.textAlign = 'center';
@@ -378,21 +447,21 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.fillText('EP — PROJECT UNIVERSE', canvas.width / 2, canvas.height / 2 - 150);
     }
 
-    // --- Animación ---
     function animate() {
         state.time += 1 / 60;
         drawUniverse();
         state.animFrame = requestAnimationFrame(animate);
     }
 
-    // --- Redimensionar canvas ---
     function resizeCanvas() {
         const rect = container.getBoundingClientRect();
         canvas.width = rect.width;
         canvas.height = rect.height;
     }
 
-    // --- Eventos del canvas ---
+    // ============================================
+    // COORDENADAS Y EVENTOS DEL CANVAS
+    // ============================================
     function getCanvasCoords(e) {
         const rect = canvas.getBoundingClientRect();
         const clientX = e.clientX || (e.touches && e.touches[0].clientX);
@@ -427,26 +496,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleMouseMove(e) {
         const pos = getUniverseCoords(e);
-        // Detectar hover
         let hovered = null;
         for (let id of Object.keys(projectsData)) {
             const p = projectsData[id];
             const dx = pos.ux - p.x;
             const dy = pos.uy - p.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < p.radius * 1.2) {
+            if (Math.sqrt(dx * dx + dy * dy) < p.radius * 1.2) {
                 hovered = id;
                 break;
             }
         }
         state.hoveredProject = hovered;
 
-        // Cursor personalizado
         if (hovered) {
             cursorEl.classList.add('hover-planet');
-            cursorEl.classList.remove('hover-tech');
         } else {
-            cursorEl.classList.remove('hover-planet', 'hover-tech');
+            cursorEl.classList.remove('hover-planet');
         }
 
         if (state.isDragging) {
@@ -456,7 +521,6 @@ document.addEventListener('DOMContentLoaded', () => {
             state.offsetY = state.startOffsetY + dy / state.zoom;
         }
 
-        // Posicionar cursor
         const clientX = e.clientX || (e.touches && e.touches[0].clientX);
         const clientY = e.clientY || (e.touches && e.touches[0].clientY);
         if (clientX !== undefined) {
@@ -465,7 +529,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function handleMouseUp(e) {
+    function handleMouseUp() {
         state.isDragging = false;
         canvas.style.cursor = 'grab';
     }
@@ -478,17 +542,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const p = projectsData[id];
             const dx = pos.ux - p.x;
             const dy = pos.uy - p.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < p.radius * 1.5) {
+            if (Math.sqrt(dx * dx + dy * dy) < p.radius * 1.5) {
                 clicked = id;
                 break;
             }
         }
-        if (clicked) {
-            selectProject(clicked);
-        } else {
-            closePanel();
-        }
+        clicked ? selectProject(clicked) : closePanel();
     }
 
     function handleWheel(e) {
@@ -497,11 +556,12 @@ document.addEventListener('DOMContentLoaded', () => {
         state.zoom = Math.min(Math.max(state.zoom + delta, 0.5), 2.5);
     }
 
-    // --- Selección de proyecto ---
+    // ============================================
+    // PANEL DE PROYECTO
+    // ============================================
     function selectProject(id) {
         state.selectedProject = id;
-        const project = projectsData[id];
-        openPanel(project);
+        openPanel(projectsData[id]);
     }
 
     function openPanel(project) {
@@ -540,7 +600,6 @@ document.addEventListener('DOMContentLoaded', () => {
         state.selectedProject = null;
     }
 
-    // --- Filtros ---
     function applyFilter(filter) {
         state.filter = filter;
         filterUniverseBtns.forEach(btn => {
@@ -548,60 +607,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Centrar universo ---
     function centerUniverse() {
         state.offsetX = 0;
         state.offsetY = 0;
         state.zoom = 1;
         closePanel();
-        state.selectedProject = null;
     }
 
-    // ============================================================
-    // NUEVA FUNCIÓN: Salir del universo (volver al modo lectura)
-    // ============================================================
-    function exitUniverse() {
-        // Si el modo juego está activo, lo desactivamos
-        if (body.classList.contains('game-mode')) {
-            body.classList.remove('game-mode');
-            // Actualizar el botón del header
-            gameIcon.textContent = '🎮';
-            gameText.textContent = 'Modo Juego';
-            // Detener animaciones y limpiar
-            stopUniverse();
-            // Restaurar scroll
-            document.body.style.overflow = '';
-            // El observer se encarga de ocultar el contenedor
-        }
-    }
+    // ============================================
+    // CONTROL DEL UNIVERSO
+    // ============================================
+    let listenersAttached = false;
 
-    // --- Iniciar / detener universo ---
     function startUniverse() {
+        void container.offsetWidth; // forzar reflow antes de medir
         resizeCanvas();
         centerUniverse();
         cursorEl.style.display = 'block';
+
         if (state.animFrame) cancelAnimationFrame(state.animFrame);
         animate();
 
-        canvas.addEventListener('mousedown', handleMouseDown);
-        canvas.addEventListener('mousemove', handleMouseMove);
-        canvas.addEventListener('mouseup', handleMouseUp);
-        canvas.addEventListener('click', handleClick);
-        canvas.addEventListener('wheel', handleWheel, { passive: false });
-        canvas.addEventListener('touchstart', handleMouseDown, { passive: false });
-        canvas.addEventListener('touchmove', handleMouseMove, { passive: false });
-        canvas.addEventListener('touchend', handleMouseUp);
-        window.addEventListener('resize', resizeCanvas);
+        if (!listenersAttached) {
+            canvas.addEventListener('mousedown', handleMouseDown);
+            canvas.addEventListener('mousemove', handleMouseMove);
+            canvas.addEventListener('mouseup', handleMouseUp);
+            canvas.addEventListener('click', handleClick);
+            canvas.addEventListener('wheel', handleWheel, { passive: false });
+            canvas.addEventListener('touchstart', handleMouseDown, { passive: false });
+            canvas.addEventListener('touchmove', handleMouseMove, { passive: false });
+            canvas.addEventListener('touchend', handleMouseUp);
+            window.addEventListener('resize', resizeCanvas);
 
-        filterUniverseBtns.forEach(btn => {
-            btn.addEventListener('click', () => applyFilter(btn.dataset.filter));
-        });
-        centerBtn.addEventListener('click', centerUniverse);
-        closePanelBtn.addEventListener('click', closePanel);
+            filterUniverseBtns.forEach(btn => {
+                btn.addEventListener('click', () => applyFilter(btn.dataset.filter));
+            });
+            centerBtn.addEventListener('click', centerUniverse);
+            closePanelBtn.addEventListener('click', closePanel);
 
-        // NUEVO: evento para el botón "Modo Lectura" dentro del universo
-        if (exitUniverseBtn) {
-            exitUniverseBtn.addEventListener('click', exitUniverse);
+            listenersAttached = true;
         }
 
         applyFilter('all');
@@ -614,58 +658,53 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         cursorEl.style.display = 'none';
         panel.classList.remove('open');
-        // Los listeners se mantienen, pero el contenedor se oculta, así que no hay interacción.
     }
 
-    // --- Integración con el botón de Modo Juego ---
-    // Reemplazar el botón existente para evitar duplicación de listeners
-    const oldGameToggle = document.getElementById('game-toggle');
-    const newGameToggle = oldGameToggle.cloneNode(true);
-    oldGameToggle.parentNode.replaceChild(newGameToggle, oldGameToggle);
-    const gameIcon = newGameToggle.querySelector('#game-icon');
-    const gameText = newGameToggle.querySelector('#game-text');
-
-    newGameToggle.addEventListener('click', () => {
-        body.classList.toggle('game-mode');
+    function exitUniverse() {
         if (body.classList.contains('game-mode')) {
+            body.classList.remove('game-mode');
+            gameIcon.textContent = '🎮';
+            gameText.textContent = 'Modo Juego';
+            stopUniverse();
+        }
+    }
+
+    if (exitUniverseBtn) {
+        exitUniverseBtn.addEventListener('click', exitUniverse);
+    }
+
+    // ============================================
+    // BOTÓN PRINCIPAL DE TOGGLE
+    // ============================================
+    gameToggle.addEventListener('click', () => {
+        const isOpening = !body.classList.contains('game-mode');
+
+        if (isOpening) {
+            body.classList.add('game-mode');
             gameIcon.textContent = '✦';
             gameText.textContent = 'Modo Universo';
-            startUniverse();
-            // Si estaba en modo oscuro, lo desactivamos (opcional)
+
             if (body.classList.contains('dark-mode')) {
                 body.classList.remove('dark-mode');
                 darkmodeIcon.classList.remove('fa-sun');
                 darkmodeIcon.classList.add('fa-moon');
             }
+
+            startUniverse();
         } else {
+            body.classList.remove('game-mode');
             gameIcon.textContent = '🎮';
             gameText.textContent = 'Modo Juego';
             stopUniverse();
-            document.body.style.overflow = '';
         }
     });
 
-    // Si la página se recarga con game-mode activo, iniciar universo
-    if (body.classList.contains('game-mode')) {
-        startUniverse();
-        gameIcon.textContent = '✦';
-        gameText.textContent = 'Modo Universo';
+    // ✅ Si venimos del nav con #juego, activar Modo Universo automáticamente
+    if (window.location.hash === '#juego') {
+        // Limpiar el hash de la URL para no re-disparar al refrescar
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+        // Pequeño delay para asegurar que todo esté montado
+        setTimeout(() => gameToggle.click(), 250);
     }
 
-    // Observar cambios en la clase game-mode para mostrar/ocultar el contenedor
-    const observer = new MutationObserver(() => {
-        if (body.classList.contains('game-mode')) {
-            container.style.display = 'block';
-            container.style.opacity = '1';
-            resizeCanvas();
-        } else {
-            container.style.display = 'none';
-        }
-    });
-    observer.observe(body, { attributes: true, attributeFilter: ['class'] });
-
-    // Inicialización: si no está en modo juego, ocultar contenedor
-    if (!body.classList.contains('game-mode')) {
-        container.style.display = 'none';
-    }
 });
