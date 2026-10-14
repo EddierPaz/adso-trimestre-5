@@ -4,58 +4,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Clima</title>
+    <title>Dashboard Clima — Eddier Paz</title>
+
+    <!-- Fuente Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS del proyecto -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- CSS compartido del nav -->
+    <link rel="stylesheet" href="../../../assets/css/portafolio_nav.css">
 </head>
 
 <body>
 
-    <div class="contenedor">
-        <div class="buscador">
-            <input type="text" id="ciudad" placeholder="Buscar ciudad...">
-            <button onclick="buscar()">Buscar</button>
+    <!-- ============ NAV COMPARTIDO ============ -->
+    <nav class="portfolio-nav">
+        <a href="../../../index.html" class="pnav-brand" aria-label="Ir al inicio del portafolio">EP</a>
+
+        <a href="../../../index.html#proyectos" class="pnav-back" aria-label="Volver al portafolio">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Volver al portafolio</span>
+        </a>
+
+        <div class="pnav-actions">
+            <button id="pnav-dark-toggle" class="pnav-icon-btn" aria-label="Cambiar tema oscuro/claro">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <a href="../../../index.html#juego" class="pnav-game-btn" aria-label="Abrir modo universo">
+                <span class="pnav-game-icon">🎮</span>
+                <span class="pnav-game-text">Modo Juego</span>
+            </a>
         </div>
+    </nav>
 
-        <div id="error" class="error oculto"></div>
+    <!-- ============ CONTENIDO ============ -->
+    <main class="page-wrap">
+        <div class="contenedor">
 
-        <div id="clima-actual" class="oculto">
-            <div class="ciudad-info">
-                <h1 id="nombre-ciudad"></h1>
-                <p id="fecha"></p>
+            <header class="header-app">
+                <h1>Dashboard del Clima</h1>
+                <p class="subtitle">Busca cualquier ciudad del mundo</p>
+            </header>
+
+            <div class="buscador">
+                <input type="text" id="ciudad" placeholder="Buscar ciudad..." autocomplete="off">
+                <button onclick="buscar()">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Buscar</span>
+                </button>
             </div>
-            <div class="temp-principal">
-                <span id="icono" class="icono"></span>
-                <span id="temperatura"></span>
+
+            <div id="error" class="error oculto"></div>
+
+            <div id="clima-actual" class="oculto">
+                <div class="ciudad-info">
+                    <h2 id="nombre-ciudad"></h2>
+                    <p id="fecha"></p>
+                </div>
+                <div class="temp-principal">
+                    <span id="icono" class="icono"></span>
+                    <span id="temperatura"></span>
+                </div>
+                <p id="descripcion"></p>
+                <div class="detalles">
+                    <div class="detalle">
+                        <span class="label">Sensación</span>
+                        <span id="sensacion"></span>
+                    </div>
+                    <div class="detalle">
+                        <span class="label">Humedad</span>
+                        <span id="humedad"></span>
+                    </div>
+                    <div class="detalle">
+                        <span class="label">Viento</span>
+                        <span id="viento"></span>
+                    </div>
+                    <div class="detalle">
+                        <span class="label">Visibilidad</span>
+                        <span id="visibilidad"></span>
+                    </div>
+                </div>
             </div>
-            <p id="descripcion"></p>
-            <div class="detalles">
-                <div class="detalle">
-                    <span class="label">Sensación</span>
-                    <span id="sensacion"></span>
-                </div>
-                <div class="detalle">
-                    <span class="label">Humedad</span>
-                    <span id="humedad"></span>
-                </div>
-                <div class="detalle">
-                    <span class="label">Viento</span>
-                    <span id="viento"></span>
-                </div>
-                <div class="detalle">
-                    <span class="label">Visibilidad</span>
-                    <span id="visibilidad"></span>
-                </div>
+
+            <div id="pronostico" class="oculto">
+                <h2>Pronóstico 5 días</h2>
+                <div id="dias"></div>
+                <canvas id="grafica"></canvas>
             </div>
+
         </div>
+    </main>
 
-        <div id="pronostico" class="oculto">
-            <h2>Pronóstico 5 días</h2>
-            <div id="dias"></div>
-        </div>
-    </div>
-
+    <!-- ============ SCRIPTS ============ -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
+    <script src="../../../assets/js/portafolio_nav.js"></script>
 </body>
 
 </html>
