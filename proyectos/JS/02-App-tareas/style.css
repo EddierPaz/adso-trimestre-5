@@ -1,37 +1,147 @@
+/* ============================================
+   PALETA DE COLORES — App Tareas
+   ============================================ */
+
+/* ===== LIGHT MODE (por defecto) ===== */
+:root {
+    --primary: #7C3AED;
+    --primary-hover: #6D28D9;
+    --primary-soft: #EDE9FE;
+
+    --page-bg: #F4F4F8;
+    --card-bg: #FFFFFF;
+    --input-bg: #F8F9FC;
+    --input-border: #E5E7EB;
+
+    --text-strong: #1E1E2F;
+    --text-base: #4B5563;
+    --text-muted: #9CA3AF;
+
+    --border: #E5E7EB;
+
+    /* Categorías */
+    --cat-personal-bg: #EDE9FE;
+    --cat-personal-text: #5B21B6;
+    --cat-estudio-bg: #D1FAE5;
+    --cat-estudio-text: #065F46;
+    --cat-trabajo-bg: #FEF3C7;
+    --cat-trabajo-text: #92400E;
+
+    --danger: #EF4444;
+    --danger-hover: #DC2626;
+
+    --font-primary: 'Poppins', system-ui, sans-serif;
+}
+
+/* ===== DARK MODE ===== */
+body.dark-mode {
+    --page-bg: #0F0F1A;
+    --card-bg: #1E1E2F;
+    --input-bg: #2A2A4A;
+    --input-border: #3D3D5A;
+
+    --text-strong: #F8FAFC;
+    --text-base: #CBD5E1;
+    --text-muted: #94A3B8;
+
+    --border: #2A2A4A;
+
+    --cat-personal-bg: rgba(124, 58, 237, 0.25);
+    --cat-personal-text: #C4B5FD;
+    --cat-estudio-bg: rgba(16, 185, 129, 0.2);
+    --cat-estudio-text: #6EE7B7;
+    --cat-trabajo-bg: rgba(245, 158, 11, 0.2);
+    --cat-trabajo-text: #FCD34D;
+
+    --danger: #F87171;
+    --danger-hover: #EF4444;
+}
+
+/* ============================================
+   BASE
+   ============================================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+}
+
 body {
+    min-height: 100%;
+    margin: 0;
+    background: var(--page-bg);
+    font-family: var(--font-primary);
+    color: var(--text-base);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ============================================
+   WRAPPER
+   ============================================ */
+.page-wrap {
     min-height: 100vh;
-    background: #1a1a2e;
-    font-family: sans-serif;
+    padding: 88px 20px 40px;
+    box-sizing: border-box;
+
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    padding: 40px 16px;
 }
 
+/* ============================================
+   CONTENEDOR
+   ============================================ */
 .contenedor {
-    background: #16213e;
-    border-radius: 16px;
+    background: var(--card-bg);
+    border-radius: 20px;
     padding: 32px;
     width: 100%;
-    max-width: 520px;
+    max-width: 560px;
+    box-shadow:
+        0 20px 50px rgba(124, 58, 237, 0.08),
+        0 0 0 1px rgba(124, 58, 237, 0.05);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-h1 {
-    color: #fff;
-    font-size: 24px;
+body.dark-mode .contenedor {
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(124, 58, 237, 0.15);
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header-app {
     margin-bottom: 24px;
 }
 
+.header-app h1 {
+    color: var(--text-strong);
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+.header-app .subtitle {
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* ============================================
+   INPUT AREA
+   ============================================ */
 .input-area {
     display: flex;
     gap: 8px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     flex-wrap: wrap;
 }
 
@@ -39,90 +149,141 @@ input[type="text"] {
     flex: 1;
     min-width: 160px;
     padding: 12px 16px;
-    border-radius: 8px;
-    border: none;
-    background: #0f3460;
-    color: #fff;
-    font-size: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--input-border);
+    background: var(--input-bg);
+    color: var(--text-strong);
+    font-family: inherit;
+    font-size: 14px;
     outline: none;
+    transition: all 0.2s ease;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
 }
 
 input[type="text"]::placeholder {
-    color: #888;
+    color: var(--text-muted);
 }
 
 select {
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    background: #0f3460;
-    color: #fff;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--input-border);
+    background: var(--input-bg);
+    color: var(--text-strong);
+    font-family: inherit;
     font-size: 14px;
     cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
 }
 
+select:focus {
+    border-color: var(--primary);
+}
+
+/* Botón agregar */
 .input-area button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
     padding: 12px 20px;
-    background: #e94560;
-    color: #fff;
+    background: var(--primary);
+    color: #FFFFFF;
     border: none;
-    border-radius: 8px;
-    font-size: 15px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
     cursor: pointer;
-    transition: background 0.15s;
+    transition: all 0.2s ease;
 }
 
 .input-area button:hover {
-    background: #c73652;
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(124, 58, 237, 0.35);
 }
 
+.input-area button:active {
+    transform: translateY(0);
+}
+
+/* ============================================
+   FILTROS
+   ============================================ */
 .filtros {
     display: flex;
     gap: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
 }
 
 .filtros button {
     padding: 8px 16px;
-    background: #1a1a2e;
-    color: #888;
-    border: none;
-    border-radius: 8px;
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-family: inherit;
     font-size: 13px;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.15s;
+    transition: all 0.2s ease;
+}
+
+.filtros button:hover {
+    color: var(--primary);
+    border-color: var(--primary);
 }
 
 .filtros button.activo {
-    background: #0f3460;
-    color: #fff;
+    background: var(--primary);
+    color: #FFFFFF;
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
 }
 
+/* ============================================
+   LISTA DE TAREAS
+   ============================================ */
 #lista-tareas {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
+    min-height: 60px;
 }
 
 .tarea {
-    background: #1a1a2e;
-    border-radius: 10px;
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
     padding: 14px 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    transition: opacity 0.2s;
+    transition: all 0.2s ease;
+}
+
+.tarea:hover {
+    border-color: rgba(124, 58, 237, 0.3);
+    transform: translateX(2px);
 }
 
 .tarea.completada {
-    opacity: 0.5;
+    opacity: 0.55;
 }
 
 .tarea.completada .texto {
     text-decoration: line-through;
+    text-decoration-color: var(--text-muted);
 }
 
 .tarea-info {
@@ -130,64 +291,135 @@ select {
     align-items: center;
     gap: 10px;
     flex: 1;
+    min-width: 0;
 }
 
 .texto {
-    color: #fff;
-    font-size: 15px;
+    color: var(--text-strong);
+    font-size: 14px;
+    font-weight: 500;
+    word-break: break-word;
+    transition: color 0.3s ease;
 }
 
+/* ============================================
+   CATEGORÍAS
+   ============================================ */
 .categoria {
     font-size: 11px;
-    padding: 3px 8px;
-    border-radius: 99px;
-    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-transform: capitalize;
+    white-space: nowrap;
+    transition: all 0.3s ease;
 }
 
 .categoria.personal {
-    background: #534AB7;
-    color: #CECBF6;
+    background: var(--cat-personal-bg);
+    color: var(--cat-personal-text);
 }
 
 .categoria.estudio {
-    background: #0F6E56;
-    color: #9FE1CB;
+    background: var(--cat-estudio-bg);
+    color: var(--cat-estudio-text);
 }
 
 .categoria.trabajo {
-    background: #854F0B;
-    color: #FAC775;
+    background: var(--cat-trabajo-bg);
+    color: var(--cat-trabajo-text);
 }
 
+/* ============================================
+   ACCIONES
+   ============================================ */
 .acciones {
     display: flex;
     gap: 6px;
+    flex-shrink: 0;
 }
 
 .acciones button {
-    background: #0f3460;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    padding: 6px 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 8px;
     cursor: pointer;
     font-size: 14px;
-    transition: background 0.15s;
+    transition: all 0.15s ease;
 }
 
 .acciones button:hover {
-    background: #e94560;
+    background: var(--primary);
+    color: #FFFFFF;
+    border-color: var(--primary);
+    transform: scale(1.08);
 }
 
-.btn-eliminar:hover {
-    background: #c73652 !important;
+.acciones .btn-eliminar:hover {
+    background: var(--danger);
+    border-color: var(--danger);
 }
 
+/* ============================================
+   STATS
+   ============================================ */
 .stats {
     display: flex;
     justify-content: space-between;
-    color: #888;
+    color: var(--text-muted);
     font-size: 13px;
-    padding-top: 12px;
-    border-top: 1px solid #0f3460;
+    font-weight: 500;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+/* ============================================
+   ESTADO VACÍO
+   ============================================ */
+#lista-tareas:empty::before {
+    content: "✨ No hay tareas todavía. ¡Añade la primera!";
+    display: block;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 14px;
+    padding: 32px 16px;
+    font-style: italic;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 480px) {
+    .page-wrap {
+        padding: 80px 12px 24px;
+    }
+
+    .contenedor {
+        padding: 24px 20px;
+        border-radius: 16px;
+    }
+
+    .header-app h1 {
+        font-size: 22px;
+    }
+
+    .input-area {
+        gap: 6px;
+    }
+
+    select {
+        flex: 1;
+    }
+
+    .input-area button {
+        width: 100%;
+        justify-content: center;
+    }
 }

@@ -1,40 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>App Tareas</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Tareas — Eddier Paz</title>
+
+    <!-- Fuente Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS del proyecto -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS compartido del nav -->
+    <link rel="stylesheet" href="../../../assets/css/portafolio_nav.css">
 </head>
+
 <body>
 
-  <div class="contenedor">
-    <h1>Mis Tareas</h1>
+    <!-- ============ NAV COMPARTIDO ============ -->
+    <nav class="portfolio-nav">
+        <a href="../../../index.html" class="pnav-brand" aria-label="Ir al inicio del portafolio">EP</a>
 
-    <div class="input-area">
-      <input type="text" id="input-tarea" placeholder="Nueva tarea...">
-      <select id="categoria">
-        <option value="personal">Personal</option>
-        <option value="estudio">Estudio</option>
-        <option value="trabajo">Trabajo</option>
-      </select>
-      <button onclick="agregarTarea()">Agregar</button>
-    </div>
+        <a href="../../../index.html#proyectos" class="pnav-back" aria-label="Volver al portafolio">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Volver al portafolio</span>
+        </a>
 
-    <div class="filtros">
-      <button onclick="filtrar('todas')" class="activo">Todas</button>
-      <button onclick="filtrar('pendiente')">Pendientes</button>
-      <button onclick="filtrar('completada')">Completadas</button>
-    </div>
+        <div class="pnav-actions">
+            <button id="pnav-dark-toggle" class="pnav-icon-btn" aria-label="Cambiar tema oscuro/claro">
+                <i class="fa-solid fa-moon"></i>
+            </button>
 
-    <ul id="lista-tareas"></ul>
+            <a href="../../../index.html#juego" class="pnav-game-btn" aria-label="Abrir modo universo">
+                <span class="pnav-game-icon">🎮</span>
+                <span class="pnav-game-text">Modo Juego</span>
+            </a>
+        </div>
+    </nav>
 
-    <div class="stats">
-      <span id="total">0 tareas</span>
-      <span id="completadas">0 completadas</span>
-    </div>
-  </div>
+    <!-- ============ CONTENIDO ============ -->
+    <main class="page-wrap">
+        <div class="contenedor">
 
-  <script src="script.js"></script>
+            <header class="header-app">
+                <h1>Mis Tareas</h1>
+                <p class="subtitle">Organiza tu día, una tarea a la vez</p>
+            </header>
+
+            <div class="input-area">
+                <input type="text" id="input-tarea" placeholder="Nueva tarea..." autocomplete="off">
+                <select id="categoria">
+                    <option value="personal">Personal</option>
+                    <option value="estudio">Estudio</option>
+                    <option value="trabajo">Trabajo</option>
+                </select>
+                <button onclick="agregarTarea()">
+                    <i class="fa-solid fa-plus"></i> Agregar
+                </button>
+            </div>
+
+            <div class="filtros">
+                <button onclick="filtrar('todas', this)" class="activo">Todas</button>
+                <button onclick="filtrar('pendiente', this)">Pendientes</button>
+                <button onclick="filtrar('completada', this)">Completadas</button>
+            </div>
+
+            <ul id="lista-tareas"></ul>
+
+            <div class="stats">
+                <span id="total">0 tareas</span>
+                <span id="completadas">0 completadas</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script src="script.js"></script>
+    <script src="../../../assets/js/portafolio_nav.js"></script>
 </body>
+
 </html>
