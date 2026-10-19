@@ -707,4 +707,37 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => gameToggle.click(), 250);
     }
 
+        // ============================================
+    // FILTRO DE PROYECTOS (A PRUEBA DE BALAS)
+    // ============================================
+    const filterBtns = document.querySelectorAll('.btn-filter');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    if (filterBtns.length > 0 && projectCards.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault(); // Evita que la página se recargue
+                
+                // 1. Cambiar el botón activo
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // 2. Obtener el valor del filtro
+                const filterValue = btn.getAttribute('data-filter');
+                
+                // 3. Filtrar las tarjetas
+                projectCards.forEach(card => {
+                    const category = card.getAttribute('data-categoria');
+                    
+                    if (filterValue === 'todos' || category === filterValue) {
+                        card.style.display = 'flex'; // Mostrar
+                        card.style.flexDirection = 'column';
+                    } else {
+                        card.style.display = 'none'; // Ocultar
+                    }
+                });
+            });
+        });
+    }
+
 });

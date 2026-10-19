@@ -72,13 +72,13 @@
                     </div>
 
                     <div class="social-icons">
-                        <a href="https://github.com/EddierPaz/adso-trimestre-5" target="_blank" aria-label="GitHub"><i
+                        <a href="https://github.com/EddierPaz/" target="_blank" aria-label="GitHub"><i
                                 class="fa-brands fa-github"></i></a>
                         <a href="https://wa.me/573023365691" target="_blank" aria-label="WhatsApp"><i
                                 class="fa-brands fa-whatsapp"></i></a>
                         <a href="mailto:eddierpaz9@gmail.com" aria-label="Email"><i
                                 class="fa-regular fa-envelope"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.linkedin.com/in/eddier-paz" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                 </div>
 
@@ -101,7 +101,7 @@
                 </div>
                 <div class="stat-item">
                     <h3>1+</h3>
-                    <p>Años de Experiencia</p>
+                    <p>Años de Aprendizaje</p>
                 </div>
                 <div class="stat-item">
                     <h3>100%</h3>
@@ -118,7 +118,7 @@
                     <p>Soy estudiante de Análisis y Desarrollo de Software, apasionado por crear soluciones que sean
                         funcionales, accesibles y con un diseño intuitivo. Disfruto aprender nuevas tecnologías y
                         enfrentar desafíos que me permitan crecer como profesional.</p>
-                    <button class="btn btn-secondary-red">Conoce más de mi experiencia <i
+                    <button class="btn btn-secondary-red">Conoce más de mi aprendizaje <i
                             class="fa-solid fa-arrow-right"></i></button>
 
                     <div class="about-cards">
@@ -148,22 +148,22 @@
         <!-- PROYECTOS -->
         <section class="section-padding" id="proyectos">
             <div class="container">
-                <div class="projects-header">
-                    <h2 class="section-title">Mis Proyectos</h2>
-                    <div class="filter-btn-group">
-                        <button class="btn-filter active">Todos</button>
-                        <button class="btn-filter">Web</button>
-                        <button class="btn-filter">Aplicaciones</button>
-                        <button class="btn-filter">Sistemas</button>
-                    </div>
+                <div class="filter-btn-group">
+                    <button type="button" class="btn-filter active" data-filter="todos">Todos</button>
+                    <button type="button" class="btn-filter" data-filter="web">Web</button>
+                    <button type="button" class="btn-filter" data-filter="aplicaciones">Aplicaciones</button>
+                    <button type="button" class="btn-filter" data-filter="sistemas">Sistemas</button>
                 </div>
 
                 <div class="projects-grid">
 
-                    <!-- Proyecto 1: Calculadora -->
-                    <article class="project-card">
+                    <!-- ========================================== -->
+                    <!-- PROYECTOS DESTACADOS (APLICACIONES WEB)    -->
+                    <!-- ========================================== -->
+
+                    <!-- Calculadora -->
+                    <article class="project-card" data-categoria="aplicaciones">
                         <div class="project-img">
-                            <!-- Sube una captura a assets/img/proyectos/calculadora.webp -->
                             <img src="./assets/img/proyectos/calculadora.webp" alt="Calculadora web" loading="lazy">
                         </div>
                         <div class="project-body">
@@ -180,8 +180,8 @@
                         </div>
                     </article>
 
-                    <!-- Proyecto 2: App Tareas -->
-                    <article class="project-card">
+                    <!-- App Tareas -->
+                    <article class="project-card" data-categoria="aplicaciones">
                         <div class="project-img">
                             <img src="./assets/img/proyectos/tareas.webp" alt="App de tareas" loading="lazy">
                         </div>
@@ -198,8 +198,8 @@
                         </div>
                     </article>
 
-                    <!-- Proyecto 3: Dashboard Clima -->
-                    <article class="project-card">
+                    <!-- Dashboard Clima -->
+                    <article class="project-card" data-categoria="aplicaciones">
                         <div class="project-img">
                             <img src="./assets/img/proyectos/clima.webp" alt="Dashboard del clima" loading="lazy">
                         </div>
@@ -217,14 +217,18 @@
                         </div>
                     </article>
 
-                    <!-- Proyecto 4: Laika -->
-                    <article class="project-card">
+                    <!-- ========================================== -->
+                    <!-- FRONTEND: LOS DOS LAIKAS                   -->
+                    <!-- ========================================== -->
+
+                    <!-- Laika CSS Puro -->
+                    <article class="project-card" data-categoria="web">
                         <div class="project-img">
-                            <img src="./assets/img/proyectos/laika.webp" alt="Tienda de mascotas Laika" loading="lazy">
+                            <img src="./assets/img/proyectos/laika.webp" alt="Laika CSS" loading="lazy">
                         </div>
                         <div class="project-body">
-                            <h3>Laika — Tienda de mascotas</h3>
-                            <p>Sitio responsive con HTML y CSS puro: header fijo, menú desplegable y grillas Flexbox.</p>
+                            <h3>Laika (CSS Puro)</h3>
+                            <p>Tienda de mascotas maquetada desde cero con Flexbox, menús desplegables y diseño 100% responsive.</p>
                             <ul class="tech-stack">
                                 <li class="tech-tag">HTML5</li>
                                 <li class="tech-tag">CSS3</li>
@@ -236,40 +240,159 @@
                         </div>
                     </article>
 
-                    <!-- Proyecto 5: Backend CRUD -->
-                    <article class="project-card">
+                    <!-- Laika Bootstrap -->
+                    <article class="project-card" data-categoria="web">
                         <div class="project-img">
-                            <img src="./assets/img/proyectos/crud.webp" alt="CRUD MySQL por capas" loading="lazy">
+                            <img src="./assets/img/proyectos/laika-bootstrap.webp" alt="Laika Bootstrap" loading="lazy">
                         </div>
                         <div class="project-body">
-                            <h3>CRUD MySQL por capas</h3>
-                            <p>Sistema CRUD en Python con arquitectura por capas: <code>config/</code>, <code>models/</code> y <code>services/</code>.</p>
+                            <h3>Laika (Bootstrap 5)</h3>
+                            <p>Reconstrucción del sitio usando componentes nativos como carousels, grillas y mega-menús.</p>
                             <ul class="tech-stack">
-                                <li class="tech-tag">Python</li>
-                                <li class="tech-tag">MySQL</li>
-                                <li class="tech-tag">POO</li>
+                                <li class="tech-tag">Bootstrap</li>
+                                <li class="tech-tag">Carousels</li>
+                                <li class="tech-tag">Responsive</li>
                             </ul>
-                            <!-- Los proyectos de Python no corren en el navegador, así que enviamos a GitHub -->
-                            <a href="https://github.com/EddierPaz/Portafolio-Eddier-Paz/tree/main/proyectos/backend/crud-mysql-1" target="_blank" rel="noopener" class="project-link">
-                                Ver en GitHub <i class="fa-brands fa-github"></i>
+                            <a href="./proyectos/frontend/laika-bootstrap/index.html" class="project-link">
+                                Ver proyecto <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
                     </article>
 
-                    <!-- Proyecto 6: Fundamentos POO -->
-                    <article class="project-card">
+                    <!-- Galería Bootstrap -->
+                    <article class="project-card" data-categoria="web">
+                        <div class="project-img" style="background: #7952B3; color: white; display:flex; align-items:center; justify-content:center; font-size: 3.5rem;">
+                            <i class="fa-brands fa-bootstrap"></i>
+                        </div>
+                        <div class="project-body">
+                            <h3>Galería Bootstrap 5</h3>
+                            <p>Colección de ejercicios prácticos: grillas, componentes, formularios y utilidades de maquetación.</p>
+                            <ul class="tech-stack">
+                                <li class="tech-tag">HTML5</li>
+                                <li class="tech-tag">Bootstrap</li>
+                            </ul>
+                            <a href="./proyectos/frontend/bootstrap/index.html" class="project-link">
+                                Ver Galería <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- ========================================== -->
+                    <!-- BACKEND: EVOLUCIÓN DE LOS CRUDS            -->
+                    <!-- ========================================== -->
+
+                    <!-- CRUD 1: Básico -->
+                    <article class="project-card" data-categoria="sistemas">
                         <div class="project-img">
-                            <img src="./assets/img/proyectos/poo.webp" alt="Fundamentos de POO en Python" loading="lazy">
+                            <img src="./assets/img/proyectos/crud-1.webp" alt="CRUD Básico" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <h3>CRUD MySQL — Básico</h3>
+                            <p>Primera aproximación a bases de datos: operaciones Create, Read, Update y Delete en un solo archivo.</p>
+                            <ul class="tech-stack">
+                                <li class="tech-tag">Python</li>
+                                <li class="tech-tag">MySQL</li>
+                            </ul>
+                            <a href="./proyectos/backend/crud-mysql-1/index.html" class="project-link">
+                                Ver Documentación <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- CRUD 2: Por Capas -->
+                    <article class="project-card" data-categoria="sistemas">
+                        <div class="project-img">
+                            <img src="./assets/img/proyectos/crud-2.webp" alt="CRUD por Capas" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <h3>CRUD MySQL — Arquitectura por Capas</h3>
+                            <p>Evolución del proyecto aplicando POO y separación de responsabilidades (Models, Services, Config).</p>
+                            <ul class="tech-stack">
+                                <li class="tech-tag">Python</li>
+                                <li class="tech-tag">POO</li>
+                                <li class="tech-tag">Arquitectura</li>
+                            </ul>
+                            <a href="./proyectos/backend/crud-mysql-2/index.html" class="project-link">
+                                Ver Documentación <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- CRUD 3: OperPan -->
+                    <article class="project-card" data-categoria="sistemas">
+                        <div class="project-img">
+                            <img src="./assets/img/proyectos/operpan.webp" alt="CRUD OperPan" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <h3>CRUD OperPan — Caso Real</h3>
+                            <p>Sistema aplicado a un negocio real. Incluye relaciones complejas, gestión de tareas y usuarios.</p>
+                            <ul class="tech-stack">
+                                <li class="tech-tag">Python</li>
+                                <li class="tech-tag">MySQL</li>
+                                <li class="tech-tag">Sistema</li>
+                            </ul>
+                            <a href="./proyectos/backend/crud-mysql-operpan/index.html" class="project-link">
+                                Ver Documentación <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Fundamentos POO -->
+                    <article class="project-card" data-categoria="sistemas">
+                        <div class="project-img">
+                            <img src="./assets/img/proyectos/poo.webp" alt="Fundamentos de POO" loading="lazy">
                         </div>
                         <div class="project-body">
                             <h3>Fundamentos POO</h3>
-                            <p>Prácticas de Programación Orientada a Objetos: clases, herencia, encapsulamiento y polimorfismo.</p>
+                            <p>Repositorio de prácticas: clases, herencia, encapsulamiento y polimorfismo en Python.</p>
                             <ul class="tech-stack">
                                 <li class="tech-tag">Python</li>
                                 <li class="tech-tag">POO</li>
                             </ul>
                             <a href="https://github.com/EddierPaz/Portafolio-Eddier-Paz/tree/main/proyectos/backend/fundamentos-poo" target="_blank" rel="noopener" class="project-link">
                                 Ver en GitHub <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- ========================================== -->
+                    <!-- BASES DE DATOS (PDFs)                      -->
+                    <!-- ========================================== -->
+
+                    <!-- Migración Access -->
+                    <article class="project-card" data-categoria="sistemas">
+                        <div class="project-img" style="background: linear-gradient(135deg, #e0e7ff, #c7d2fe); color: #3730a3; display:flex; align-items:center; justify-content:center; font-size: 3.5rem;">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <div class="project-body">
+                            <h3>Migración Access a MySQL</h3>
+                            <p>Proceso ETL: Exportación, mapeo de tipos, creación de estructura en XAMPP y validación de integridad.</p>
+                            <ul class="tech-stack">
+                                <li class="tech-tag">Access</li>
+                                <li class="tech-tag">MySQL</li>
+                                <li class="tech-tag">ETL</li>
+                            </ul>
+                            <a href="./assets/docs/Migracion-Access-a-Xampp.pdf" target="_blank" class="project-link">
+                                Ver PDF <i class="fa-solid fa-file-pdf"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Migración Masiva -->
+                    <article class="project-card" data-categoria="sistemas">
+                        <div class="project-img" style="background: linear-gradient(135deg, #dcfce7, #bbf7d0); color: #166534; display:flex; align-items:center; justify-content:center; font-size: 3.5rem;">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                        <div class="project-body">
+                            <h3>Migración de 2 Millones de Registros</h3>
+                            <p>Generación masiva de datos, optimización de consultas, importación por consola y procedimientos almacenados.</p>
+                            <ul class="tech-stack">
+                                <li class="tech-tag">MySQL</li>
+                                <li class="tech-tag">SQL</li>
+                                <li class="tech-tag">Big Data</li>
+                            </ul>
+                            <a href="./assets/docs/Migracion-Millon-de-Datos.pdf" target="_blank" class="project-link">
+                                Ver PDF <i class="fa-solid fa-file-pdf"></i>
                             </a>
                         </div>
                     </article>
@@ -361,7 +484,7 @@
                     </div>
                     <div class="contact-item">
                         <i class="fa-solid fa-location-dot"></i>
-                        <span>Santiago de Compostela, Colombia</span>
+                        <span>Bogotá, Colombia</span>
                     </div>
 
                     <div class="contact-socials">
