@@ -23,15 +23,25 @@
 
 <body>
 
-    <!-- ============ NAV COMPARTIDO ============ -->
+        <!-- ============ NAV COMPARTIDO ============ -->
     <nav class="portfolio-nav">
-        <a href="../../../index.html" class="pnav-brand" aria-label="Ir al inicio del portafolio">EP</a>
+        
+        <!-- IZQUIERDA: Logo + Botón Volver -->
+        <div class="pnav-left">
+            <a href="../../../index.html" class="pnav-brand" aria-label="Ir al inicio del portafolio">EP</a>
+            
+            <a href="../../../index.html#proyectos" class="pnav-back" aria-label="Volver al portafolio">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Volver</span> 
+            </a>
+        </div>
 
-        <a href="../../../index.html#proyectos" class="pnav-back" aria-label="Volver al portafolio">
-            <i class="fa-solid fa-arrow-left"></i>
-            <span>Volver al portafolio</span>
-        </a>
+        <!-- CENTRO: Título del Proyecto -->
+        <div class="pnav-center">
+            Dashboard del Clima
+        </div>
 
+        <!-- DERECHA: Controles -->
         <div class="pnav-actions">
             <button id="pnav-dark-toggle" class="pnav-icon-btn" aria-label="Cambiar tema oscuro/claro">
                 <i class="fa-solid fa-moon"></i>
@@ -42,6 +52,7 @@
                 <span class="pnav-game-text">Modo Juego</span>
             </a>
         </div>
+
     </nav>
 
     <!-- ============ CONTENIDO ============ -->
@@ -49,8 +60,7 @@
         <div class="contenedor">
 
             <header class="header-app">
-                <h1>Dashboard del Clima</h1>
-                <p class="subtitle">Busca cualquier ciudad del mundo</p>
+                <h1>Busca cualquier ciudad del mundo</h1>
             </header>
 
             <div class="buscador">

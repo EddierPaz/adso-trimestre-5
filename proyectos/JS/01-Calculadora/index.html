@@ -24,14 +24,25 @@
 <body>
 
     <!-- ============ NAV COMPARTIDO ============ -->
+    <!-- ============ NAV COMPARTIDO ============ -->
     <nav class="portfolio-nav">
-        <a href="../../../index.html" class="pnav-brand" aria-label="Ir al inicio del portafolio">EP</a>
+        
+        <!-- IZQUIERDA: Logo + Botón Volver -->
+        <div class="pnav-left">
+            <a href="../../../index.html" class="pnav-brand" aria-label="Ir al inicio del portafolio">EP</a>
+            
+            <a href="../../../index.html#proyectos" class="pnav-back" aria-label="Volver al portafolio">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Volver</span> <!-- Acorté el texto a "Volver" para que se vea más limpio -->
+            </a>
+        </div>
 
-        <a href="../../../index.html#proyectos" class="pnav-back" aria-label="Volver al portafolio">
-            <i class="fa-solid fa-arrow-left"></i>
-            <span>Volver al portafolio</span>
-        </a>
+        <!-- CENTRO: Título del Proyecto (Cámbialo en cada proyecto) -->
+        <div class="pnav-center">
+            Calculadora Web
+        </div>
 
+        <!-- DERECHA: Controles -->
         <div class="pnav-actions">
             <button id="pnav-dark-toggle" class="pnav-icon-btn" aria-label="Cambiar tema oscuro/claro">
                 <i class="fa-solid fa-moon"></i>
@@ -42,6 +53,7 @@
                 <span class="pnav-game-text">Modo Juego</span>
             </a>
         </div>
+
     </nav>
 
     <!-- ============ CONTENIDO CENTRADO ============ -->

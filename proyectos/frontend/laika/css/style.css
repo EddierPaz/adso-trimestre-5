@@ -285,16 +285,30 @@ input[type=submit] {
     font-size: 12px;
 }
 
-.footer1 {
-    text-align: center;
-    padding: 2rem;
-    font-size: .8rem;
-    color: var(--muted);
-    border-top: 1px solid var(--sand);
-    margin-top: 3rem;
+/* ============================================
+   AJUSTES PARA EL NAV COMPARTIDO (VERSIÓN FINAL)
+   ============================================ */
+
+body > .portfolio-nav {
+    top: 0 !important;
+    z-index: 999999 !important;
 }
 
-.footera {
-    color: var(--clay-d);
-    text-decoration: none;
+body > header {
+    top: 64px !important; 
+}
+
+body > nav:not(.portfolio-nav) {
+    top: 169px !important;
+}
+
+body {
+    margin-top: 212px !important;
+}
+
+@media (max-width: 768px) {
+    body > header { top: 58px !important; }
+    body > nav:not(.portfolio-nav) { top: 163px !important; }
+    body { margin-top: 206px !important; }
+
 }

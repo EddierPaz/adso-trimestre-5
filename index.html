@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eddier Paz — Portafolio</title>
 
-    <!-- Fuente Poppins (Igual a la imagen) -->
+    <!-- Fuente Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Íconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -37,14 +36,10 @@
                 </ul>
             </nav>
 
-            <!-- CONTROLES DE TEMA -->
             <div class="theme-controls">
-                <!-- Botón Sol / Luna (Tema Claro/Oscuro) -->
                 <button id="darkmode-toggle" class="icon-btn" aria-label="Cambiar tema oscuro/claro">
                     <i class="fa-solid fa-moon"></i>
                 </button>
-
-                <!-- Botón Modo Juego (El que ya tenías) -->
                 <button id="game-toggle" class="mode-toggle-btn">
                     <span id="game-icon">🎮</span> <span id="game-text">Modo Juego</span>
                 </button>
@@ -72,12 +67,9 @@
                     </div>
 
                     <div class="social-icons">
-                        <a href="https://github.com/EddierPaz/" target="_blank" aria-label="GitHub"><i
-                                class="fa-brands fa-github"></i></a>
-                        <a href="https://wa.me/573023365691" target="_blank" aria-label="WhatsApp"><i
-                                class="fa-brands fa-whatsapp"></i></a>
-                        <a href="mailto:eddierpaz9@gmail.com" aria-label="Email"><i
-                                class="fa-regular fa-envelope"></i></a>
+                        <a href="https://github.com/EddierPaz/" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://wa.me/573023365691" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="mailto:eddierpaz9@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
                         <a href="https://www.linkedin.com/in/eddier-paz" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                 </div>
@@ -89,7 +81,6 @@
                 </div>
             </div>
 
-            <!-- STATS -->
             <div class="container stats-container">
                 <div class="stat-item">
                     <h3>5+</h3>
@@ -115,11 +106,8 @@
             <div class="container about-grid">
                 <div class="about-content">
                     <h2 class="section-title">Sobre mí</h2>
-                    <p>Soy estudiante de Análisis y Desarrollo de Software, apasionado por crear soluciones que sean
-                        funcionales, accesibles y con un diseño intuitivo. Disfruto aprender nuevas tecnologías y
-                        enfrentar desafíos que me permitan crecer como profesional.</p>
-                    <button class="btn btn-secondary-red">Conoce más de mi aprendizaje <i
-                            class="fa-solid fa-arrow-right"></i></button>
+                    <p>Soy estudiante de Análisis y Desarrollo de Software, apasionado por crear soluciones que sean funcionales, accesibles y con un diseño intuitivo. Disfruto aprender nuevas tecnologías y enfrentar desafíos que me permitan crecer como profesional.</p>
+                    <button class="btn btn-secondary-red">Conoce más de mi aprendizaje <i class="fa-solid fa-arrow-right"></i></button>
 
                     <div class="about-cards">
                         <div class="about-card">
@@ -148,23 +136,51 @@
         <!-- PROYECTOS -->
         <section class="section-padding" id="proyectos">
             <div class="container">
-                <div class="filter-btn-group">
-                    <button type="button" class="btn-filter active" data-filter="todos">Todos</button>
-                    <button type="button" class="btn-filter" data-filter="web">Web</button>
-                    <button type="button" class="btn-filter" data-filter="aplicaciones">Aplicaciones</button>
-                    <button type="button" class="btn-filter" data-filter="sistemas">Sistemas</button>
+                
+                <!-- Encabezado de Proyectos con Filtros -->
+                <div class="projects-header">
+                    <h2 class="section-title">Mis Proyectos</h2>
+                    <div class="filter-btn-group">
+                        <button type="button" class="btn-filter active" data-filter="todos">Todos</button>
+                        <button type="button" class="btn-filter" data-filter="aplicaciones">Aplicaciones</button>
+                        <button type="button" class="btn-filter" data-filter="web">Web</button>
+                        <button type="button" class="btn-filter" data-filter="sistemas">Sistemas</button>
+                    </div>
                 </div>
 
-                <div class="projects-grid">
-
-                    <!-- ========================================== -->
-                    <!-- PROYECTOS DESTACADOS (APLICACIONES WEB)    -->
-                    <!-- ========================================== -->
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Las tarjetas se manejarán con JavaScript -->
+                    
+                    <!-- PROYECTO PRINCIPAL: OPERPAN BACKEND (DJANGO) -->
+                    <article class="project-card project-card-featured" data-categoria="sistemas">
+                        <div class="project-img featured-img">
+                            <i class="fa-solid fa-gears"></i>
+                            <span class="featured-badge">PROYECTO PRINCIPAL</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>OperPan — Backend & Gestión</h3>
+                            <p>Sistema integral para la gestión de operaciones y tareas. Desarrollado con el framework Django, arquitectura MVT, conexión a MySQL y autenticación de usuarios.</p>
+                            <ul class="tech-stack">
+                                <li class="tech-tag">Django</li>
+                                <li class="tech-tag">Python</li>
+                                <li class="tech-tag">MySQL</li>
+                                <li class="tech-tag">Bootstrap</li>
+                            </ul>
+                            <div class="featured-actions">
+                                <a href="https://github.com/EddierPaz/OperPan-Backend" target="_blank" class="btn btn-primary" style="font-size: 0.8rem; padding: 8px 15px;">
+                                    <i class="fa-brands fa-github"></i> Repositorio
+                                </a>
+                                <a href="https://docs.google.com/document/d/1WeP7t5k3XXXj5kX-FdRHh_X6NUDrqqUk/edit?usp=drive_link&ouid=103494730822861967344&rtpof=true&sd=true" target="_blank" class="btn btn-outline" style="font-size: 0.8rem; padding: 8px 15px; border-color: #7C3AED; color: #7C3AED;">
+                                    <i class="fa-solid fa-file-lines"></i> Informe
+                                </a>
+                            </div>
+                        </div>
+                    </article>
 
                     <!-- Calculadora -->
                     <article class="project-card" data-categoria="aplicaciones">
-                        <div class="project-img">
-                            <img src="./assets/img/proyectos/calculadora.webp" alt="Calculadora web" loading="lazy">
+                        <div class="project-img" style="background: #fef08a; color: #854d0e;">
+                            <i class="fa-solid fa-calculator"></i>
                         </div>
                         <div class="project-body">
                             <h3>Calculadora Web</h3>
@@ -182,8 +198,8 @@
 
                     <!-- App Tareas -->
                     <article class="project-card" data-categoria="aplicaciones">
-                        <div class="project-img">
-                            <img src="./assets/img/proyectos/tareas.webp" alt="App de tareas" loading="lazy">
+                        <div class="project-img" style="background: #e0e7ff; color: #3730a3;">
+                            <i class="fa-solid fa-list-check"></i>
                         </div>
                         <div class="project-body">
                             <h3>App de Tareas</h3>
@@ -200,8 +216,8 @@
 
                     <!-- Dashboard Clima -->
                     <article class="project-card" data-categoria="aplicaciones">
-                        <div class="project-img">
-                            <img src="./assets/img/proyectos/clima.webp" alt="Dashboard del clima" loading="lazy">
+                        <div class="project-img" style="background: #cffafe; color: #155e75;">
+                            <i class="fa-solid fa-cloud-sun"></i>
                         </div>
                         <div class="project-body">
                             <h3>Dashboard del Clima</h3>
@@ -217,14 +233,10 @@
                         </div>
                     </article>
 
-                    <!-- ========================================== -->
-                    <!-- FRONTEND: LOS DOS LAIKAS                   -->
-                    <!-- ========================================== -->
-
                     <!-- Laika CSS Puro -->
                     <article class="project-card" data-categoria="web">
-                        <div class="project-img">
-                            <img src="./assets/img/proyectos/laika.webp" alt="Laika CSS" loading="lazy">
+                        <div class="project-img" style="background: #fce7f3; color: #9d174d;">
+                            <i class="fa-solid fa-paw"></i>
                         </div>
                         <div class="project-body">
                             <h3>Laika (CSS Puro)</h3>
@@ -242,8 +254,8 @@
 
                     <!-- Laika Bootstrap -->
                     <article class="project-card" data-categoria="web">
-                        <div class="project-img">
-                            <img src="./assets/img/proyectos/laika-bootstrap.webp" alt="Laika Bootstrap" loading="lazy">
+                        <div class="project-img" style="background: #f3e8ff; color: #6b21a8;">
+                            <i class="fa-solid fa-paw"></i>
                         </div>
                         <div class="project-body">
                             <h3>Laika (Bootstrap 5)</h3>
@@ -261,7 +273,7 @@
 
                     <!-- Galería Bootstrap -->
                     <article class="project-card" data-categoria="web">
-                        <div class="project-img" style="background: #7952B3; color: white; display:flex; align-items:center; justify-content:center; font-size: 3.5rem;">
+                        <div class="project-img" style="background: #7952B3; color: white;">
                             <i class="fa-brands fa-bootstrap"></i>
                         </div>
                         <div class="project-body">
@@ -277,14 +289,10 @@
                         </div>
                     </article>
 
-                    <!-- ========================================== -->
-                    <!-- BACKEND: EVOLUCIÓN DE LOS CRUDS            -->
-                    <!-- ========================================== -->
-
                     <!-- CRUD 1: Básico -->
                     <article class="project-card" data-categoria="sistemas">
-                        <div class="project-img">
-                            <img src="./assets/img/proyectos/crud-1.webp" alt="CRUD Básico" loading="lazy">
+                        <div class="project-img" style="background: #f1f5f9; color: #334155;">
+                            <i class="fa-solid fa-database"></i>
                         </div>
                         <div class="project-body">
                             <h3>CRUD MySQL — Básico</h3>
@@ -301,11 +309,11 @@
 
                     <!-- CRUD 2: Por Capas -->
                     <article class="project-card" data-categoria="sistemas">
-                        <div class="project-img">
-                            <img src="./assets/img/proyectos/crud-2.webp" alt="CRUD por Capas" loading="lazy">
+                        <div class="project-img" style="background: #e0f2fe; color: #0284c7;">
+                            <i class="fa-solid fa-layer-group"></i>
                         </div>
                         <div class="project-body">
-                            <h3>CRUD MySQL — Arquitectura por Capas</h3>
+                            <h3>CRUD MySQL — Capas</h3>
                             <p>Evolución del proyecto aplicando POO y separación de responsabilidades (Models, Services, Config).</p>
                             <ul class="tech-stack">
                                 <li class="tech-tag">Python</li>
@@ -320,8 +328,8 @@
 
                     <!-- CRUD 3: OperPan -->
                     <article class="project-card" data-categoria="sistemas">
-                        <div class="project-img">
-                            <img src="./assets/img/proyectos/operpan.webp" alt="CRUD OperPan" loading="lazy">
+                        <div class="project-img" style="background: #fdf4ff; color: #86198f;">
+                            <i class="fa-solid fa-store"></i>
                         </div>
                         <div class="project-body">
                             <h3>CRUD OperPan — Caso Real</h3>
@@ -339,8 +347,8 @@
 
                     <!-- Fundamentos POO -->
                     <article class="project-card" data-categoria="sistemas">
-                        <div class="project-img">
-                            <img src="./assets/img/proyectos/poo.webp" alt="Fundamentos de POO" loading="lazy">
+                        <div class="project-img" style="background: #fffbeb; color: #b45309;">
+                            <i class="fa-brands fa-python"></i>
                         </div>
                         <div class="project-body">
                             <h3>Fundamentos POO</h3>
@@ -355,14 +363,10 @@
                         </div>
                     </article>
 
-                    <!-- ========================================== -->
-                    <!-- BASES DE DATOS (PDFs)                      -->
-                    <!-- ========================================== -->
-
                     <!-- Migración Access -->
                     <article class="project-card" data-categoria="sistemas">
-                        <div class="project-img" style="background: linear-gradient(135deg, #e0e7ff, #c7d2fe); color: #3730a3; display:flex; align-items:center; justify-content:center; font-size: 3.5rem;">
-                            <i class="fa-solid fa-database"></i>
+                        <div class="project-img" style="background: #e0e7ff; color: #3730a3;">
+                            <i class="fa-solid fa-file-export"></i>
                         </div>
                         <div class="project-body">
                             <h3>Migración Access a MySQL</h3>
@@ -380,7 +384,7 @@
 
                     <!-- Migración Masiva -->
                     <article class="project-card" data-categoria="sistemas">
-                        <div class="project-img" style="background: linear-gradient(135deg, #dcfce7, #bbf7d0); color: #166534; display:flex; align-items:center; justify-content:center; font-size: 3.5rem;">
+                        <div class="project-img" style="background: #dcfce7; color: #166534;">
                             <i class="fa-solid fa-server"></i>
                         </div>
                         <div class="project-body">
@@ -398,6 +402,12 @@
                     </article>
 
                 </div>
+
+                <!-- BOTÓN VER MÁS -->
+                <div class="load-more-container">
+                    <button id="btn-ver-mas" class="btn btn-primary">Ver todos los proyectos</button>
+                </div>
+
             </div>
         </section>
 
@@ -406,62 +416,37 @@
             <div class="container skills-layout">
                 <div class="skills-left">
                     <h2 class="section-title">Habilidades</h2>
-
                     <div class="skills-grid-icons">
-                        <div class="skill-icon-box"><i class="fa-brands fa-html5" style="color:#E34F26;"></i>
-                            <p>HTML</p>
-                        </div>
-                        <div class="skill-icon-box"><i class="fa-brands fa-css3-alt" style="color:#1572B6;"></i>
-                            <p>CSS</p>
-                        </div>
-                        <div class="skill-icon-box"><i class="fa-brands fa-js" style="color:#F7DF1E;"></i>
-                            <p>JavaScript</p>
-                        </div>
-                        <div class="skill-icon-box"><i class="fa-brands fa-python" style="color:#3776AB;"></i>
-                            <p>Python</p>
-                        </div>
-                        <div class="skill-icon-box"><i class="fa-brands fa-bootstrap" style="color:#563D7C;"></i>
-                            <p>Bootstrap</p>
-                        </div>
-                        <div class="skill-icon-box"><i class="fa-solid fa-database" style="color:#00758F;"></i>
-                            <p>MySQL</p>
-                        </div>
+                        <div class="skill-icon-box"><i class="fa-brands fa-html5" style="color:#E34F26;"></i><p>HTML</p></div>
+                        <div class="skill-icon-box"><i class="fa-brands fa-css3-alt" style="color:#1572B6;"></i><p>CSS</p></div>
+                        <div class="skill-icon-box"><i class="fa-brands fa-js" style="color:#F7DF1E;"></i><p>JavaScript</p></div>
+                        <div class="skill-icon-box"><i class="fa-brands fa-python" style="color:#3776AB;"></i><p>Python</p></div>
+                        <div class="skill-icon-box"><i class="fa-brands fa-bootstrap" style="color:#563D7C;"></i><p>Bootstrap</p></div>
+                        <div class="skill-icon-box"><i class="fa-solid fa-database" style="color:#00758F;"></i><p>MySQL</p></div>
                     </div>
                 </div>
 
                 <div class="skills-right">
                     <h3 class="subtitle-skill">Otras habilidades</h3>
-
                     <div class="skill-bar-wrap">
                         <div class="skill-label"><span>Resolución de problemas</span></div>
-                        <div class="skill-track">
-                            <div class="skill-fill" style="width: 90%;"></div>
-                        </div>
+                        <div class="skill-track"><div class="skill-fill" style="width: 90%;"></div></div>
                         <span class="skill-percent">90%</span>
                     </div>
-
                     <div class="skill-bar-wrap">
                         <div class="skill-label"><span>Trabajo en equipo</span></div>
-                        <div class="skill-track">
-                            <div class="skill-fill" style="width: 85%;"></div>
-                        </div>
+                        <div class="skill-track"><div class="skill-fill" style="width: 85%;"></div></div>
                         <span class="skill-percent">85%</span>
                     </div>
-
                     <div class="skill-bar-wrap">
                         <div class="skill-label"><span>Comunicación</span></div>
-                        <div class="skill-track">
-                            <div class="skill-fill" style="width: 80%;"></div>
-                        </div>
+                        <div class="skill-track"><div class="skill-fill" style="width: 80%;"></div></div>
                         <span class="skill-percent">80%</span>
                     </div>
-
                     <div class="learning-card">
                         <h4>Siempre aprendiendo</h4>
                         <p>Me gusta explorar nuevas tecnologías y mejorar mis habilidades constantemente.</p>
-                        <div class="learning-icon">
-                            <i class="fa-solid fa-book-open" style="color: var(--accent-orange);"></i>
-                        </div>
+                        <div class="learning-icon"><i class="fa-solid fa-book-open" style="color: var(--accent-orange);"></i></div>
                     </div>
                 </div>
             </div>
@@ -473,20 +458,9 @@
                 <div class="contact-info">
                     <h2 class="section-title">Contacto</h2>
                     <p>¿Tienes algún proyecto en mente o quieres colaborar? ¡Hablemos!</p>
-
-                    <div class="contact-item">
-                        <i class="fa-regular fa-envelope"></i>
-                        <span>eddierpaz9@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fa-solid fa-phone"></i>
-                        <span>+57 302 336 5691</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <span>Bogotá, Colombia</span>
-                    </div>
-
+                    <div class="contact-item"><i class="fa-regular fa-envelope"></i><span>eddierpaz9@gmail.com</span></div>
+                    <div class="contact-item"><i class="fa-solid fa-phone"></i><span>+57 302 336 5691</span></div>
+                    <div class="contact-item"><i class="fa-solid fa-location-dot"></i><span>Bogotá, Colombia</span></div>
                     <div class="contact-socials">
                         <a href="https://github.com/EddierPaz" target="_blank"><i class="fa-brands fa-github"></i></a>
                         <a href="https://wa.me/573023365691" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
@@ -496,18 +470,9 @@
                 </div>
 
                 <form class="contact-form">
-                    <div class="form-group">
-                        <label>Nombre</label>
-                        <input type="text" placeholder="Tu nombre">
-                    </div>
-                    <div class="form-group">
-                        <label>Correo electrónico</label>
-                        <input type="email" placeholder="tu@email.com">
-                    </div>
-                    <div class="form-group">
-                        <label>Mensaje</label>
-                        <textarea rows="4" placeholder="Escribe tu mensaje aquí"></textarea>
-                    </div>
+                    <div class="form-group"><label>Nombre</label><input type="text" placeholder="Tu nombre"></div>
+                    <div class="form-group"><label>Correo electrónico</label><input type="email" placeholder="tu@email.com"></div>
+                    <div class="form-group"><label>Mensaje</label><textarea rows="4" placeholder="Escribe tu mensaje aquí"></textarea></div>
                     <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar un mensaje</button>
                 </form>
             </div>
@@ -515,19 +480,12 @@
 
     </main>
 
-    <!-- ========== MODO UNIVERSO ========== -->
+    <!-- MODO UNIVERSO -->
     <div id="universe-container" class="universe-container">
         <canvas id="universe-canvas"></canvas>
-
-        <!-- Botón para salir al modo lectura (nuevo) -->
-        <button id="exit-universe-btn" class="exit-universe-btn">
-            <i class="fa-solid fa-book-open"></i> Modo Lectura
-        </button>
-
-        <!-- Botón centrar -->
+        <button id="exit-universe-btn" class="exit-universe-btn"><i class="fa-solid fa-book-open"></i> Modo Lectura</button>
         <button id="center-universe-btn" class="center-btn">◎ CENTRAR UNIVERSO</button>
 
-        <!-- Filtros -->
         <div class="universe-filters">
             <button class="universe-filter active" data-filter="all">TODOS</button>
             <button class="universe-filter" data-filter="web">WEB</button>
@@ -539,12 +497,11 @@
             <button class="universe-filter" data-filter="javascript">JAVASCRIPT</button>
         </div>
 
-        <!-- Panel lateral de proyecto -->
         <div id="project-panel" class="project-panel">
             <button id="close-panel-btn" class="close-panel-btn"><i class="fa-solid fa-xmark"></i></button>
             <div class="panel-content">
                 <h2 id="panel-title">OperPan</h2>
-                <p id="panel-subtitle" class="panel-subtitle">Sistema de Gestión de Personal</p>
+                <p id="panel-subtitle" class="panel-subtitle">Sistema de Gestión</p>
                 <div class="panel-meta">
                     <span class="panel-badge" id="panel-status">Destacado</span>
                     <span class="panel-year" id="panel-year">2026</span>
@@ -559,7 +516,6 @@
             </div>
         </div>
 
-        <!-- Perfil del explorador (Sobre mí en el universo) -->
         <div id="explorer-profile" class="explorer-profile">
             <div class="profile-avatar">EP</div>
             <h3>Eddier Paz</h3>
@@ -573,7 +529,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -598,7 +553,6 @@
                     <li><a href="https://github.com/EddierPaz" target="_blank">GitHub</a></li>
                     <li><a href="#">LinkedIn</a></li>
                     <li><a href="#">CV / Portafolio</a></li>
-                    <li><a href="#">Certificaciones</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -606,7 +560,7 @@
                 <ul>
                     <li><i class="fa-regular fa-envelope"></i> eddierpaz9@gmail.com</li>
                     <li><i class="fa-solid fa-phone"></i> +57 302 336 5691</li>
-                    <li><i class="fa-solid fa-location-dot"></i> Santiago de Compostela</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Bogotá, Colombia</li>
                 </ul>
             </div>
         </div>
@@ -617,5 +571,4 @@
 
     <script src="./assets/js/main.js"></script>
 </body>
-
 </html>

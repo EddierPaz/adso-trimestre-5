@@ -1,6 +1,5 @@
 /* ============================================
-   NAV SUPERIOR COMPARTIDO
-   Se usa en todos los proyectos de /proyectos/
+   NAV SUPERIOR COMPARTIDO (Estructura Grid)
    ============================================ */
 
 .portfolio-nav {
@@ -9,10 +8,12 @@
     left: 0;
     right: 0;
     z-index: 9999;
-    display: flex;
+    
+    /* Usamos Grid para 3 columnas exactas */
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: space-between;
-    gap: 16px;
+    
     height: 64px;
     padding: 0 20px;
     background: rgba(255, 255, 255, 0.85);
@@ -24,7 +25,14 @@
     transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
-/* ---- MARCA ---- */
+/* ---- COLUMNA IZQUIERDA ---- */
+.pnav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-self: start; /* Se pega a la izquierda */
+}
+
 .pnav-brand {
     display: inline-flex;
     align-items: center;
@@ -36,7 +44,6 @@
     color: #FFFFFF;
     font-weight: 700;
     font-size: 0.95rem;
-    letter-spacing: 0.5px;
     text-decoration: none;
     box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -47,7 +54,6 @@
     box-shadow: 0 6px 18px rgba(124, 58, 237, 0.5);
 }
 
-/* ---- BOTÓN VOLVER ---- */
 .pnav-back {
     display: inline-flex;
     align-items: center;
@@ -69,25 +75,24 @@
     transform: translateX(-2px);
 }
 
-.pnav-back svg {
-    width: 15px;
-    height: 15px;
-    flex-shrink: 0;
-    transition: transform 0.25s ease;
+/* ---- COLUMNA CENTRAL ---- */
+.pnav-center {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #1E1E2F;
+    justify-self: center; /* Se queda justo en el medio */
+    white-space: nowrap;
 }
 
-.pnav-back:hover svg {
-    transform: translateX(-3px);
-}
-
-/* ---- CONTROLES (derecha) ---- */
+/* ---- COLUMNA DERECHA ---- */
 .pnav-actions {
     display: flex;
     align-items: center;
     gap: 10px;
+    justify-self: end; /* Se pega a la derecha */
 }
 
-/* Botón circular (tema) */
 .pnav-icon-btn {
     display: inline-flex;
     align-items: center;
@@ -108,12 +113,6 @@
     transform: rotate(-15deg) scale(1.05);
 }
 
-.pnav-icon-btn svg {
-    width: 17px;
-    height: 17px;
-}
-
-/* Botón Modo Juego */
 .pnav-game-btn {
     display: inline-flex;
     align-items: center;
@@ -140,38 +139,15 @@
 }
 
 /* ============================================
-   ANIMACIÓN DEL ICONO SOL / LUNA
-   ============================================ */
-.pnav-icon-btn {
-    overflow: hidden;
-    position: relative;
-}
-
-.pnav-icon-btn svg {
-    width: 17px;
-    height: 17px;
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-                opacity 0.3s ease;
-    transform-origin: center;
-}
-
-/* Pequeño "pop" al cambiar de icono */
-.pnav-icon-btn:hover svg {
-    transform: rotate(180deg) scale(1.1);
-}
-
-/* En modo oscuro, el sol también puede girar un poco al hover */
-body.dark-mode .pnav-icon-btn:hover svg {
-    transform: rotate(-180deg) scale(1.1);
-}
-
-/* ============================================
    MODO OSCURO
-   Se activa con body.dark-mode
    ============================================ */
 body.dark-mode .portfolio-nav {
     background: rgba(15, 15, 26, 0.85);
     border-bottom-color: rgba(124, 58, 237, 0.25);
+    color: #F8FAFC;
+}
+
+body.dark-mode .pnav-center {
     color: #F8FAFC;
 }
 
@@ -196,39 +172,39 @@ body.dark-mode .pnav-icon-btn:hover {
 }
 
 /* ============================================
-   RESPONSIVE
+   RESPONSIVE (Móviles y Tablets)
    ============================================ */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .portfolio-nav {
         height: 58px;
         padding: 0 12px;
     }
 
-    .pnav-back {
-        padding: 8px;
-        width: 40px;
-        height: 40px;
-        justify-content: center;
-    }
+    /* En móviles ocultamos el texto del botón volver para ahorrar espacio */
     .pnav-back span {
         display: none;
     }
-
-    .pnav-game-btn {
-        padding: 8px;
+    
+    .pnav-back {
         width: 40px;
         height: 40px;
         justify-content: center;
+        padding: 0;
     }
+
+    /* Ocultamos el título del centro en móviles para que no se encimen los elementos */
+    .pnav-center {
+        display: none; 
+    }
+
     .pnav-game-text {
         display: none;
     }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .portfolio-nav *,
-    .portfolio-nav *::before,
-    .portfolio-nav *::after {
-        transition: none !important;
+    
+    .pnav-game-btn {
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+        padding: 0;
     }
 }

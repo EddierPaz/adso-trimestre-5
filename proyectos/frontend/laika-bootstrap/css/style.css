@@ -316,35 +316,15 @@
     object-fit: contain;
 }
 
-.menu-panel {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 280px;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 10px 0;
-    display: none;
-    z-index: 9999;
-    overflow: visible !important;
-    max-height: none !important;
-}
-
 /* =====================
-   FOOTER PORTAFOLIO
+   AJUSTE PARA EL NAV COMPARTIDO
    ===================== */
-
-.footer1 {
-    text-align: center;
-    padding: 2rem;
-    font-size: .8rem;
-    color: var(--muted);
-    border-top: 1px solid var(--sand);
-    margin-top: 3rem;
+body {
+    padding-top: 64px; /* Espacio para el nav fijo del portafolio */
 }
 
-.footera {
-    color: var(--clay-d);
-    text-decoration: none;
+@media (max-width: 768px) {
+    body {
+        padding-top: 58px; /* Altura del nav en móviles */
+    }
 }

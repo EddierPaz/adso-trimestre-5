@@ -47,6 +47,7 @@
     text-align: center;
     border: none;
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .btn-primary {
@@ -240,7 +241,11 @@
 }
 .about-illustration-placeholder i { font-size: 4rem; color: var(--secondary-red); }
 
-/* --- PROJECTS --- */
+/* ============================================
+   SECCIÓN DE PROYECTOS
+   ============================================ */
+
+/* Encabezado de Proyectos */
 .projects-header {
     display: flex;
     justify-content: space-between;
@@ -250,30 +255,50 @@
     gap: 20px;
 }
 
+.projects-header .section-title {
+    margin-bottom: 0;
+}
+
+/* Botones de Filtro */
 .filter-btn-group {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .btn-filter {
     background: transparent;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 20px;
+    border: 1px solid var(--border-light);
+    padding: 8px 20px;
+    border-radius: 30px;
     font-weight: 500;
+    color: var(--text-gray);
     cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-primary);
 }
+
+.btn-filter:hover {
+    border-color: var(--primary-purple);
+    color: var(--primary-purple);
+}
+
 .btn-filter.active {
     background: var(--primary-purple);
-    color: var(--text-light);
+    border-color: var(--primary-purple);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
 }
 
+/* Grid de Proyectos */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
+    align-items: stretch;
 }
 
+/* Tarjeta Base */
 .project-card {
     display: flex;
     flex-direction: column;
@@ -281,45 +306,153 @@
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    height: 100%;
 }
+
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
+/* Clase para ocultar tarjetas con el filtro y paginación */
+.project-card.oculto {
+    display: none !important;
+}
+
+/* Imagen / Icono del Proyecto */
 .project-img {
-    height: 180px;
+    height: 200px;
     background: #eef0f5;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 600;
-    color: #999;
-    font-size: 1.2rem;
+    font-size: 3.5rem;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
-.project-body { padding: 25px; }
-.project-body h4 { margin-bottom: 10px; font-size: 1.1rem;}
-.project-body p { color: var(--text-gray); font-size: 0.9rem; margin-bottom: 15px; }
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
 
+.project-card:hover .project-img img {
+    transform: scale(1.05);
+}
+
+.project-card:hover .project-img i {
+    transform: scale(1.1);
+}
+
+.project-img i {
+    transition: transform 0.3s ease;
+}
+
+/* Cuerpo del Proyecto */
+.project-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1; 
+}
+
+.project-body h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: var(--text-dark);
+}
+
+.project-body p {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* Etiquetas de Tecnología */
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 20px;
 }
+
 .tech-tag {
     background: #f0f0f0;
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 0.75rem;
     font-weight: 600;
+    color: var(--text-gray);
 }
 
+/* Enlace "Ver proyecto" (se empuja al fondo) */
 .project-link {
     color: var(--primary-purple);
     font-weight: 600;
+    margin-top: auto;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: gap 0.3s ease;
+}
+
+.project-link:hover {
+    gap: 10px;
+}
+
+/* ============================================
+   ESTILOS ESPECIALES PARA OPERPAN (Destacado)
+   ============================================ */
+.project-card-featured {
+    border: 1px solid #7C3AED;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FC 100%);
+    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.1);
+}
+
+.project-card-featured:hover {
+    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.2);
+}
+
+.featured-img {
+    background: linear-gradient(135deg, #1E1E2F 0%, #2D2D4A 100%);
+    color: #A78BFA;
+    font-size: 4rem;
+}
+
+.featured-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(124, 58, 237, 0.2);
+    color: #A78BFA;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    z-index: 2;
+}
+
+.featured-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+/* Contenedor del botón Ver Más */
+.load-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
 }
 
 /* --- SKILLS --- */
@@ -439,7 +572,6 @@
     transform: scale(1.1);
 }
 
-/* Botón del Modo Juego */
 .mode-toggle-btn {
     background: transparent;
     border: 1px solid var(--border-light);
@@ -459,18 +591,9 @@
     color: var(--primary-purple);
 }
 
-/* Estilos específicos para cuando están activos */
-body.dark-mode .icon-btn {
-    color: #f1c40f; /* Color amarillo para la luna en modo oscuro */
-}
-body.dark-mode .mode-toggle-btn {
-    border-color: #555;
-    color: #ccc;
-}
-
-body.game-mode .icon-btn {
-    color: #00ffcc;
-}
+body.dark-mode .icon-btn { color: #f1c40f; }
+body.dark-mode .mode-toggle-btn { border-color: #555; color: #ccc; }
+body.game-mode .icon-btn { color: #00ffcc; }
 body.game-mode .mode-toggle-btn {
     border-color: #00ffcc;
     color: #00ffcc;
@@ -504,9 +627,7 @@ body.game-mode .mode-toggle-btn {
 
 .footer-bottom { text-align: center; color: #666; font-size: 0.8rem; padding-top: 10px; }
 
-/* game-mode.css */
-
-/* Cuando el modo juego está activo, ocultamos el contenido principal y mostramos el universo */
+/* --- MODO UNIVERSO (GAME MODE) --- */
 body.game-mode .main-content {
     opacity: 0;
     visibility: hidden;
@@ -524,7 +645,6 @@ body.game-mode #game-universe {
     100% { opacity: 1; }
 }
 
-/* Ajustes para el header en modo juego (puede mantenerlo visible o no) */
 body.game-mode .header {
     background: rgba(5,5,9,0.7) !important;
     backdrop-filter: blur(10px);
@@ -535,68 +655,18 @@ body.game-mode .header {
     z-index: 70;
 }
 
-/* Ocultamos el botón de modo juego en el header (porque ya tenemos el de salida) */
-body.game-mode #game-toggle {
-    display: none;
-}
+body.game-mode #game-toggle { display: none; }
 
-/* Estilos adicionales para el HUD, paneles, etc. */
-#planet-panel {
-    font-family: 'Poppins', sans-serif;
-}
-#planet-panel h2 {
-    color: #A78BFA;
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-#planet-panel .status {
-    color: #22D3EE;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-}
-#planet-panel .tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 15px 0;
-}
-#planet-panel .tech-tag {
-    background: rgba(124,58,237,0.2);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    border: 1px solid rgba(124,58,237,0.3);
-}
-#planet-panel .btn-group-panel {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-}
-#planet-panel .btn-panel {
-    padding: 8px 18px;
-    border-radius: 30px;
-    border: none;
-    font-weight: 600;
-    cursor: pointer;
-    background: #7C3AED;
-    color: white;
-    transition: 0.3s;
-}
-#planet-panel .btn-panel.outline {
-    background: transparent;
-    border: 1px solid #7C3AED;
-    color: #A78BFA;
-}
-#planet-panel .btn-panel:hover {
-    transform: scale(1.05);
-}
+#planet-panel { font-family: 'Poppins', sans-serif; }
+#planet-panel h2 { color: #A78BFA; font-size: 1.8rem; margin-bottom: 10px; }
+#planet-panel .status { color: #22D3EE; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 15px; }
+#planet-panel .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 15px 0; }
+#planet-panel .tech-tag { background: rgba(124,58,237,0.2); padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; border: 1px solid rgba(124,58,237,0.3); }
+#planet-panel .btn-group-panel { display: flex; gap: 10px; margin-top: 20px; }
+#planet-panel .btn-panel { padding: 8px 18px; border-radius: 30px; border: none; font-weight: 600; cursor: pointer; background: #7C3AED; color: white; transition: 0.3s; }
+#planet-panel .btn-panel.outline { background: transparent; border: 1px solid #7C3AED; color: #A78BFA; }
+#planet-panel .btn-panel:hover { transform: scale(1.05); }
 
-/* ============================================
-   MODO UNIVERSO (game-mode)
-   ============================================ */
-
-/* Contenedor principal del universo */
 .universe-container {
     position: fixed;
     top: 0;
@@ -605,7 +675,7 @@ body.game-mode #game-toggle {
     height: 100vh;
     z-index: 1000;
     background: #07070C;
-    display: none;  /* oculto por defecto */
+    display: none;
     overflow: hidden;
     pointer-events: none;
     transition: opacity 0.8s ease;
@@ -618,7 +688,6 @@ body.game-mode .universe-container {
     opacity: 1;
 }
 
-/* Ocultar el contenido principal cuando game-mode está activo */
 body.game-mode .main-content,
 body.game-mode .header,
 body.game-mode .footer {
@@ -627,23 +696,11 @@ body.game-mode .footer {
     transition: opacity 0.6s ease;
 }
 
-body.game-mode {
-    background: #07070C;
-    overflow: hidden; /* evitar scroll */
-}
+body.game-mode { background: #07070C; overflow: hidden; }
 
-/* Canvas ocupa todo el contenedor */
-#universe-canvas {
-    display: block;
-    width: 100%;
-    height: 100%;
-    cursor: grab;
-}
-#universe-canvas:active {
-    cursor: grabbing;
-}
+#universe-canvas { display: block; width: 100%; height: 100%; cursor: grab; }
+#universe-canvas:active { cursor: grabbing; }
 
-/* Botón centrar */
 .center-btn {
     position: absolute;
     bottom: 30px;
@@ -668,7 +725,6 @@ body.game-mode {
     box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
 }
 
-/* Filtros del universo */
 .universe-filters {
     position: absolute;
     top: 30px;
@@ -699,17 +755,9 @@ body.game-mode {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
-.universe-filter:hover {
-    color: #F8FAFC;
-    background: rgba(124, 58, 237, 0.15);
-}
-.universe-filter.active {
-    background: #7C3AED;
-    color: #F8FAFC;
-    box-shadow: 0 0 15px rgba(124, 58, 237, 0.3);
-}
+.universe-filter:hover { color: #F8FAFC; background: rgba(124, 58, 237, 0.15); }
+.universe-filter.active { background: #7C3AED; color: #F8FAFC; box-shadow: 0 0 15px rgba(124, 58, 237, 0.3); }
 
-/* Panel lateral de proyecto */
 .project-panel {
     position: absolute;
     top: 0;
@@ -725,9 +773,8 @@ body.game-mode {
     transition: right 0.4s cubic-bezier(0.22, 1, 0.36, 1);
     color: #F8FAFC;
 }
-.project-panel.open {
-    right: 0;
-}
+.project-panel.open { right: 0; }
+
 .close-panel-btn {
     position: absolute;
     top: 20px;
@@ -741,80 +788,22 @@ body.game-mode {
     border-radius: 8px;
     transition: 0.3s;
 }
-.close-panel-btn:hover {
-    background: rgba(255,255,255,0.1);
-    color: #F8FAFC;
-}
-.panel-content h2 {
-    font-size: 2rem;
-    margin-bottom: 5px;
-    color: #F8FAFC;
-}
-.panel-content .panel-subtitle {
-    font-size: 1rem;
-    color: #94A3B8;
-    margin-bottom: 15px;
-}
-.panel-meta {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-.panel-badge {
-    background: #7C3AED;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #F8FAFC;
-}
-.panel-year {
-    color: #94A3B8;
-    font-size: 0.9rem;
-}
-.panel-description {
-    color: #CBD5E1;
-    line-height: 1.7;
-    margin-bottom: 25px;
-}
-.panel-techs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 25px;
-}
-.panel-techs .tech-tag {
-    background: rgba(124, 58, 237, 0.2);
-    color: #A78BFA;
-    padding: 4px 14px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    border: 1px solid rgba(124, 58, 237, 0.2);
-}
-.panel-actions {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 25px;
-}
-.panel-actions .btn {
-    flex: 1;
-    text-align: center;
-    padding: 10px 0;
-}
-.panel-actions .btn-outline {
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.2);
-    color: #F8FAFC;
-}
-.panel-actions .btn-outline:hover {
-    border-color: #7C3AED;
-    color: #7C3AED;
-}
-.panel-gallery {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
+.close-panel-btn:hover { background: rgba(255,255,255,0.1); color: #F8FAFC; }
+
+.panel-content h2 { font-size: 2rem; margin-bottom: 5px; color: #F8FAFC; }
+.panel-content .panel-subtitle { font-size: 1rem; color: #94A3B8; margin-bottom: 15px; }
+.panel-meta { display: flex; gap: 15px; margin-bottom: 20px; }
+.panel-badge { background: #7C3AED; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; color: #F8FAFC; }
+.panel-year { color: #94A3B8; font-size: 0.9rem; }
+.panel-description { color: #CBD5E1; line-height: 1.7; margin-bottom: 25px; }
+.panel-techs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 25px; }
+.panel-techs .tech-tag { background: rgba(124, 58, 237, 0.2); color: #A78BFA; padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(124, 58, 237, 0.2); }
+.panel-actions { display: flex; gap: 12px; margin-bottom: 25px; }
+.panel-actions .btn { flex: 1; text-align: center; padding: 10px 0; }
+.panel-actions .btn-outline { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #F8FAFC; }
+.panel-actions .btn-outline:hover { border-color: #7C3AED; color: #7C3AED; }
+
+.panel-gallery { display: flex; gap: 10px; flex-wrap: wrap; }
 .panel-gallery .gallery-thumb {
     width: 70px;
     height: 70px;
@@ -829,12 +818,8 @@ body.game-mode {
     cursor: pointer;
     transition: 0.3s;
 }
-.panel-gallery .gallery-thumb:hover {
-    border-color: #7C3AED;
-    background: rgba(124, 58, 237, 0.1);
-}
+.panel-gallery .gallery-thumb:hover { border-color: #7C3AED; background: rgba(124, 58, 237, 0.1); }
 
-/* Perfil del explorador */
 .explorer-profile {
     position: absolute;
     bottom: 100px;
@@ -849,9 +834,8 @@ body.game-mode {
     z-index: 5;
     display: none;
 }
-body.game-mode .explorer-profile {
-    display: block;
-}
+body.game-mode .explorer-profile { display: block; }
+
 .explorer-profile .profile-avatar {
     width: 60px;
     height: 60px;
@@ -864,25 +848,10 @@ body.game-mode .explorer-profile {
     font-size: 1.5rem;
     margin-bottom: 12px;
 }
-.explorer-profile h3 {
-    font-size: 1.2rem;
-    margin-bottom: 2px;
-}
-.explorer-profile p {
-    color: #94A3B8;
-    font-size: 0.85rem;
-    margin-bottom: 8px;
-}
-.explorer-profile .profile-bio {
-    color: #CBD5E1;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-}
-.explorer-profile .profile-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
+.explorer-profile h3 { font-size: 1.2rem; margin-bottom: 2px; }
+.explorer-profile p { color: #94A3B8; font-size: 0.85rem; margin-bottom: 8px; }
+.explorer-profile .profile-bio { color: #CBD5E1; font-size: 0.9rem; margin-bottom: 15px; }
+.explorer-profile .profile-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .explorer-profile .profile-stats div {
     background: rgba(255,255,255,0.03);
     padding: 8px 12px;
@@ -891,14 +860,8 @@ body.game-mode .explorer-profile {
     font-size: 0.8rem;
     color: #94A3B8;
 }
-.explorer-profile .profile-stats div span {
-    display: block;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #F8FAFC;
-}
+.explorer-profile .profile-stats div span { display: block; font-size: 1.2rem; font-weight: 700; color: #F8FAFC; }
 
-/* Cursor personalizado (solo universo) */
 body.game-mode .universe-cursor {
     position: fixed;
     pointer-events: none;
@@ -912,23 +875,10 @@ body.game-mode .universe-cursor {
     transition: width 0.2s, height 0.2s, border-color 0.2s, background 0.2s;
     display: none;
 }
-body.game-mode .universe-cursor.active {
-    display: block;
-}
-body.game-mode .universe-cursor.hover-planet {
-    width: 50px;
-    height: 50px;
-    border-color: #7C3AED;
-    background: rgba(124, 58, 237, 0.15);
-}
-body.game-mode .universe-cursor.hover-tech {
-    width: 40px;
-    height: 40px;
-    border-color: #22D3EE;
-    background: rgba(34, 211, 238, 0.1);
-}
+body.game-mode .universe-cursor.active { display: block; }
+body.game-mode .universe-cursor.hover-planet { width: 50px; height: 50px; border-color: #7C3AED; background: rgba(124, 58, 237, 0.15); }
+body.game-mode .universe-cursor.hover-tech { width: 40px; height: 40px; border-color: #22D3EE; background: rgba(34, 211, 238, 0.1); }
 
-/* Botón para salir del universo (Modo Lectura) */
 .exit-universe-btn {
     position: absolute;
     top: 30px;
@@ -949,30 +899,15 @@ body.game-mode .universe-cursor.hover-tech {
     z-index: 15;
     font-family: var(--font-primary);
 }
-.exit-universe-btn:hover {
-    background: rgba(124, 58, 237, 0.3);
-    border-color: #7C3AED;
-    box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
-}
-.exit-universe-btn i {
-    font-size: 1rem;
-}
+.exit-universe-btn:hover { background: rgba(124, 58, 237, 0.3); border-color: #7C3AED; box-shadow: 0 0 20px rgba(124, 58, 237, 0.2); }
+.exit-universe-btn i { font-size: 1rem; }
 
-/* Ajustes responsivos para el botón */
 @media (max-width: 768px) {
-    .exit-universe-btn {
-        top: 15px;
-        right: 15px;
-        padding: 8px 16px;
-        font-size: 0.8rem;
-        gap: 6px;
-    }
-    .exit-universe-btn i {
-        font-size: 0.9rem;
-    }
+    .exit-universe-btn { top: 15px; right: 15px; padding: 8px 16px; font-size: 0.8rem; gap: 6px; }
+    .exit-universe-btn i { font-size: 0.9rem; }
 }
 
-/* --- RESPONSIVE --- */
+/* --- RESPONSIVE GENERAL --- */
 @media (max-width: 1024px) {
     .hero-grid { grid-template-columns: 1fr; text-align: center; }
     .hero-text .description { margin: 0 auto 30px auto; }
@@ -983,14 +918,16 @@ body.game-mode .universe-cursor.hover-tech {
     .skills-layout { grid-template-columns: 1fr; }
     .contact-layout { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
-    .badge-float { display: none; } /* Ocultar badges en tablet/móvil */
+    .badge-float { display: none; }
+    .projects-header { flex-direction: column; text-align: center; }
 }
 
 @media (max-width: 768px) {
-    .nav-links { display: none; } /* Para versión móvil, luego puedes añadir un menú hamburguesa con JS */
+    .nav-links { display: none; }
     .stats-container { grid-template-columns: 1fr 1fr; }
     .about-cards { grid-template-columns: 1fr; }
     .skills-grid-icons { grid-template-columns: 1fr 1fr; }
     .footer-grid { grid-template-columns: 1fr; }
     .hero-text h1 { font-size: 2.5rem; }
+    .filter-btn-group { justify-content: center; }
 }
