@@ -357,6 +357,7 @@
     margin-bottom: 20px;
 }
 
+/* --- ETIQUETAS DE TECNOLOGÍA (Base) --- */
 .tech-tag {
     background: #f0f0f0;
     padding: 4px 12px;
@@ -364,6 +365,14 @@
     font-size: 0.75rem;
     font-weight: 600;
     color: var(--text-gray);
+    transition: all 0.3s ease;
+}
+
+/* --- ETIQUETAS DE TECNOLOGÍA EN MODO OSCURO --- */
+body.dark-mode .tech-tag {
+    background: rgba(124, 58, 237, 0.15); 
+    color: #C4B5FD; 
+    border: 1px solid rgba(124, 58, 237, 0.3); 
 }
 
 .project-link {
@@ -381,34 +390,50 @@
     gap: 10px;
 }
 
+/* ============================================
+   ESTILOS ESPECIALES PARA OPERPAN (Destacado)
+   ============================================ */
 .project-card-featured {
     border: 1px solid #7C3AED;
     background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FC 100%);
     box-shadow: 0 10px 30px rgba(124, 58, 237, 0.1);
+    position: relative;
 }
 
 .project-card-featured:hover {
     box-shadow: 0 15px 35px rgba(124, 58, 237, 0.2);
 }
 
-.featured-img {
-    background: linear-gradient(135deg, #1E1E2F 0%, #2D2D4A 100%);
-    color: #A78BFA;
-    font-size: 4rem;
+/* --- ARREGLO PARA EL MODO OSCURO --- */
+body.dark-mode .project-card-featured {
+    background: linear-gradient(180deg, #1E1E2F 0%, #16213E 100%);
+    border-color: rgba(124, 58, 237, 0.6);
 }
 
+body.dark-mode .project-card-featured .project-body h3 {
+    color: var(--text-light);
+}
+
+body.dark-mode .project-card-featured .project-body p {
+    color: #CBD5E1;
+}
+
+/* --- MEJORA DE LA ETIQUETA "PROYECTO PRINCIPAL" --- */
 .featured-badge {
     position: absolute;
     top: 15px;
     right: 15px;
-    background: rgba(124, 58, 237, 0.2);
-    color: #A78BFA;
+    background: rgba(15, 15, 26, 0.75); 
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #F8FAFC;
     font-size: 0.7rem;
-    font-weight: 600;
-    padding: 4px 10px;
+    font-weight: 700;
+    padding: 6px 14px;
     border-radius: 20px;
-    letter-spacing: 0.5px;
-    border: 1px solid rgba(167, 139, 250, 0.3);
+    letter-spacing: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     z-index: 2;
 }
 
@@ -903,7 +928,7 @@ body.game-mode .universe-cursor.hover-tech { width: 40px; height: 40px; border-c
     .hero-grid { 
         grid-template-columns: 1fr; 
         text-align: center; 
-        gap: 30px; /* Devolvemos el espacio entre el texto y la imagen */
+        gap: 30px; 
     }
     .hero-text h1 { font-size: 2.5rem; }
     .hero-text .description { margin: 0 auto 30px auto; }
@@ -917,7 +942,7 @@ body.game-mode .universe-cursor.hover-tech { width: 40px; height: 40px; border-c
     }
 
     .hero-avatar-img {
-        max-width: 85% !important; /* Evita que se salga de la pantalla */
+        max-width: 85% !important; 
         height: auto !important;
         margin: 0 auto;
     }
