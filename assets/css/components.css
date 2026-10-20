@@ -146,24 +146,6 @@
     align-items: center;
 }
 
-.hero-illustration-placeholder {
-    width: 350px;
-    height: 350px;
-    background: #eef0f5;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #999;
-    font-size: 1.2rem;
-}
-.hero-illustration-placeholder i {
-    font-size: 4rem;
-    margin-bottom: 10px;
-    color: var(--primary-purple);
-}
-
 .badge-float {
     position: absolute;
     background: var(--bg-white);
@@ -191,7 +173,6 @@
     transform: scale(1.05); 
 }
 
-/* El contenedor, solo para darle el tamaño y hacerlo circular */
 .logo-avatar {
     width: 48px; 
     height: 48px;
@@ -202,7 +183,6 @@
     align-items: center;
 }
 
-/* La imagen original */
 .logo-avatar img {
     width: 100%;
     height: 100%;
@@ -257,25 +237,10 @@
 .about-card h4 { font-size: 1rem; margin-bottom: 5px; }
 .about-card p { font-size: 0.85rem; color: var(--text-gray); }
 
-.about-illustration-placeholder {
-    width: 100%;
-    aspect-ratio: 1/1;
-    max-width: 350px;
-    background: #eef0f5;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #999;
-}
-.about-illustration-placeholder i { font-size: 4rem; color: var(--secondary-red); }
-
 /* ============================================
    SECCIÓN DE PROYECTOS
    ============================================ */
 
-/* Encabezado de Proyectos */
 .projects-header {
     display: flex;
     justify-content: space-between;
@@ -289,7 +254,6 @@
     margin-bottom: 0;
 }
 
-/* Botones de Filtro */
 .filter-btn-group {
     display: flex;
     gap: 10px;
@@ -320,7 +284,6 @@
     box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
 }
 
-/* Grid de Proyectos */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -328,7 +291,6 @@
     align-items: stretch;
 }
 
-/* Tarjeta Base */
 .project-card {
     display: flex;
     flex-direction: column;
@@ -345,12 +307,10 @@
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* Clase para ocultar tarjetas con el filtro y paginación */
 .project-card.oculto {
     display: none !important;
 }
 
-/* Imagen / Icono del Proyecto */
 .project-img {
     height: 200px;
     background: #eef0f5;
@@ -370,19 +330,6 @@
     transition: transform 0.5s ease;
 }
 
-.project-card:hover .project-img img {
-    transform: scale(1.05);
-}
-
-.project-card:hover .project-img i {
-    transform: scale(1.1);
-}
-
-.project-img i {
-    transition: transform 0.3s ease;
-}
-
-/* Cuerpo del Proyecto */
 .project-body {
     padding: 25px;
     display: flex;
@@ -403,7 +350,6 @@
     line-height: 1.5;
 }
 
-/* Etiquetas de Tecnología */
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
@@ -420,7 +366,6 @@
     color: var(--text-gray);
 }
 
-/* Enlace "Ver proyecto" (se empuja al fondo) */
 .project-link {
     color: var(--primary-purple);
     font-weight: 600;
@@ -436,9 +381,6 @@
     gap: 10px;
 }
 
-/* ============================================
-   ESTILOS ESPECIALES PARA OPERPAN (Destacado)
-   ============================================ */
 .project-card-featured {
     border: 1px solid #7C3AED;
     background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FC 100%);
@@ -478,7 +420,6 @@
     padding-top: 10px;
 }
 
-/* Contenedor del botón Ver Más */
 .load-more-container {
     display: flex;
     justify-content: center;
@@ -932,12 +873,10 @@ body.game-mode .universe-cursor.hover-tech { width: 40px; height: 40px; border-c
 .exit-universe-btn:hover { background: rgba(124, 58, 237, 0.3); border-color: #7C3AED; box-shadow: 0 0 20px rgba(124, 58, 237, 0.2); }
 .exit-universe-btn i { font-size: 1rem; }
 
-@media (max-width: 768px) {
-    .exit-universe-btn { top: 15px; right: 15px; padding: 8px 16px; font-size: 0.8rem; gap: 6px; }
-    .exit-universe-btn i { font-size: 0.9rem; }
-}
+/* ============================================
+   RESPONSIVE GENERAL (TABLETS Y MÓVILES)
+   ============================================ */
 
-/* --- RESPONSIVE GENERAL --- */
 @media (max-width: 1024px) {
     .hero-grid { grid-template-columns: 1fr; text-align: center; }
     .hero-text .description { margin: 0 auto 30px auto; }
@@ -953,11 +892,61 @@ body.game-mode .universe-cursor.hover-tech { width: 40px; height: 40px; border-c
 }
 
 @media (max-width: 768px) {
+    /* NAVEGACIÓN MÓVIL */
     .nav-links { display: none; }
-    .stats-container { grid-template-columns: 1fr 1fr; }
+    .header-content { padding: 0 10px; }
+    .theme-controls { gap: 8px; }
+    #game-text { display: none; }
+    .mode-toggle-btn { padding: 8px 12px; }
+
+    /* AJUSTES DEL HERO EN MÓVIL */
+    .hero-grid { 
+        grid-template-columns: 1fr; 
+        text-align: center; 
+        gap: 30px; /* Devolvemos el espacio entre el texto y la imagen */
+    }
+    .hero-text h1 { font-size: 2.5rem; }
+    .hero-text .description { margin: 0 auto 30px auto; }
+    .btn-group { justify-content: center; }
+    .social-icons { justify-content: center; }
+
+    /* MANTENEMOS EL AVATAR PRINCIPAL PERO LO HACEMOS RESPONSIVO */
+    .hero-image-wrapper {
+        display: flex !important; 
+        margin-top: 10px;
+    }
+
+    .hero-avatar-img {
+        max-width: 85% !important; /* Evita que se salga de la pantalla */
+        height: auto !important;
+        margin: 0 auto;
+    }
+
+    /* OCULTAMOS SOLO LA IMAGEN DE "SOBRE MÍ" */
+    .about-image { 
+        display: none !important; 
+    }
+
+    /* AJUSTES DE ESPACIADO */
+    .stats-container {
+        margin-top: 30px;
+        padding-top: 20px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .section-padding {
+        padding: 50px 0;
+    }
+
     .about-cards { grid-template-columns: 1fr; }
     .skills-grid-icons { grid-template-columns: 1fr 1fr; }
     .footer-grid { grid-template-columns: 1fr; }
-    .hero-text h1 { font-size: 2.5rem; }
-    .filter-btn-group { justify-content: center; }
+    .filter-btn-group { justify-content: center; gap: 8px; }
+
+    /* AJUSTES DE PROYECTOS EN MÓVIL */
+    .projects-header { gap: 15px; margin-bottom: 30px; }
+    .projects-header .section-title { font-size: 2rem; }
+    .btn-filter { padding: 6px 16px; font-size: 0.85rem; }
+    .project-img { height: 160px; }
+    .featured-img { font-size: 3rem; }
 }
