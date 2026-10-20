@@ -179,6 +179,36 @@
 .badge-dev { top: 20px; right: -20px; color: var(--primary-purple); }
 .badge-creative { bottom: 20px; left: -20px; color: var(--accent-orange); }
 
+/* --- LOGO --- */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05); 
+}
+
+/* El contenedor, solo para darle el tamaño y hacerlo circular */
+.logo-avatar {
+    width: 48px; 
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* La imagen original */
+.logo-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* --- STATS --- */
 .stats-container {
     display: grid;
