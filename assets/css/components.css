@@ -238,7 +238,7 @@
 .about-card p { font-size: 0.85rem; color: var(--text-gray); }
 
 /* ============================================
-   SECCIÓN DE PROYECTOS
+   SECCIÓN DE PROYECTOS (ESTILO PASTEL Y SUAVE)
    ============================================ */
 
 .projects-header {
@@ -291,43 +291,55 @@
     align-items: stretch;
 }
 
+/* Tarjeta Base (Pastel) */
 .project-card {
     display: flex;
     flex-direction: column;
     background: var(--bg-white);
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.06);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     height: 100%;
+    border: 1px solid rgba(124, 58, 237, 0.05);
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.15);
+    border-color: rgba(124, 58, 237, 0.15);
 }
 
 .project-card.oculto {
     display: none !important;
 }
 
+/* Contenedor de la imagen */
 .project-img {
     height: 200px;
-    background: #eef0f5;
+    background: #f8f9fc;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 3.5rem;
     overflow: hidden;
     position: relative;
-    transition: all 0.3s ease;
 }
 
+/* Imagen suavizada */
 .project-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    /* El filtro mágico para bajarle lo neón/IA */
+    filter: saturate(0.7) brightness(1.1) contrast(0.95);
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+/* Hover en la imagen */
+.project-card:hover .project-img img {
+    transform: scale(1.08);
+    filter: saturate(1) brightness(1) contrast(1);
 }
 
 .project-body {
@@ -357,22 +369,19 @@
     margin-bottom: 20px;
 }
 
-/* --- ETIQUETAS DE TECNOLOGÍA (Base) --- */
+/* --- ETIQUETAS DE TECNOLOGÍA (Pastel) --- */
 .tech-tag {
-    background: #f0f0f0;
-    padding: 4px 12px;
+    background: #f4efff; 
+    padding: 5px 14px;
     border-radius: 20px;
     font-size: 0.75rem;
     font-weight: 600;
-    color: var(--text-gray);
+    color: #7C3AED; 
     transition: all 0.3s ease;
 }
 
-/* --- ETIQUETAS DE TECNOLOGÍA EN MODO OSCURO --- */
-body.dark-mode .tech-tag {
-    background: rgba(124, 58, 237, 0.15); 
-    color: #C4B5FD; 
-    border: 1px solid rgba(124, 58, 237, 0.3); 
+.project-card:hover .tech-tag {
+    background: #eaddff;
 }
 
 .project-link {
@@ -391,31 +400,18 @@ body.dark-mode .tech-tag {
 }
 
 /* ============================================
-   ESTILOS ESPECIALES PARA OPERPAN (Destacado)
+   ESTILOS ESPECIALES PARA OPERPAN (Destacado Pastel)
    ============================================ */
 .project-card-featured {
-    border: 1px solid #7C3AED;
-    background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FC 100%);
-    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.1);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8F5FF 100%);
+    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.08);
     position: relative;
 }
 
 .project-card-featured:hover {
-    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.2);
-}
-
-/* --- ARREGLO PARA EL MODO OSCURO --- */
-body.dark-mode .project-card-featured {
-    background: linear-gradient(180deg, #1E1E2F 0%, #16213E 100%);
-    border-color: rgba(124, 58, 237, 0.6);
-}
-
-body.dark-mode .project-card-featured .project-body h3 {
-    color: var(--text-light);
-}
-
-body.dark-mode .project-card-featured .project-body p {
-    color: #CBD5E1;
+    box-shadow: 0 18px 40px rgba(124, 58, 237, 0.15);
+    border-color: rgba(124, 58, 237, 0.5);
 }
 
 /* --- MEJORA DE LA ETIQUETA "PROYECTO PRINCIPAL" --- */
@@ -449,6 +445,36 @@ body.dark-mode .project-card-featured .project-body p {
     display: flex;
     justify-content: center;
     margin-top: 50px;
+}
+
+/* --- MODO OSCURO (Tarjetas y Etiquetas) --- */
+body.dark-mode .project-card {
+    background: #1E1E2F;
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .project-card-featured {
+    background: linear-gradient(180deg, #1E1E2F 0%, #2A2438 100%);
+    border-color: rgba(124, 58, 237, 0.4);
+}
+
+body.dark-mode .project-body {
+    background: transparent;
+}
+
+body.dark-mode .project-body h3 {
+    color: var(--text-light);
+}
+
+body.dark-mode .tech-tag {
+    background: rgba(124, 58, 237, 0.2); 
+    color: #C4B5FD; 
+    border: 1px solid rgba(124, 58, 237, 0.3); 
+}
+
+body.dark-mode .project-card:hover .tech-tag {
+    background: rgba(124, 58, 237, 0.3);
 }
 
 /* --- SKILLS --- */
