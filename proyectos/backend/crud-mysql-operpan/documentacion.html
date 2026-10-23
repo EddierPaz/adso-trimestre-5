@@ -6,21 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CRUD OperPan · Gestión de Tareas</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../../assets/img/profile/logo.png">
+
     <!-- CSS del proyecto -->
     <link rel="stylesheet" href="./css/style.css">
     
     <!-- CSS del Nav Compartido -->
     <link rel="stylesheet" href="../../../assets/css/portafolio_nav.css">
     
-    <!-- FontAwesome (Para los iconos del nav) -->
+    <!-- FontAwesome (Para los iconos) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Fuentes del proyecto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 
     <style>
-        /* Ajuste para que el nuevo nav fijo no tape el contenido */
+        /* Ajuste para evitar que el nav fijo cubra el contenido */
         body { padding-top: 64px; }
         @media (max-width: 768px) { body { padding-top: 58px; } }
     </style>
@@ -33,7 +37,7 @@
         <div class="pnav-left">
             <a href="../../../index.html" class="pnav-logo" aria-label="Inicio">
                 <div class="pnav-logo-avatar">
-                    <img src="../../../assets/img/logo.png" alt="Eddier Paz">
+                    <img src="../../../assets/img/profile/logo.png" alt="Logo">
                 </div>
             </a>
             <a href="../../../index.html#proyectos" class="pnav-back" aria-label="Volver al portafolio">
@@ -55,144 +59,122 @@
         </div>
     </nav>
 
-    <!-- AQUÍ SIGUE TU CONTENIDO ORIGINAL -->
-    <div class="hero">
-        <div class="fade-in">
-            <span class="hero-tag">Python · MySQL · CRUD</span>
-
-            <h1>
-                Sistema CRUD <em>OperPan</em>
-            </h1>
-
-            <p class="subtitle">
-                Aplicación desarrollada en Python utilizando Programación Orientada a Objetos y arquitectura por capas
-                para la gestión de tareas en OperPan.
-            </p>
-
-            <div class="chips">
-                <span class="chip">Python</span>
-                <span class="chip">MySQL</span>
-                <span class="chip">POO</span>
-                <span class="chip">Arquitectura Modular</span>
-            </div>
+    <!-- ============ CONTENIDO ============ -->
+    <div class="hero fade-in">
+        <span class="hero-tag">Backend · Python · MySQL</span>
+        <h1>Sistema CRUD <em>OperPan</em></h1>
+        <p class="subtitle">Aplicación de consola desarrollada con Programación Orientada a Objetos para la gestión de operaciones y tareas en OperPan. Implementa un modelo de datos relacional y una arquitectura modular escalable.</p>
+        <div class="chips">
+            <span class="chip">Python 3</span>
+            <span class="chip">MySQL</span>
+            <span class="chip">POO</span>
+            <span class="chip">CLI</span>
         </div>
     </div>
 
-    <section>
-
+    <section class="fade-in">
+        <!-- Arquitectura del proyecto -->
         <p class="section-label">Arquitectura</p>
-        <h2 class="section-title">Estructura del proyecto</h2>
-
-        <div class="layers fade-in">
-
-            <div class="layer-card config">
-                <div class="layer-num">01</div>
-                <div class="layer-title">Config DB</div>
-                <div class="layer-desc">
-                    Manejo de conexión a MySQL mediante una clase Database reutilizable.
-                </div>
+        <h2 class="section-title">Estructura por Capas</h2>
+        <div class="layers">
+            <div class="layer-card">
+                <i class="fa-solid fa-server layer-icon"></i>
+                <h3>Config</h3>
+                <p>Clase <code>Database</code> para centralizar la conexión al motor MySQL y el manejo de cursores.</p>
             </div>
-
-            <div class="layer-card models">
-                <div class="layer-num">02</div>
-                <div class="layer-title">Models</div>
-                <div class="layer-desc">
-                    Representación de tareas utilizando clases y Programación Orientada a Objetos.
-                </div>
+            <div class="layer-card">
+                <i class="fa-solid fa-cube layer-icon"></i>
+                <h3>Models</h3>
+                <p>Entidad <code>TipoTarea</code> con atributos encapsulados y métodos de representación.</p>
             </div>
-
-            <div class="layer-card services">
-                <div class="layer-num">03</div>
-                <div class="layer-title">Services</div>
-                <div class="layer-desc">
-                    Implementación de la lógica CRUD para crear, listar, actualizar y eliminar tareas.
-                </div>
+            <div class="layer-card">
+                <i class="fa-solid fa-gears layer-icon"></i>
+                <h3>Services</h3>
+                <p><code>TipoTareaService</code> contiene la lógica CRUD y las consultas SQL a la base de datos.</p>
             </div>
-
         </div>
+    </section>
 
-        <div class="terminal fade-in">
+    <section class="fade-in">
+        <!-- Bloque de código real -->
+        <p class="section-label">Lógica de Negocio</p>
+        <h2 class="section-title">Fragmento de Código</h2>
+        <div class="code-window">
+            <div class="code-header">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="code-title">services/tipo_tarea_service.py</span>
+            </div>
+            <pre><code><span class="k">from</span> models.usuario <span class="k">import</span> TipoTarea
 
+<span class="k">class</span> <span class="nc">TipoTareaService</span>:
+    <span class="k">def</span> <span class="nf">__init__</span>(<span class="nb">self</span>, db):
+        <span class="nb">self</span>.db = db
+
+    <span class="k">def</span> <span class="nf">crear</span>(<span class="nb">self</span>, tipo_tarea):
+        cursor = <span class="nb">self</span>.db.get_cursor()
+        cursor.execute(
+            <span class="s">"INSERT INTO tipo_tarea (nombre_tipo_tarea) VALUES (%s)"</span>,
+            (tipo_tarea.nombre_tipo_tarea,)
+        )
+        <span class="nb">self</span>.db.commit()
+
+    <span class="k">def</span> <span class="nf">listar</span>(<span class="nb">self</span>):
+        cursor = <span class="nb">self</span>.db.get_cursor()
+        cursor.execute(<span class="s">"SELECT * FROM tipo_tarea"</span>)
+        datos = cursor.fetchall()
+        
+        tareas = []
+        <span class="k">for</span> d <span class="k">in</span> datos:
+            tareas.append(TipoTarea(d[<span class="m">1</span>], d[<span class="m">0</span>]))
+            
+        <span class="k">return</span> tareas</code></pre>
+        </div>
+    </section>
+
+    <section class="fade-in">
+        <!-- Salida en consola -->
+        <p class="section-label">Interfaz de Usuario</p>
+        <h2 class="section-title">Menú en Consola (CLI)</h2>
+        <div class="terminal">
             <div class="terminal-bar">
-                <span class="dot r"></span>
-                <span class="dot y"></span>
-                <span class="dot g"></span>
-
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
                 <span class="terminal-label">python main.py</span>
             </div>
-
             <div class="terminal-body">
-
-                <div class="t-info">--- TAREAS ---</div>
-
+                <div><span class="t-prompt">$ </span>python main.py</div>
+                <div class="t-info">Conectado</div>
+                <div>&nbsp;</div>
+                <div class="t-out">--- TAREAS ---</div>
                 <div class="t-out">1. Crear tarea</div>
                 <div class="t-out">2. Listar tarea</div>
                 <div class="t-out">3. Actualizar tarea</div>
                 <div class="t-out">4. Eliminar tarea</div>
-                <div class="t-out">5. Salir al menú</div>
-
-                <br>
-
-                <div>
-                    <span class="t-prompt">Opción: </span>
-                    <span class="cursor"></span>
-                </div>
-
+                <div class="t-out">5. Salir al menu</div>
+                <div>&nbsp;</div>
+                <div><span class="t-prompt">Opcion: </span><span class="cursor"></span></div>
             </div>
         </div>
-
-        <p class="section-label">Características</p>
-
-        <div class="features fade-in">
-
-            <div class="feat">
-                <span class="feat-dot"></span>
-                <span>CRUD completo para gestión de tareas.</span>
-            </div>
-
-            <div class="feat">
-                <span class="feat-dot"></span>
-                <span>Arquitectura organizada en capas.</span>
-            </div>
-
-            <div class="feat">
-                <span class="feat-dot"></span>
-                <span>Uso de Programación Orientada a Objetos.</span>
-            </div>
-
-            <div class="feat">
-                <span class="feat-dot"></span>
-                <span>Separación entre lógica, modelos y conexión.</span>
-            </div>
-
-            <div class="feat">
-                <span class="feat-dot"></span>
-                <span>Interfaz basada en consola para administración de tareas.</span>
-            </div>
-
-        </div>
-
     </section>
 
-    <footer>
-        Eddier Paz · 2025
-    </footer>   
+    <section class="fade-in">
+        <!-- Funcionalidades -->
+        <p class="section-label">Características</p>
+        <h2 class="section-title">Funcionalidades Implementadas</h2>
+        <div class="features">
+            <div class="feat"><span class="feat-dot"></span><span>CRUD completo para la gestión de tipos de tareas en el sistema OperPan.</span></div>
+            <div class="feat"><span class="feat-dot"></span><span>Arquitectura organizada en capas para facilitar el mantenimiento del código.</span></div>
+            <div class="feat"><span class="feat-dot"></span><span>Uso de Programación Orientada a Objetos (POO) para representar entidades.</span></div>
+            <div class="feat"><span class="feat-dot"></span><span>Separación estricta entre la lógica de negocio, los modelos y la conexión a la BD.</span></div>
+            <div class="feat"><span class="feat-dot"></span><span>Interfaz de línea de comandos (CLI) intuitiva para la administración de registros.</span></div>
+        </div>
+    </section>
 
+    <!-- ============ SCRIPTS ============ -->
     <script>
-        const obs = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: .1 });
-
+        const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); }), { threshold: .1 });
         document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
     </script>
-    
-    <!-- Script para el modo oscuro del nav -->
     <script src="../../../assets/js/portafolio_nav.js"></script>
-
 </body>
 
 </html>
