@@ -1,0 +1,92 @@
+/* ============================================
+   ESTILOS GLOBALES DE LA GALERÍA
+   ============================================ */
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f8f9fc; /* Fondo claro suave igual al portafolio */
+  color: #1e1e2f;
+  padding-top: 80px; /* Espacio superior para el nav fijo */
+}
+
+/* ============================================
+   ENCABEZADO (HUB)
+   ============================================ */
+.header-hub {
+  background: linear-gradient(180deg, #ffffff 0%, #f4efff 100%);
+  color: #1e1e2f;
+  padding: 60px 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+  margin-bottom: 40px;
+}
+
+.header-hub h1 {
+  color: #7c3aed; /* Título en morado para resaltar */
+}
+
+/* ============================================
+   TARJETAS DE EJERCICIOS (ESTILO PASTEL)
+   ============================================ */
+.card-ejercicio {
+  background: #ffffff;
+  border: 1px solid rgba(124, 58, 237, 0.05); /* Borde sutil */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.06); /* Sombra suave */
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Efecto Hover: Elevación y sombra más pronunciada */
+.card-ejercicio:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(124, 58, 237, 0.15);
+  border-color: rgba(124, 58, 237, 0.15);
+}
+
+/* Contenedor del Icono */
+.card-icon {
+  font-size: 3rem;
+  padding: 30px 20px;
+  background: #f4efff; /* Fondo lila muy claro */
+  color: #7c3aed; /* Icono morado */
+  text-align: center;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.05);
+}
+
+/* Ajustes del texto en la tarjeta */
+.card-body {
+  padding: 25px;
+}
+
+.card-title {
+  color: #1e1e2f;
+}
+
+/* Botón primario personalizado para que coincida con el portafolio */
+.btn-primary {
+  background-color: #7c3aed;
+  border-color: #7c3aed;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 50px; /* Botones redondeados */
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #6d28d9;
+  border-color: #6d28d9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+/* ============================================
+   RESPONSIVE (Móviles)
+   ============================================ */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+  .header-hub {
+    padding: 40px 15px;
+  }
+}

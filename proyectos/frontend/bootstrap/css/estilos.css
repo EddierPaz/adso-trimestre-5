@@ -7,8 +7,10 @@
 }
 
 body {
-    background: #EEEFF2;
-    color: #fff;
+    background: #696a6d;
+}
+h1, h2, h3, h4, h5, h6, p {
+    color: #000;
 }
 header {
     background: #2F3350;
