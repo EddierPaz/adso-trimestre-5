@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eddier Paz — Portafolio</title>
 
+    <!-- Favicon (Icono de la pestaña) -->
     <link rel="icon" type="image/png" href="assets/img/profile/logo.png">
 
     <!-- Fuente Poppins -->
@@ -16,7 +17,7 @@
     <!-- Íconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Hojas de estilo -->
+    <!-- Hojas de estilo personalizadas -->
     <link rel="stylesheet" href="./assets/css/variables.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/components.css">
@@ -24,14 +25,20 @@
 
 <body>
 
-    <!-- HEADER / NAV -->
+    <!-- ========================================== -->
+    <!-- HEADER / NAVEGACIÓN PRINCIPAL              -->
+    <!-- ========================================== -->
     <header class="header">
         <div class="container header-content">
+            
+            <!-- Logo (Imagen) -->
             <a href="#" class="logo" aria-label="Inicio">
                 <div class="logo-avatar">
                     <img src="assets/img/profile/logo.png" alt="Eddier Paz">
                 </div>
             </a>
+
+            <!-- Menú de navegación -->
             <nav>
                 <ul class="nav-links">
                     <li><a href="#hero" class="active">Inicio</a></li>
@@ -42,6 +49,7 @@
                 </ul>
             </nav>
 
+            <!-- Controles de Tema y Modo Juego -->
             <div class="theme-controls">
                 <button id="darkmode-toggle" class="icon-btn" aria-label="Cambiar tema oscuro/claro">
                     <i class="fa-solid fa-moon"></i>
@@ -53,12 +61,17 @@
         </div>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL -->
+    <!-- ========================================== -->
+    <!-- CONTENIDO PRINCIPAL                        -->
+    <!-- ========================================== -->
     <main class="main-content">
 
-        <!-- HERO SECTION -->
+        <!-- ========================================== -->
+        <!-- SECCIÓN 1: HERO (INICIO)                   -->
+        <!-- ========================================== -->
         <section class="section-padding" id="hero">
             <div class="container hero-grid">
+                <!-- Texto de Presentación -->
                 <div class="hero-text">
                     <p class="greeting">Hola, soy</p>
                     <h1>Eddier <span>Paz</span></h1>
@@ -80,6 +93,7 @@
                     </div>
                 </div>
 
+                <!-- Imagen de Presentación (Avatar 3D) -->
                 <div class="hero-image-wrapper">
                     <img src="assets/img/profile/avatar.png" alt="Avatar 3D de Eddier Paz" class="hero-avatar-img">
                     <div class="badge-float badge-dev"><i class="fa-solid fa-code"></i> Desarrollo</div>
@@ -87,6 +101,7 @@
                 </div>
             </div>
 
+            <!-- Estadísticas rápidas -->
             <div class="container stats-container">
                 <div class="stat-item">
                     <h3>5+</h3>
@@ -107,7 +122,9 @@
             </div>
         </section>
 
-        <!-- SOBRE MÍ -->
+        <!-- ========================================== -->
+        <!-- SECCIÓN 2: SOBRE MÍ                        -->
+        <!-- ========================================== -->
         <section class="section-padding bg-white" id="sobre-mi">
             <div class="container about-grid">
                 <div class="about-content">
@@ -139,7 +156,9 @@
             </div>
         </section>
 
-        <!-- PROYECTOS -->
+        <!-- ========================================== -->
+        <!-- SECCIÓN 3: PROYECTOS                       -->
+        <!-- ========================================== -->
         <section class="section-padding" id="proyectos">
             <div class="container">
                 
@@ -154,10 +173,10 @@
                     </div>
                 </div>
 
+                <!-- Cuadrícula de Tarjetas de Proyectos -->
                 <div class="projects-grid" id="projects-grid">
-                    <!-- Las tarjetas se manejarán con JavaScript -->
                     
-                    <!-- PROYECTO PRINCIPAL: OPERPAN BACKEND (DJANGO) -->
+                    <!-- PROYECTO DESTACADO: OPERPAN (Django) -->
                     <article class="project-card project-card-featured" data-categoria="sistemas">
                         <div class="project-img">
                             <img src="assets/img/projects/operpan.jpg" alt="OperPan" loading="lazy">
@@ -183,7 +202,7 @@
                         </div>
                     </article>
 
-                    <!-- Calculadora -->
+                    <!-- PROYECTO: Calculadora -->
                     <article class="project-card" data-categoria="aplicaciones">
                         <div class="project-img">
                             <img src="assets/img/projects/calculator.jpg" alt="Calculadora Web" loading="lazy">
@@ -196,13 +215,14 @@
                                 <li class="tech-tag">CSS3</li>
                                 <li class="tech-tag">JavaScript</li>
                             </ul>
+                            <!-- Enlace local a la carpeta del proyecto -->
                             <a href="./proyectos/frontend/projects-js/01-calculadora/index.html" class="project-link">
                                 Ver proyecto <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
                     </article>
 
-                    <!-- App Tareas -->
+                    <!-- PROYECTO: App Tareas -->
                     <article class="project-card" data-categoria="aplicaciones">
                         <div class="project-img">
                             <img src="assets/img/projects/tasks.jpg" alt="App de Tareas" loading="lazy">
@@ -220,7 +240,7 @@
                         </div>
                     </article>
 
-                    <!-- Dashboard Clima -->
+                    <!-- PROYECTO: Dashboard Clima -->
                     <article class="project-card" data-categoria="aplicaciones">
                         <div class="project-img">
                             <img src="assets/img/projects/clima.jpg" alt="Dashboard del Clima" loading="lazy">
@@ -239,7 +259,7 @@
                         </div>
                     </article>
 
-                    <!-- Laika CSS Puro -->
+                    <!-- PROYECTO: Laika CSS Puro -->
                     <article class="project-card" data-categoria="web">
                         <div class="project-img">
                             <img src="assets/img/projects/laikaa.jpg" alt="Laika (CSS Puro)" loading="lazy">
@@ -258,7 +278,7 @@
                         </div>
                     </article>
 
-                    <!-- Laika Bootstrap -->
+                    <!-- PROYECTO: Laika Bootstrap -->
                     <article class="project-card" data-categoria="web">
                         <div class="project-img">
                             <img src="assets/img/projects/laika.jpg" alt="Laika (Bootstrap 5)" loading="lazy">
@@ -277,7 +297,7 @@
                         </div>
                     </article>
 
-                    <!-- Galería Bootstrap -->
+                    <!-- PROYECTO: Galería Bootstrap -->
                     <article class="project-card" data-categoria="web">
                         <div class="project-img">
                             <img src="assets/img/projects/bootstrap.jpg" alt="Galería Bootstrap 5" loading="lazy">
@@ -295,7 +315,7 @@
                         </div>
                     </article>
 
-                    <!-- CRUD 1: Básico -->
+                    <!-- PROYECTO: CRUD 1 (Básico) -->
                     <article class="project-card" data-categoria="sistemas">
                         <div class="project-img">
                             <img src="assets/img/projects/crud.jpg" alt="Crud MySQL" loading="lazy">
@@ -307,13 +327,14 @@
                                 <li class="tech-tag">Python</li>
                                 <li class="tech-tag">MySQL</li>
                             </ul>
+                            <!-- Enlace a la documentación HTML -->
                             <a href="./proyectos/backend/crud-mysql-1/documentacion.html" class="project-link">
                                 Ver Documentación <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
                     </article>
 
-                    <!-- CRUD 2: Por Capas -->
+                    <!-- PROYECTO: CRUD 2 (Por Capas) -->
                     <article class="project-card" data-categoria="sistemas">
                         <div class="project-img">
                             <img src="assets/img/projects/cruds.jpg" alt="Crud Por Capas" loading="lazy">
@@ -332,7 +353,7 @@
                         </div>
                     </article>
 
-                    <!-- CRUD 3: OperPan -->
+                    <!-- PROYECTO: CRUD 3 (OperPan) -->
                     <article class="project-card" data-categoria="sistemas">
                         <div class="project-img">
                             <img src="assets/img/projects/crud-operpan.jpg" alt="CRUD OperPan — Caso Real" loading="lazy">
@@ -351,7 +372,7 @@
                         </div>
                     </article>
 
-                    <!-- Fundamentos POO -->
+                    <!-- PROYECTO: Fundamentos POO -->
                     <article class="project-card" data-categoria="sistemas">
                         <div class="project-img">
                             <img src="assets/img/projects/POO.jpg" alt="Fundamentos POO" loading="lazy">
@@ -369,7 +390,7 @@
                         </div>
                     </article>
 
-                    <!-- Migración Access -->
+                    <!-- PROYECTO: Migración Access a MySQL (PDF) -->
                     <article class="project-card" data-categoria="sistemas">
                         <div class="project-img">
                             <img src="assets/img/projects/migration-access.jpg" alt="Migración Access a MySQL" loading="lazy">
@@ -382,13 +403,14 @@
                                 <li class="tech-tag">MySQL</li>
                                 <li class="tech-tag">ETL</li>
                             </ul>
+                            <!-- Enlace a PDF local -->
                             <a href="./assets/docs/Migracion-Access-a-Xampp.pdf" target="_blank" class="project-link">
                                 Ver PDF <i class="fa-solid fa-file-pdf"></i>
                             </a>
                         </div>
                     </article>
 
-                    <!-- Migración Masiva -->
+                    <!-- PROYECTO: Migración Masiva (PDF) -->
                     <article class="project-card" data-categoria="sistemas">
                         <div class="project-img">
                             <img src="assets/img/projects/migration.jpg" alt="Migración Masiva" loading="lazy">
@@ -409,7 +431,7 @@
 
                 </div>
 
-                <!-- BOTÓN VER MÁS -->
+                <!-- Botón para cargar más proyectos (controlado por JS) -->
                 <div class="load-more-container">
                     <button id="btn-ver-mas" class="btn btn-primary">Ver todos los proyectos</button>
                 </div>
@@ -417,9 +439,12 @@
             </div>
         </section>
 
-        <!-- HABILIDADES -->
+        <!-- ========================================== -->
+        <!-- SECCIÓN 4: HABILIDADES                     -->
+        <!-- ========================================== -->
         <section class="section-padding bg-white" id="habilidades">
             <div class="container skills-layout">
+                <!-- Iconos de Tecnologías -->
                 <div class="skills-left">
                     <h2 class="section-title">Habilidades</h2>
                     <div class="skills-grid-icons">
@@ -432,6 +457,7 @@
                     </div>
                 </div>
 
+                <!-- Habilidades Blandas / Barras de progreso -->
                 <div class="skills-right">
                     <h3 class="subtitle-skill">Otras habilidades</h3>
                     <div class="skill-bar-wrap">
@@ -458,9 +484,12 @@
             </div>
         </section>
 
-        <!-- CONTACTO -->
+        <!-- ========================================== -->
+        <!-- SECCIÓN 5: CONTACTO                        -->
+        <!-- ========================================== -->
         <section class="section-padding" id="contacto">
             <div class="container contact-layout">
+                <!-- Información de Contacto -->
                 <div class="contact-info">
                     <h2 class="section-title">Contacto</h2>
                     <p>¿Tienes algún proyecto en mente o quieres colaborar? ¡Hablemos!</p>
@@ -475,10 +504,24 @@
                     </div>
                 </div>
 
-                <form class="contact-form">
-                    <div class="form-group"><label>Nombre</label><input type="text" placeholder="Tu nombre"></div>
-                    <div class="form-group"><label>Correo electrónico</label><input type="email" placeholder="tu@email.com"></div>
-                    <div class="form-group"><label>Mensaje</label><textarea rows="4" placeholder="Escribe tu mensaje aquí"></textarea></div>
+                <!-- Formulario conectado a Formspree -->
+                <form class="contact-form" action="https://formspree.io/f/xjyygbvw" method="POST">
+                    
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Correo electrónico</label>
+                        <input type="email" name="email" placeholder="tu@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Mensaje</label>
+                        <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí" required></textarea>
+                    </div>
+                    
                     <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar un mensaje</button>
                 </form>
             </div>
@@ -486,12 +529,17 @@
 
     </main>
 
-    <!-- MODO UNIVERSO -->
+    <!-- ========================================== -->
+    <!-- MODO UNIVERSO (FONDO INTERACTIVO)          -->
+    <!-- ========================================== -->
     <div id="universe-container" class="universe-container">
         <canvas id="universe-canvas"></canvas>
+        
+        <!-- Controles del Universo -->
         <button id="exit-universe-btn" class="exit-universe-btn"><i class="fa-solid fa-book-open"></i> Modo Lectura</button>
         <button id="center-universe-btn" class="center-btn">◎ CENTRAR UNIVERSO</button>
 
+        <!-- Filtros dentro del Universo -->
         <div class="universe-filters">
             <button class="universe-filter active" data-filter="all">TODOS</button>
             <button class="universe-filter" data-filter="web">WEB</button>
@@ -503,6 +551,7 @@
             <button class="universe-filter" data-filter="javascript">JAVASCRIPT</button>
         </div>
 
+        <!-- Panel de detalles al hacer clic en un planeta -->
         <div id="project-panel" class="project-panel">
             <button id="close-panel-btn" class="close-panel-btn"><i class="fa-solid fa-xmark"></i></button>
             <div class="panel-content">
@@ -522,6 +571,7 @@
             </div>
         </div>
 
+        <!-- Perfil flotante en el modo universo -->
         <div id="explorer-profile" class="explorer-profile">
             <div class="profile-avatar">EP</div>
             <h3>Eddier Paz</h3>
@@ -536,9 +586,12 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
+    <!-- ========================================== -->
+    <!-- FOOTER (PIE DE PÁGINA)                     -->
+    <!-- ========================================== -->
     <footer class="footer">
         <div class="container footer-grid">
+            <!-- Columna Logo y Descripción -->
             <div class="footer-col">
                 <a href="#" class="logo" aria-label="Inicio">
                     <div class="logo-avatar">
@@ -547,6 +600,8 @@
                 </a>
                 <p>Estudiante de ADSO apasionado por el desarrollo web y la creación de soluciones innovadoras.</p>
             </div>
+            
+            <!-- Columna Navegación -->
             <div class="footer-col">
                 <h4>Navegación</h4>
                 <ul>
@@ -557,6 +612,8 @@
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </div>
+            
+            <!-- Columna Enlaces Externos -->
             <div class="footer-col">
                 <h4>Enlaces útiles</h4>
                 <ul>
@@ -565,6 +622,8 @@
                     <li><a href="#" target="_blank">CV / Portafolio</a></li>
                 </ul>
             </div>
+            
+            <!-- Columna Información de Contacto -->
             <div class="footer-col">
                 <h4>Contacto</h4>
                 <ul>
@@ -574,11 +633,14 @@
                 </ul>
             </div>
         </div>
+        
+        <!-- Copyright -->
         <div class="container footer-bottom">
             <p>Hecho con ganas de aprender · Eddier Paz · 2026</p>
         </div>
     </footer>
 
+    <!-- Scripts Principales -->
     <script src="./assets/js/main.js"></script>
 </body>
 </html>
