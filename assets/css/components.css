@@ -209,33 +209,128 @@
     font-size: 0.9rem;
 }
 
-/* --- ABOUT --- */
+/* ============================================
+   SECCIÓN SOBRE MÍ (ESTILO MODERNO)
+   ============================================ */
 .about-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 50px;
     align-items: center;
 }
 
-.about-content p {
+.about-description {
     color: var(--text-gray);
-    margin-bottom: 20px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 40px;
 }
 
-.about-cards {
+/* Grid de las 3 tarjetas */
+.about-cards-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    margin-top: 40px;
 }
 
-.about-card i {
-    font-size: 2rem;
-    color: var(--primary-purple);
-    margin-bottom: 15px;
+/* Tarjeta individual */
+.about-card-item {
+    background: var(--bg-light);
+    padding: 25px 20px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
 }
-.about-card h4 { font-size: 1rem; margin-bottom: 5px; }
-.about-card p { font-size: 0.85rem; color: var(--text-gray); }
+
+/* Efecto hover en la tarjeta */
+.about-card-item:hover {
+    background: #FFFFFF;
+    border-color: rgba(124, 58, 237, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(124, 58, 237, 0.08);
+}
+
+body.dark-mode .about-card-item {
+    background: rgba(255, 255, 255, 0.03);
+}
+body.dark-mode .about-card-item:hover {
+    background: rgba(124, 58, 237, 0.1);
+    border-color: rgba(124, 58, 237, 0.3);
+}
+
+/* Cajita del icono */
+.about-icon-box {
+    width: 50px;
+    height: 50px;
+    background: rgba(124, 58, 237, 0.1);
+    color: var(--primary-purple);
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.about-card-item:hover .about-icon-box {
+    background: var(--primary-purple);
+    color: #FFFFFF;
+    transform: scale(1.1) rotate(-5deg);
+}
+
+body.dark-mode .about-icon-box {
+    background: rgba(124, 58, 237, 0.2);
+    color: #A78BFA;
+}
+
+/* Títulos y textos */
+.about-card-item h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+body.dark-mode .about-card-item h4 {
+    color: var(--text-light);
+}
+.about-card-item p {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Avatar con resplandor */
+.about-image-modern {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+    animation: pulseGlow 4s infinite alternate;
+}
+
+@keyframes pulseGlow {
+    0% { transform: scale(0.9); opacity: 0.7; }
+    100% { transform: scale(1.1); opacity: 1; }
+}
+
+.about-image-modern img {
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.08));
+}
 
 /* ============================================
    SECCIÓN DE PROYECTOS (ESTILO PASTEL Y SUAVE)
@@ -331,7 +426,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* El filtro mágico para bajarle lo neón/IA */
     filter: saturate(0.7) brightness(1.1) contrast(0.95);
     transition: transform 0.6s ease, filter 0.6s ease;
 }
@@ -369,7 +463,7 @@
     margin-bottom: 20px;
 }
 
-/* --- ETIQUETAS DE TECNOLOGÍA (Pastel) --- */
+/* Etiquetas de Tecnología (Pastel) */
 .tech-tag {
     background: #f4efff; 
     padding: 5px 14px;
@@ -414,7 +508,6 @@
     border-color: rgba(124, 58, 237, 0.5);
 }
 
-/* --- MEJORA DE LA ETIQUETA "PROYECTO PRINCIPAL" --- */
 .featured-badge {
     position: absolute;
     top: 15px;
@@ -447,7 +540,7 @@
     margin-top: 50px;
 }
 
-/* --- MODO OSCURO (Tarjetas y Etiquetas) --- */
+/* Modo Oscuro (Tarjetas y Etiquetas) */
 body.dark-mode .project-card {
     background: #1E1E2F;
     border-color: rgba(255, 255, 255, 0.05);
@@ -934,7 +1027,8 @@ body.game-mode .universe-cursor.hover-tech { width: 40px; height: 40px; border-c
     .btn-group { justify-content: center; }
     .social-icons { justify-content: center; }
     .about-grid { grid-template-columns: 1fr; text-align: center; }
-    .about-cards { grid-template-columns: 1fr 1fr; }
+    .about-cards-grid { grid-template-columns: 1fr; } /* En tablets/celular se apilan */
+    .about-card-item { display: flex; flex-direction: column; align-items: center; text-align: center; }
     .skills-layout { grid-template-columns: 1fr; }
     .contact-layout { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -973,8 +1067,8 @@ body.game-mode .universe-cursor.hover-tech { width: 40px; height: 40px; border-c
         margin: 0 auto;
     }
 
-    /* OCULTAMOS SOLO LA IMAGEN DE "SOBRE MÍ" */
-    .about-image { 
+    /* OCULTAMOS SOLO LA IMAGEN DE "SOBRE MÍ" EN CELULAR */
+    .about-image-modern { 
         display: none !important; 
     }
 
@@ -989,7 +1083,6 @@ body.game-mode .universe-cursor.hover-tech { width: 40px; height: 40px; border-c
         padding: 50px 0;
     }
 
-    .about-cards { grid-template-columns: 1fr; }
     .skills-grid-icons { grid-template-columns: 1fr 1fr; }
     .footer-grid { grid-template-columns: 1fr; }
     .filter-btn-group { justify-content: center; gap: 8px; }
